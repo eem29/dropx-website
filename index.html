@@ -49,14 +49,15 @@
     #site-header { transition: background-color 0.3s ease; }
     #site-header.scrolled { background-color: rgba(0,0,0,0.95); backdrop-filter: blur(12px); }
     .nav-link {
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.9);
       font-size: 0.8125rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.6);
       transition: color 0.2s ease, border-color 0.2s ease;
     }
     .nav-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
@@ -181,28 +182,30 @@
       <div class="absolute inset-0 -z-10" aria-hidden="true">
         <img src="/assets/images/Drop%20X%20Opening%202026-41.webp"
              alt=""
-             class="w-full h-full object-cover object-top"
+             class="w-full h-full object-cover object-center"
              width="1920" height="1280"
              loading="eager">
-        <!-- Gradient: concentrated in lower third, photo breathes above -->
-        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 22%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0) 75%)"></div>
-        <!-- Subtle accent radial -->
-        <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 60% at 65% 25%, rgba(0,191,255,0.06) 0%, transparent 70%)"></div>
+        <!-- Mobile: bottom-heavy gradient so stacked text reads -->
+        <div class="absolute inset-0 md:hidden" style="background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0) 100%)"></div>
+        <!-- Desktop: left-side gradient — text on left, jumpers visible on right -->
+        <div class="absolute inset-0 hidden md:block" style="background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 22%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0) 65%)"></div>
+        <!-- Always: top scrim so nav text reads against light clouds -->
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.52) 0%, rgba(0,0,0,0.15) 12%, transparent 25%)"></div>
       </div>
-      <!-- Content anchored to bottom-left -->
-      <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-16 md:px-12 md:pb-24 pt-32">
+      <!-- Content: full-width bottom-anchored on mobile, left-column centered on desktop -->
+      <div class="relative z-10 flex-1 flex flex-col justify-end md:justify-center px-6 pb-16 pt-28 md:px-14 md:pb-0 md:pt-0 w-full md:max-w-[44%]">
         <img src="/assets/images/Drop%20X%20%20Stacked%20-%20White-%20PNG.webp"
              alt="Skydive DropX"
              width="200" height="200"
              loading="eager"
              class="mb-6 w-28 md:w-44"
-             style="opacity: 1; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6));">
+             style="opacity: 1; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.7));">
         <p class="section-label">Canterbury, New Zealand</p>
         <h1 class="font-bold leading-tight mb-5 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(3rem, 8vw, 6.5rem);">
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.75rem, 7vw, 5.5rem);">
           Canterbury's<br>sport drop zone.
         </h1>
-        <p class="text-lg md:text-xl mb-10 max-w-xl leading-relaxed" style="color: rgba(255,255,255,0.72)">
+        <p class="text-base md:text-lg mb-10 leading-relaxed" style="color: rgba(255,255,255,0.78)">
           A Canterbury crew of licensed jumpers doing what they love: jump days, coaching and demo work.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
@@ -215,18 +218,29 @@
     <!-- WHAT WE DO -->
     <section aria-labelledby="what-we-do-heading" class="px-6 md:px-12 py-20 md:py-28">
       <div class="max-w-6xl mx-auto">
-        <p class="section-label">What we do</p>
-        <h2 id="what-we-do-heading" class="font-bold mb-3 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
-          Jump with us
-        </h2>
-        <p class="mb-6 max-w-lg leading-relaxed" style="color: rgba(255,255,255,0.6); font-size: 1rem;">
-          Sport jumping in Canterbury, open to licensed jumpers. Here's what we've got on.
-        </p>
-        <div class="flex items-baseline gap-2 mb-12">
-          <span id="ticket-price" class="font-bold" style="font-family:'Barlow Condensed',sans-serif; font-size: 2rem; color: var(--color-accent)">NZ$65</span>
-          <span style="color: rgba(255,255,255,0.35); font-size: 1rem;">·</span>
-          <span id="ticket-alt" class="text-base" style="color: rgba(255,255,255,0.5)">12,000ft</span>
+        <div class="md:grid md:grid-cols-2 md:gap-14 md:items-center mb-12">
+          <div>
+            <p class="section-label">What we do</p>
+            <h2 id="what-we-do-heading" class="font-bold mb-3 text-white"
+                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
+              Jump with us
+            </h2>
+            <p class="mb-6 leading-relaxed" style="color: rgba(255,255,255,0.6); font-size: 1rem;">
+              Sport jumping in Canterbury, open to licensed jumpers. Here's what we've got on.
+            </p>
+            <div class="flex items-baseline gap-2">
+              <span id="ticket-price" class="font-bold" style="font-family:'Barlow Condensed',sans-serif; font-size: 2rem; color: var(--color-accent)">NZ$65</span>
+              <span style="color: rgba(255,255,255,0.35); font-size: 1rem;">·</span>
+              <span id="ticket-alt" class="text-base" style="color: rgba(255,255,255,0.5)">12,000ft</span>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <img src="/assets/images/Drop%20X%20Opening%202026-57.webp"
+                 alt="Sport jumping over Canterbury"
+                 class="w-full object-cover"
+                 style="height: 320px; border-radius: 3px; box-shadow: 0 16px 40px -8px rgba(0,0,0,0.7);"
+                 loading="lazy">
+          </div>
         </div>
         <div id="activities-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <p style="color: rgba(255,255,255,0.3); font-size:0.875rem;">Loading...</p>
@@ -245,17 +259,24 @@
 
     <!-- COMING SOON -->
     <section aria-labelledby="coming-soon-heading" class="px-6 md:px-12 py-16 md:py-20">
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto md:grid md:grid-cols-2 md:gap-16 md:items-center">
         <div style="border-left: 3px solid var(--color-accent); padding-left: 1.75rem;">
           <p class="section-label" style="margin-bottom: 0.5rem;">Coming Spring 2026</p>
           <h2 id="coming-soon-heading" class="font-bold text-white mb-3"
               style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(1.75rem, 4vw, 2.75rem);">
             Tandem skydives and AFF training
           </h2>
-          <p class="max-w-2xl leading-relaxed mb-6" style="color: rgba(255,255,255,0.65); font-size: 1rem;">
+          <p class="leading-relaxed mb-6" style="color: rgba(255,255,255,0.65); font-size: 1rem;">
             DropX is opening up to everyone. First-time jumpers and students working toward a licence: Spring 2026 is when it all kicks off. Want to be first in the door? Let us know.
           </p>
           <a href="/contact.html" class="btn-ghost" style="width: fit-content;">Register your interest</a>
+        </div>
+        <div class="hidden md:block mt-0">
+          <img src="/assets/images/Drop%20X%20Opening%202026-3.webp"
+               alt="Canopy over the drop zone"
+               class="w-full object-cover"
+               style="height: 380px; border-radius: 3px; box-shadow: 0 16px 40px -8px rgba(0,0,0,0.7);"
+               loading="lazy">
         </div>
       </div>
     </section>
@@ -310,6 +331,15 @@
         </div>
       </div>
     </section>
+
+    <!-- PHOTO STRIP: DEMOS -->
+    <div class="relative overflow-hidden" style="height: clamp(280px, 45vh, 520px);" aria-hidden="true">
+      <img src="/assets/images/Drop%20X%20Opening%202026-88.webp"
+           alt=""
+           class="w-full h-full object-cover object-center"
+           loading="lazy">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 50%)"></div>
+    </div>
 
     <!-- CONTACT CTA -->
     <section aria-labelledby="contact-cta-heading" class="px-6 md:px-12 py-20 md:py-28 text-center"
