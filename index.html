@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://skydivedropx.com/assets/images/IMG_3595.webp">
   <meta property="og:url" content="https://skydivedropx.com">
   <meta property="og:type" content="website">
-  <!-- Plausible: add after domain confirmed with Ben -->
+  <!-- Plausible: add after domain DNS is confirmed -->
   <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,9 +179,9 @@
     <!-- HERO -->
     <section aria-label="Hero" class="relative min-h-screen flex flex-col overflow-hidden">
       <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <img src="/assets/images/IMG_3595.webp"
+        <img src="/assets/images/Drop%20X%20Opening%202026-41.webp"
              alt=""
-             class="w-full h-full object-cover object-center"
+             class="w-full h-full object-cover object-top"
              width="1920" height="1280"
              loading="eager">
         <!-- Gradient overlay: bottom-heavy so headline reads cleanly -->
@@ -191,22 +191,19 @@
       </div>
       <!-- Content anchored to bottom-left -->
       <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-16 md:px-12 md:pb-24 pt-32">
-        <p class="section-label">Canterbury, New Zealand</p>
         <img src="/assets/images/Drop%20X%20%20Stacked%20-%20White-%20PNG.webp"
              alt="Skydive DropX"
-             width="96" height="96"
+             width="200" height="200"
              loading="eager"
-             class="mb-6 w-16 md:w-24"
-             style="opacity: 0.95;">
-        <h1 class="font-black uppercase leading-none mb-5 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(3.5rem, 9vw, 7.5rem);">
+             class="mb-6 w-28 md:w-44"
+             style="opacity: 1; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6));">
+        <p class="section-label">Canterbury, New Zealand</p>
+        <h1 class="font-bold leading-tight mb-5 text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(3rem, 8vw, 6.5rem);">
           Canterbury's<br>sport drop zone.
         </h1>
-        <p class="text-lg md:text-xl mb-3 max-w-xl leading-relaxed" style="color: rgba(255,255,255,0.72)">
-          Licensed jumpers, canopy coaching, freefly, and demo jumps.
-        </p>
-        <p class="text-sm font-semibold mb-10" style="color: var(--color-accent)">
-          Tandem and AFF coming Spring 2026.
+        <p class="text-lg md:text-xl mb-10 max-w-xl leading-relaxed" style="color: rgba(255,255,255,0.72)">
+          A Canterbury crew of licensed jumpers. Jump days, coaching, and demo work — run by jumpers, for jumpers.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a id="hero-cta" href="#" class="btn-primary">Join the Community</a>
@@ -219,8 +216,8 @@
     <section aria-labelledby="what-we-do-heading" class="px-6 md:px-12 py-20 md:py-28">
       <div class="max-w-6xl mx-auto">
         <p class="section-label">What we do</p>
-        <h2 id="what-we-do-heading" class="font-black uppercase mb-4 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
+        <h2 id="what-we-do-heading" class="font-bold mb-4 text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
           Jump with us
         </h2>
         <div class="flex items-baseline gap-3 mb-12">
@@ -233,6 +230,23 @@
       </div>
     </section>
 
+    <!-- COMING SOON -->
+    <section aria-labelledby="coming-soon-heading" class="px-6 md:px-12 py-16 md:py-20">
+      <div class="max-w-6xl mx-auto">
+        <div style="border-left: 3px solid var(--color-accent); padding-left: 1.75rem;">
+          <p class="section-label" style="margin-bottom: 0.5rem;">Coming Spring 2026</p>
+          <h2 id="coming-soon-heading" class="font-bold text-white mb-3"
+              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(1.75rem, 4vw, 2.75rem);">
+            Tandem skydives and AFF training
+          </h2>
+          <p class="max-w-2xl leading-relaxed mb-6" style="color: rgba(255,255,255,0.65); font-size: 1rem;">
+            DropX is opening up to everyone. First-time jumpers and students working toward a licence — Spring 2026 is when it all kicks off. Want to be first in the door? Let us know.
+          </p>
+          <a href="/contact.html" class="btn-ghost" style="width: fit-content;">Register your interest</a>
+        </div>
+      </div>
+    </section>
+
     <!-- COMMUNITY -->
     <section aria-labelledby="community-heading"
              style="background: var(--color-surface); border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);"
@@ -240,15 +254,15 @@
       <div class="max-w-6xl mx-auto md:flex md:items-center md:gap-16">
         <div class="flex-1">
           <p class="section-label">How it works</p>
-          <h2 id="community-heading" class="font-black uppercase mb-6 text-white"
-              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
+          <h2 id="community-heading" class="font-bold mb-6 text-white"
+              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
             The community
           </h2>
           <p class="mb-4 leading-relaxed max-w-lg" style="color: rgba(255,255,255,0.65)">
-            Coordination happens through a Facebook Messenger group. Jump days, coaching sessions, and demo work are all organised there.
+            Everything happens through a Facebook Messenger group. Jump days, coaching sessions, demo work — all coordinated by the people doing it.
           </p>
           <p class="mb-10 leading-relaxed max-w-lg" style="color: rgba(255,255,255,0.65)">
-            Join to find out who is jumping this weekend, when the next session is, and how to get involved.
+            Jump in to see who's flying this weekend, when the next session is on, and how to get involved.
           </p>
           <div class="flex flex-col sm:flex-row items-start gap-4">
             <a id="community-cta" href="#" class="btn-primary">Join the Messenger Group</a>
@@ -270,12 +284,12 @@
     <section aria-labelledby="contact-cta-heading" class="px-6 md:px-12 py-20 md:py-28 text-center">
       <div class="max-w-xl mx-auto">
         <p class="section-label">Get in touch</p>
-        <h2 id="contact-cta-heading" class="font-black uppercase mb-6 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
-          Questions? Talk to Ben.
+        <h2 id="contact-cta-heading" class="font-bold mb-6 text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.01em; font-size: clamp(2.25rem, 5vw, 3.5rem);">
+          Got questions? Get in touch.
         </h2>
         <p class="leading-relaxed mb-10" style="color: rgba(255,255,255,0.6)">
-          Demo enquiries, coaching bookings, and general questions. Register interest for tandem and AFF coming Spring 2026.
+          Questions about demo jumps, coaching, or anything else — get in touch and someone will get back to you.
         </p>
         <a href="/contact.html" class="btn-primary">Contact Us</a>
       </div>
@@ -398,10 +412,22 @@
         const data = await res.json();
         document.getElementById('ticket-price').textContent = data.ticket.price;
         document.getElementById('ticket-alt').textContent   = data.ticket.altitude;
-        grid.innerHTML = data.activities.map(act => `
-          <article class="activity-card${act.available ? '' : ' coming-soon'}">
-            ${!act.available ? `<span style="display:inline-block; font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; background:rgba(255,255,255,0.07); color:var(--color-text-muted); padding:0.25rem 0.6rem; border-radius:2px; margin-bottom:0.75rem;">${act.coming_soon}</span>` : ''}
-            <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; font-weight:900; text-transform:uppercase; letter-spacing:-0.01em; color:${act.available ? 'var(--color-text)' : 'var(--color-text-muted)'}; margin-bottom:0.5rem;">
+
+        // Merge canopy-coaching + freefly-coaching into one Coaching card
+        const coachingItems = data.activities.filter(a => a.id === 'canopy-coaching' || a.id === 'freefly-coaching');
+        const otherItems    = data.activities.filter(a => a.id !== 'canopy-coaching' && a.id !== 'freefly-coaching' && a.available);
+        const mergedCoaching = coachingItems.length ? {
+          id: 'coaching',
+          name: 'Coaching',
+          description: 'Canopy and freefly coaching available on jump days. Whether you\'re working on accuracy, swooping, or freefly skills — get in touch through the Messenger group.',
+          available: true
+        } : null;
+        const displayActivities = otherItems.slice(); // fun-jumping, demo-jumps
+        if (mergedCoaching) displayActivities.splice(1, 0, mergedCoaching); // insert after fun-jumping
+
+        grid.innerHTML = displayActivities.map(act => `
+          <article class="activity-card">
+            <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.35rem; font-weight:700; letter-spacing:0em; color:var(--color-text); margin-bottom:0.5rem;">
               ${act.name}
             </h3>
             <p style="font-size:0.875rem; line-height:1.65; color:var(--color-text-muted)">
