@@ -1,0 +1,88 @@
+# Decap CMS configuration — Skydive DropX
+# Docs: https://decapcms.org/docs/
+#
+# Auth: Cloudflare Access
+# Steps to wire:
+#   1. Create a Cloudflare Access application for /admin/*
+#   2. Set allowed emails (Ben's address minimum)
+#   3. Configure git-gateway (via Netlify) OR use a custom backend
+#
+# See: https://decapcms.org/docs/cloudflare-access/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Media: stored in assets/images/
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Site URL (update when domain is confirmed with Ben)
+site_url: https://skydivedropx.com
+display_url: https://skydivedropx.com
+
+collections:
+
+  # ── FAQ ──────────────────────────────────────────────────────────────────
+  - name: "faq"
+    label: "FAQ"
+    label_singular: "FAQ Item"
+    description: "Frequently asked questions shown on the FAQ page."
+    files:
+      - name: "faq"
+        label: "FAQ Questions"
+        file: "content/faq.json"
+        fields:
+          - label: "FAQ Items"
+            name: "faqs"
+            widget: "list"
+            label_singular: "Question"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer",   name: "answer",   widget: "text" }
+
+  # ── EVENTS ───────────────────────────────────────────────────────────────
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    description: "Upcoming events shown on the Events page."
+    files:
+      - name: "events"
+        label: "Events List"
+        file: "content/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            label_singular: "Event"
+            fields:
+              - { label: "Title",       name: "title",       widget: "string" }
+              - { label: "Date",        name: "date",        widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Description", name: "description", widget: "text",   required: false }
+              - { label: "Location",    name: "location",    widget: "string", required: false }
+
+  # ── JUMP INFO ─────────────────────────────────────────────────────────────
+  - name: "jump"
+    label: "Jump Info"
+    description: "Ticket price, altitude, and activity descriptions on the Jump page."
+    files:
+      - name: "jump"
+        label: "Jump Details"
+        file: "content/jump.json"
+        fields:
+          - label: "Ticket"
+            name: "ticket"
+            widget: "object"
+            fields:
+              - { label: "Price",    name: "price",    widget: "string", hint: "e.g. NZ$65" }
+              - { label: "Altitude", name: "altitude", widget: "string", hint: "e.g. 12,000ft" }
+          - label: "Activities"
+            name: "activities"
+            widget: "list"
+            label_singular: "Activity"
+            fields:
+              - { label: "ID",           name: "id",          widget: "string" }
+              - { label: "Name",         name: "name",        widget: "string" }
+              - { label: "Description",  name: "description", widget: "text" }
+              - { label: "Available",    name: "available",   widget: "boolean", default: true }
+              - { label: "Coming Soon (e.g. Spring 2026)", name: "coming_soon", widget: "string", required: false }
