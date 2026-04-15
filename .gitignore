@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+screenshots/
+*.docx
+DropX onboarding/
+Photos/
+dropx-images-web/
+dropx-social-audit.txt
+PROGRESS.md

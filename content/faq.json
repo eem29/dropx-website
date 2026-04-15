@@ -1,0 +1,24 @@
+{
+  "faqs": [
+    {
+      "question": "Can I learn to skydive here?",
+      "answer": "AFF (Accelerated Freefall) is coming Spring 2026. Register your interest via the contact form and we will be in touch as soon as it opens."
+    },
+    {
+      "question": "Can I book a tandem jump?",
+      "answer": "Tandem skydiving is coming Spring 2026. Register your interest via the contact form."
+    },
+    {
+      "question": "I am a licensed jumper. How do I jump here?",
+      "answer": "Join the Facebook Messenger community group, coordinate with the crew, and show up on jump day. Tickets are NZ$65 per jump from 12,000ft."
+    },
+    {
+      "question": "What sport events do you run?",
+      "answer": "Canopy coaching, freefly coaching, and demo jumps. Check the events calendar for upcoming sessions."
+    },
+    {
+      "question": "How do I find out who is jumping this weekend?",
+      "answer": "Join the Facebook Messenger group. That is where all jump day coordination happens."
+    }
+  ]
+}

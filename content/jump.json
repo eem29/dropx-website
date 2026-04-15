@@ -1,0 +1,46 @@
+{
+  "ticket": {
+    "price": "NZ$65",
+    "altitude": "12,000ft"
+  },
+  "activities": [
+    {
+      "id": "fun-jumping",
+      "name": "Fun Jumping",
+      "description": "Open sky, crew you know. Show up and jump.",
+      "available": true
+    },
+    {
+      "id": "canopy-coaching",
+      "name": "Canopy Coaching",
+      "description": "One-on-one and small group coaching under canopy. Work on accuracy, swooping, and canopy control with experienced coaches.",
+      "available": true
+    },
+    {
+      "id": "freefly-coaching",
+      "name": "Freefly Coaching",
+      "description": "Head-down, sit-flying, and hybrid work with experienced coaches.",
+      "available": true
+    },
+    {
+      "id": "demo-jumps",
+      "name": "Demo Jumps",
+      "description": "Jumpers carry large custom flags and banners into events and stadiums. Active partnership with Switch It Up Events. Past clients include the Blues (Super Rugby) and Go Media.",
+      "available": true
+    },
+    {
+      "id": "tandem",
+      "name": "Tandem Skydiving",
+      "description": "Commercial tandem operation launching Spring 2026.",
+      "available": false,
+      "coming_soon": "Spring 2026"
+    },
+    {
+      "id": "aff",
+      "name": "AFF",
+      "description": "Accelerated Freefall — learn to skydive. Launching Spring 2026.",
+      "available": false,
+      "coming_soon": "Spring 2026"
+    }
+  ]
+}
