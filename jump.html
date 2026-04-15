@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jump With Us | Skydive DropX</title>
+  <meta name="description" content="Sport jumping at Skydive DropX, Canterbury NZ. NZ$65 per jump from 12,000ft. Canopy coaching, freefly coaching, and demo jumps. Licensed jumpers welcome.">
+  <meta property="og:title" content="Jump With Us | Skydive DropX">
+  <meta property="og:description" content="NZ$65 per jump from 12,000ft. Canopy coaching, freefly, and demo jumps. Canterbury, New Zealand.">
+  <meta property="og:image" content="https://skydivedropx.com/assets/images/Drop%20X%20Opening%202026-41.webp">
+  <meta property="og:url" content="https://skydivedropx.com/jump.html">
+  <meta property="og:type" content="website">
+  <!-- Plausible: add after domain confirmed with Ben -->
+  <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { accent: '#00BFFF', surface: '#111111' },
+          fontFamily: {
+            display: ['Barlow Condensed', 'sans-serif'],
+            body: ['Figtree', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --color-accent:     #00BFFF;
+      --color-text:       #FFFFFF;
+      --color-text-muted: #999999;
+      --color-bg:         #000000;
+      --color-surface:    #111111;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Figtree', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    #site-header {
+      transition: background-color 0.3s ease;
+      background-color: rgba(0,0,0,0.7);
+      backdrop-filter: blur(12px);
+    }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.95); }
+    .nav-link {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.8125rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      padding-bottom: 2px; border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
+    .nav-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
+    .nav-link.active { color: var(--color-accent); border-color: var(--color-accent); }
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.875rem 2.25rem;
+      background: var(--color-accent); color: #000;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border-radius: 2px;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+    }
+    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,191,255,0.35); }
+    .btn-primary:active { transform: scale(0.97); }
+    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.875rem 2.25rem; color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: 2px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); background-color: rgba(255,255,255,0.06); }
+    .btn-ghost:active { background-color: rgba(255,255,255,0.1); }
+    .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--color-accent); margin-bottom: 0.625rem;
+    }
+    .activity-block {
+      display: grid; gap: 3rem;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (min-width: 768px) {
+      .activity-block { grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+    }
+    .coming-badge {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      background: rgba(255,255,255,0.07); color: var(--color-text-muted);
+      padding: 0.25rem 0.65rem; border-radius: 2px; margin-bottom: 0.75rem;
+    }
+    .photo-card {
+      overflow: hidden; border-radius: 3px;
+      box-shadow: 0 20px 48px -8px rgba(0,0,0,0.7), 0 4px 14px -2px rgba(0,191,255,0.08);
+    }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--color-bg); z-index: 100;
+      flex-direction: column; padding: 1.5rem;
+    }
+    #mobile-menu.open { display: flex; }
+    .footer-link { color: rgba(255,255,255,0.45); font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; }
+    .footer-link:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between">
+    <a href="/" aria-label="Skydive DropX — home">
+      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
+           alt="Skydive DropX" width="148" height="38" loading="eager">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul id="nav-list" class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list"></ul>
+    </nav>
+    <button id="menu-open" class="md:hidden text-white p-1 rounded"
+            aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/>
+      </svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="flex items-center justify-between mb-10">
+      <a href="/" aria-label="Skydive DropX — home">
+        <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30">
+      </a>
+      <button id="menu-close" class="text-white p-1" aria-label="Close navigation">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
+        </svg>
+      </button>
+    </div>
+    <ul id="mobile-nav-list" class="list-none m-0 p-0 flex flex-col gap-5" role="list"></ul>
+    <div class="mt-auto pt-12">
+      <a id="mobile-cta" href="#" class="btn-primary w-full">Join the Community</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section aria-label="Jump With Us" class="relative flex flex-col justify-end overflow-hidden" style="min-height: 60vh;">
+      <div class="absolute inset-0 -z-10" aria-hidden="true">
+        <img src="/assets/images/Drop%20X%20Opening%202026-41.webp"
+             alt="" class="w-full h-full object-cover object-top"
+             width="1920" height="1280" loading="eager">
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)"></div>
+      </div>
+      <div class="relative z-10 px-6 md:px-12 pb-14 pt-40">
+        <p class="section-label">Skydive DropX</p>
+        <h1 class="font-black uppercase leading-none text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(3rem, 8vw, 6.5rem);">
+          Jump with us
+        </h1>
+      </div>
+    </section>
+
+    <!-- TICKET PRICE BAND -->
+    <div style="background: var(--color-surface); border-bottom: 1px solid rgba(255,255,255,0.07);">
+      <div class="max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:gap-10 gap-2">
+        <div class="flex items-baseline gap-3">
+          <span id="ticket-price" class="font-black"
+                style="font-family:'Barlow Condensed',sans-serif; font-size:3rem; color: var(--color-accent); letter-spacing:-0.02em;">NZ$65</span>
+          <span id="ticket-alt" class="text-xl" style="color: rgba(255,255,255,0.5);">per jump / 12,000ft</span>
+        </div>
+        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.5); max-width: 380px;">
+          Licensed jumpers only. Join the Messenger group to coordinate jump days.
+        </p>
+      </div>
+    </div>
+
+    <!-- ACTIVITIES -->
+    <section aria-labelledby="activities-heading" class="px-6 md:px-12 py-16 md:py-24">
+      <div class="max-w-6xl mx-auto">
+        <p class="section-label">What's on</p>
+        <h2 id="activities-heading" class="font-black uppercase mb-1 text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem);">
+          Sport, coaching, and demos
+        </h2>
+        <p class="mb-0 text-sm" style="color: rgba(255,255,255,0.35);">Tandem and AFF coming Spring 2026.</p>
+
+        <!-- Fun jumping -->
+        <div class="activity-block">
+          <div>
+            <p class="section-label">Sport jumping</p>
+            <h3 class="font-black uppercase mb-4 text-white"
+                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Fun jumping</h3>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
+              Open sky and crew you know. Show up on a jump day, pay your ticket, and get in the air. All disciplines welcome.
+            </p>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
+              Jump days are coordinated through the Facebook Messenger group. Join to see who is jumping this weekend.
+            </p>
+          </div>
+          <div class="photo-card" style="height: 320px;">
+            <img src="/assets/images/Drop%20X%20Opening%202026-57.webp"
+                 alt="Jumper in freefall over Canterbury" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Canopy coaching -->
+        <div class="activity-block">
+          <div class="md:order-2">
+            <p class="section-label">Coaching</p>
+            <h3 class="font-black uppercase mb-4 text-white"
+                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Canopy coaching</h3>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
+              One-on-one and small group coaching under canopy. Work on accuracy, high-performance approaches, and canopy control with experienced coaches.
+            </p>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
+              Contact us or reach out in the Messenger group to arrange a session.
+            </p>
+          </div>
+          <div class="photo-card md:order-1" style="height: 320px;">
+            <img src="/assets/images/Drop%20X%20Opening%202026-49.webp"
+                 alt="Parachute canopy in flight" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Freefly coaching -->
+        <div class="activity-block">
+          <div>
+            <p class="section-label">Coaching</p>
+            <h3 class="font-black uppercase mb-4 text-white"
+                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Freefly coaching</h3>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
+              Head-down, sit-flying, and hybrid work. Individual and small group sessions with experienced freefly coaches.
+            </p>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
+              Get in touch to discuss goals and arrange a session.
+            </p>
+          </div>
+          <div class="photo-card" style="height: 320px;">
+            <img src="/assets/images/Drop%20X%20Opening%202026-19.webp"
+                 alt="Two freeflyers over Canterbury plains" width="1920" height="1280" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Demo jumps — featured -->
+        <div class="activity-block" style="border-top-color: rgba(0,191,255,0.2);">
+          <div class="md:order-2">
+            <p class="section-label">Commercial</p>
+            <h3 class="font-black uppercase mb-4 text-white"
+                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Demo jumps</h3>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
+              Jumpers carry large custom flags and banners into events, stadiums, and public gatherings. Hard to miss.
+            </p>
+            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-6">
+              Active partnership with Switch It Up Events. Past clients include the Blues (Super Rugby) and Go Media. If you have an event and want something different, get in touch.
+            </p>
+            <a href="/contact.html" class="btn-primary">Enquire About a Demo</a>
+          </div>
+          <div class="photo-card md:order-1" style="height: 360px;">
+            <img src="/assets/images/Drop%20X%20Opening%202026-45.webp"
+                 alt="Jumper with large banner in freefall at a demo event" width="800" height="600" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Coming soon -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.07); padding-top: 3rem;">
+          <p class="section-label" style="color: var(--color-text-muted);">Coming Spring 2026</p>
+          <h2 class="font-black uppercase mb-8 text-white"
+              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem); opacity: 0.55;">
+            Tandem and AFF
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mb-8">
+            <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 3px; padding: 1.75rem; opacity: 0.5;">
+              <span class="coming-badge">Spring 2026</span>
+              <h3 class="font-black uppercase mb-2" style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; color: var(--color-text-muted);">Tandem skydiving</h3>
+              <p style="font-size:0.875rem; color: var(--color-text-muted); line-height:1.65;">Commercial tandem operation launching Spring 2026. Register interest via the contact form.</p>
+            </div>
+            <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 3px; padding: 1.75rem; opacity: 0.5;">
+              <span class="coming-badge">Spring 2026</span>
+              <h3 class="font-black uppercase mb-2" style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; color: var(--color-text-muted);">AFF</h3>
+              <p style="font-size:0.875rem; color: var(--color-text-muted); line-height:1.65;">Accelerated Freefall training launching Spring 2026. Register interest via the contact form.</p>
+            </div>
+          </div>
+          <a href="/contact.html" class="btn-ghost">Register Interest</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMMUNITY CTA -->
+    <section style="background: var(--color-surface); border-top: 1px solid rgba(255,255,255,0.07);"
+             class="px-6 md:px-12 py-16 md:py-20 text-center">
+      <div class="max-w-xl mx-auto">
+        <p class="section-label">Coordination</p>
+        <h2 class="font-black uppercase mb-5 text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem);">
+          Find out who is jumping
+        </h2>
+        <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.6)">
+          All jump day coordination happens in the Facebook Messenger group. Join to see upcoming sessions and connect with the crew.
+        </p>
+        <a id="jump-cta" href="#" class="btn-primary">Join the Messenger Group</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--color-bg); border-top: 1px solid rgba(255,255,255,0.07);" class="px-6 md:px-12 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div>
+        <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
+             alt="Skydive DropX" width="120" height="30" loading="lazy" class="mb-4 opacity-75"></a>
+        <p class="text-sm" style="color: var(--color-text-muted)">Canterbury, New Zealand</p>
+        <p class="text-sm mt-1"><a href="tel:+6427292951" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">(027) 2929951</a></p>
+        <p class="text-sm mt-1"><a href="mailto:ben@skydivedropx.com" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">ben@skydivedropx.com</a></p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul id="footer-nav" class="list-none m-0 p-0 flex flex-wrap gap-x-8 gap-y-3" role="list"></ul>
+      </nav>
+      <div><a id="footer-messenger" href="#" class="btn-primary">Join the Community</a></div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-10 pt-6" style="border-top: 1px solid rgba(255,255,255,0.07)">
+      <p class="text-xs" style="color: var(--color-text-muted)">&copy; 2026 Skydive DropX. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuOpen.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      menuOpen.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+    menuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuOpen.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+
+    async function loadSite() {
+      try {
+        const res = await fetch('/content/site.json');
+        if (!res.ok) throw new Error('fetch failed');
+        const data = await res.json();
+
+        const navList = document.getElementById('nav-list');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li');
+          const a  = document.createElement('a');
+          a.href = link.href; a.textContent = link.label;
+          a.className = link.href === '/jump.html' ? 'nav-link active' : 'nav-link';
+          li.appendChild(a); navList.appendChild(li);
+        });
+
+        const mobileList = document.getElementById('mobile-nav-list');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li');
+          const a  = document.createElement('a');
+          a.href = link.href; a.textContent = link.label;
+          a.style.cssText = "font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:rgba(255,255,255,0.8);text-decoration:none;";
+          li.appendChild(a); mobileList.appendChild(li);
+        });
+
+        const footerNav = document.getElementById('footer-nav');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li');
+          const a  = document.createElement('a');
+          a.href = link.href; a.textContent = link.label; a.className = 'footer-link';
+          li.appendChild(a); footerNav.appendChild(li);
+        });
+
+        const msUrl = data.social.facebook_messenger;
+        ['mobile-cta', 'jump-cta', 'footer-messenger'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.href = msUrl;
+        });
+      } catch (err) { console.warn('site.json failed', err); }
+    }
+
+    async function loadTicket() {
+      try {
+        const res = await fetch('/content/jump.json');
+        if (!res.ok) throw new Error('fetch failed');
+        const data = await res.json();
+        document.getElementById('ticket-price').textContent = data.ticket.price;
+        document.getElementById('ticket-alt').textContent   = 'per jump / ' + data.ticket.altitude;
+      } catch (err) { console.warn('jump.json failed', err); }
+    }
+
+    loadSite();
+    loadTicket();
+  </script>
+</body>
+</html>
