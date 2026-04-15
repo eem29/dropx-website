@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Skydive DropX</title>
+  <meta name="description" content="Upcoming events at Skydive DropX, Canterbury NZ. Canopy coaching, freefly sessions, demo jumps, and more. Check back for new dates.">
+  <meta property="og:title" content="Events | Skydive DropX">
+  <meta property="og:description" content="Upcoming events at Skydive DropX. Canopy coaching, freefly sessions, and demo jumps near Canterbury, NZ.">
+  <meta property="og:image" content="https://skydivedropx.com/assets/images/Drop%20X%20Opening%202026-41.webp">
+  <meta property="og:url" content="https://skydivedropx.com/events.html">
+  <meta property="og:type" content="website">
+  <!-- Plausible: add after domain confirmed with Ben -->
+  <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { accent: '#00BFFF', surface: '#111111' }, fontFamily: { display: ['Barlow Condensed', 'sans-serif'], body: ['Figtree', 'sans-serif'] } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --color-accent: #00BFFF; --color-text: #FFFFFF; --color-text-muted: #999999; --color-bg: #000000; --color-surface: #111111; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--color-bg); color: var(--color-text); font-family: 'Figtree', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    #site-header { transition: background-color 0.3s ease; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(12px); }
+    #site-header.scrolled { background-color: rgba(0,0,0,0.98); }
+    .nav-link { color: rgba(255,255,255,0.75); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+    .nav-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
+    .nav-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
+    .nav-link.active { color: var(--color-accent); border-color: var(--color-accent); }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2.25rem; background: var(--color-accent); color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; }
+    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,191,255,0.35); }
+    .btn-primary:active { transform: scale(0.97); }
+    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.625rem; }
+    #mobile-menu { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 100; flex-direction: column; padding: 1.5rem; }
+    #mobile-menu.open { display: flex; }
+    .footer-link { color: rgba(255,255,255,0.45); font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; }
+    .footer-link:hover { color: #fff; }
+    /* Event card */
+    .event-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px; padding: 1.5rem 1.75rem;
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 1.25rem; align-items: start;
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+    }
+    .event-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -4px rgba(0,0,0,0.5); }
+    .event-date-block { text-align: center; min-width: 56px; }
+    .event-day { font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; color: var(--color-accent); line-height: 1; }
+    .event-month { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between">
+    <a href="/" aria-label="Skydive DropX — home">
+      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="148" height="38" loading="eager">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul id="nav-list" class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list"></ul>
+    </nav>
+    <button id="menu-open" class="md:hidden text-white p-1 rounded" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="flex items-center justify-between mb-10">
+      <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30"></a>
+      <button id="menu-close" class="text-white p-1" aria-label="Close navigation">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+    </div>
+    <ul id="mobile-nav-list" class="list-none m-0 p-0 flex flex-col gap-5" role="list"></ul>
+    <div class="mt-auto pt-12"><a id="mobile-cta" href="#" class="btn-primary w-full">Join the Community</a></div>
+  </div>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="pt-36 pb-12 px-6 md:px-12" style="background: var(--color-surface); border-bottom: 1px solid rgba(255,255,255,0.07);">
+      <div class="max-w-3xl">
+        <p class="section-label">Skydive DropX</p>
+        <h1 class="font-black uppercase leading-none text-white"
+            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(3rem, 8vw, 6rem);">
+          Events
+        </h1>
+        <p class="mt-4 text-lg" style="color: rgba(255,255,255,0.55)">
+          Coaching sessions, demo jumps, and special events.
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENTS LIST -->
+    <section aria-labelledby="events-heading" class="px-6 md:px-12 py-16 md:py-24">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="events-heading" class="sr-only">Upcoming events</h2>
+        <div id="events-list">
+          <p style="color: rgba(255,255,255,0.3); font-size:0.875rem;">Loading...</p>
+        </div>
+
+        <!-- Always show: stay updated via Messenger -->
+        <div class="mt-16 pt-8" style="border-top: 1px solid rgba(255,255,255,0.07);">
+          <p class="section-label">Stay updated</p>
+          <h2 class="font-black uppercase mb-4 text-white"
+              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(1.75rem, 3vw, 2.5rem);">
+            Jump days in the Messenger group
+          </h2>
+          <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.6)">
+            Day-to-day jump coordination happens through the Facebook Messenger group, not this calendar. Join to see who is jumping this weekend.
+          </p>
+          <a id="events-messenger" href="#" class="btn-primary">Join the Messenger Group</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: var(--color-surface); border-top: 1px solid rgba(255,255,255,0.07);" class="px-6 md:px-12 py-12">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div>
+        <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30" loading="lazy" class="mb-4 opacity-75"></a>
+        <p class="text-sm" style="color: var(--color-text-muted)">Canterbury, New Zealand</p>
+        <p class="text-sm mt-1"><a href="tel:+6427292951" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">(027) 2929951</a></p>
+        <p class="text-sm mt-1"><a href="mailto:ben@skydivedropx.com" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">ben@skydivedropx.com</a></p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul id="footer-nav" class="list-none m-0 p-0 flex flex-wrap gap-x-8 gap-y-3" role="list"></ul>
+      </nav>
+      <div><a id="footer-messenger" href="#" class="btn-primary">Join the Community</a></div>
+    </div>
+    <div class="max-w-6xl mx-auto mt-10 pt-6" style="border-top: 1px solid rgba(255,255,255,0.07)">
+      <p class="text-xs" style="color: var(--color-text-muted)">&copy; 2026 Skydive DropX. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const menuOpen = document.getElementById('menu-open');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuOpen.addEventListener('click', () => { mobileMenu.classList.add('open'); menuOpen.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; });
+    menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuOpen.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; });
+
+    async function loadSite() {
+      try {
+        const res = await fetch('/content/site.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const navList = document.getElementById('nav-list');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li'); const a = document.createElement('a');
+          a.href = link.href; a.textContent = link.label;
+          a.className = link.href === '/events.html' ? 'nav-link active' : 'nav-link';
+          li.appendChild(a); navList.appendChild(li);
+        });
+        const mobileList = document.getElementById('mobile-nav-list');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li'); const a = document.createElement('a');
+          a.href = link.href; a.textContent = link.label;
+          a.style.cssText = "font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:rgba(255,255,255,0.8);text-decoration:none;";
+          li.appendChild(a); mobileList.appendChild(li);
+        });
+        const footerNav = document.getElementById('footer-nav');
+        data.nav.links.forEach(link => {
+          const li = document.createElement('li'); const a = document.createElement('a');
+          a.href = link.href; a.textContent = link.label; a.className = 'footer-link';
+          li.appendChild(a); footerNav.appendChild(li);
+        });
+        const msUrl = data.social.facebook_messenger;
+        ['mobile-cta', 'events-messenger', 'footer-messenger'].forEach(id => {
+          const el = document.getElementById(id); if (el) el.href = msUrl;
+        });
+      } catch (err) { console.warn('site.json failed', err); }
+    }
+
+    async function loadEvents() {
+      const list = document.getElementById('events-list');
+      try {
+        const res = await fetch('/content/events.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+
+        if (!data.events || data.events.length === 0) {
+          list.innerHTML = `
+            <div style="padding: 3rem 2rem; text-align: center; background: var(--color-surface); border: 1px solid rgba(255,255,255,0.07); border-radius: 3px;">
+              <p style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:0.5rem;">No events scheduled</p>
+              <p style="font-size:0.875rem; color:rgba(255,255,255,0.3);">Check back soon, or join the Messenger group for real-time updates.</p>
+            </div>`;
+          return;
+        }
+
+        const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        list.innerHTML = `<ul class="list-none m-0 p-0 flex flex-col gap-4" role="list">` +
+          data.events.map(ev => {
+            const d = new Date(ev.date);
+            return `
+              <li>
+                <article class="event-card">
+                  <div class="event-date-block">
+                    <div class="event-day">${d.getDate()}</div>
+                    <div class="event-month">${MONTHS[d.getMonth()]} ${d.getFullYear()}</div>
+                  </div>
+                  <div>
+                    <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; font-weight:900; text-transform:uppercase; letter-spacing:-0.01em; margin-bottom:0.375rem;">${ev.title}</h3>
+                    ${ev.description ? `<p style="font-size:0.875rem; color:rgba(255,255,255,0.6); line-height:1.65; margin-bottom:0.5rem;">${ev.description}</p>` : ''}
+                    ${ev.location ? `<p style="font-size:0.75rem; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:0.08em;">${ev.location}</p>` : ''}
+                  </div>
+                </article>
+              </li>`;
+          }).join('') + `</ul>`;
+      } catch (err) {
+        console.warn('events.json failed', err);
+        list.innerHTML = '<p style="color:rgba(255,255,255,0.35);font-size:0.875rem;">Unable to load. Please refresh.</p>';
+      }
+    }
+
+    loadSite();
+    loadEvents();
+  </script>
+</body>
+</html>

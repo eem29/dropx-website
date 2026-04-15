@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Sent | Skydive DropX</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config = { theme: { extend: { colors: { accent: '#00BFFF', surface: '#111111' } } } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --color-accent: #00BFFF; --color-text: #FFFFFF; --color-bg: #000000; --color-surface: #111111; --color-text-muted: #999999; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { background-color: var(--color-bg); color: var(--color-text); font-family: 'Figtree', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2.25rem; background: var(--color-accent); color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; }
+    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,191,255,0.35); }
+    .btn-ghost { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2.25rem; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; transition: border-color 0.2s ease, background-color 0.2s ease; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); background-color: rgba(255,255,255,0.06); }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.625rem; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <header class="px-6 md:px-12 py-5 flex items-center" style="border-bottom: 1px solid rgba(255,255,255,0.07);">
+    <a href="/" aria-label="Skydive DropX — home">
+      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="140" height="36" loading="eager">
+    </a>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-6 py-24 text-center">
+    <div class="max-w-lg">
+      <!-- Checkmark -->
+      <div class="mx-auto mb-8 w-16 h-16 rounded-full flex items-center justify-center"
+           style="background: rgba(0,191,255,0.12); border: 1px solid rgba(0,191,255,0.25);">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+             style="color: var(--color-accent);" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <p class="section-label">Submitted</p>
+      <h1 class="font-black uppercase leading-none mb-5 text-white"
+          style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2.5rem, 6vw, 4.5rem);">
+        Message sent
+      </h1>
+      <p class="leading-relaxed mb-10" style="color: rgba(255,255,255,0.6)">
+        Ben will be in touch. In the meantime, join the Messenger group to connect with the crew and find out who is jumping this weekend.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a id="messenger-link" href="#" class="btn-primary">Join the Community</a>
+        <a href="/" class="btn-ghost">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="px-6 md:px-12 py-8 text-center" style="border-top: 1px solid rgba(255,255,255,0.07);">
+    <p class="text-xs" style="color: var(--color-text-muted)">&copy; 2026 Skydive DropX. Canterbury, New Zealand.</p>
+  </footer>
+
+  <script>
+    async function loadMessenger() {
+      try {
+        const res = await fetch('/content/site.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        document.getElementById('messenger-link').href = data.social.facebook_messenger;
+      } catch (err) { console.warn('site.json failed', err); }
+    }
+    loadMessenger();
+  </script>
+</body>
+</html>
