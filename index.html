@@ -135,6 +135,26 @@
     .footer-link { color: rgba(255,255,255,0.45); font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; }
     .footer-link:hover { color: #fff; }
     .footer-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
+    /* Hero background image — mobile: object-cover centered; desktop: scaled to 185% width
+       so the left jumper (~27% from image left) lands at ~50% of the viewport */
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    @media (min-width: 768px) {
+      .hero-bg-img {
+        position: absolute;
+        width: 185%;
+        height: auto;
+        min-height: 100%;
+        top: 40%;
+        left: 0;
+        transform: translateY(-40%);
+        object-fit: unset;
+      }
+    }
   </style>
 </head>
 <body>
@@ -179,11 +199,10 @@
 
     <!-- HERO -->
     <section aria-label="Hero" class="relative h-screen flex flex-col overflow-hidden">
-      <div class="absolute inset-0 -z-10" aria-hidden="true">
+      <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <img src="/assets/images/Drop%20X%20Opening%202026-41.webp"
              alt=""
-             class="w-full h-full object-cover"
-             style="object-position: 60% center"
+             class="hero-bg-img"
              width="1920" height="1280"
              loading="eager">
         <!-- Mobile: bottom-heavy gradient so stacked text reads -->
