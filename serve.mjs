@@ -26,7 +26,7 @@ const server = createServer(async (req, res) => {
   let urlPath = req.url.split('?')[0];
   if (urlPath === '/') urlPath = '/index.html';
 
-  const filePath = join(ROOT, urlPath);
+  const filePath = join(ROOT, decodeURIComponent(urlPath));
 
   try {
     const data = await readFile(filePath);
