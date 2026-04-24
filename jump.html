@@ -111,7 +111,7 @@
       color: var(--color-text);
       padding: 0.25rem;
       line-height: 0;
-    }
+     transition: transform 0.18s ease, opacity 0.18s ease; }
 
     .nav-hamburger:focus-visible {
       outline: 2px solid var(--color-accent);
@@ -509,6 +509,16 @@
       .nav.open .nav-links a:active { background: rgba(232,118,63,0.15); color: var(--color-accent); transform: scale(0.96); }
       .nav-hamburger:active { transform: scale(0.85); opacity: 0.65; }
     }
+  
+    /* Bars-to-X animation */
+    .nav-hamburger svg rect {
+      transition: transform 0.26s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .nav.open .nav-hamburger rect:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav.open .nav-hamburger rect:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav.open .nav-hamburger rect:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   </style>
 </head>
 <body>
