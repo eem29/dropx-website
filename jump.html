@@ -4,432 +4,685 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jump With Us | Skydive DropX</title>
-  <meta name="description" content="Sport jumping at Skydive DropX, Canterbury NZ. NZ$65 per jump from 12,000ft. Canopy coaching, freefly coaching, and demo jumps. Licensed jumpers welcome.">
+  <meta name="description" content="Sport jumping at Skydive DropX, Canterbury NZ. NZ$65 per jump from 12,000ft. Canopy coaching, freefly coaching, and sport skydiving every weekend.">
   <meta property="og:title" content="Jump With Us | Skydive DropX">
-  <meta property="og:description" content="NZ$65 per jump from 12,000ft. Canopy coaching, freefly, and demo jumps. Canterbury, New Zealand.">
-  <meta property="og:image" content="https://skydivedropx.com/assets/images/Drop%20X%20Opening%202026-41.webp">
-  <meta property="og:url" content="https://skydivedropx.com/jump.html">
+  <meta property="og:description" content="NZ$65 per jump from 12,000ft. Fun jumping, coaching, and sport skydiving in Canterbury, New Zealand.">
   <meta property="og:type" content="website">
-  <!-- Plausible: add after domain confirmed with Ben -->
-  <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
+  <meta property="og:url" content="https://skydivedropx.com/jump.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { accent: '#00BFFF', surface: '#111111' },
-          fontFamily: {
-            display: ['Barlow Condensed', 'sans-serif'],
-            body: ['Figtree', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-accent:     #00BFFF;
-      --color-text:       #FFFFFF;
-      --color-text-muted: #999999;
-      --color-bg:         #000000;
+      --color-bg:         #0a0a0a;
       --color-surface:    #111111;
+      --color-text:       #ffffff;
+      --color-text-muted: #9a9a9a;
+      --color-accent:     #E8763F;
+      --font-display:     'Barlow Condensed', sans-serif;
+      --font-body:        'Inter', system-ui, sans-serif;
+      --panorama-max:     1520px;
     }
-    *, *::before, *::after { box-sizing: border-box; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html { scroll-behavior: smooth; }
+
     body {
-      background-color: var(--color-bg);
+      background: var(--color-bg);
       color: var(--color-text);
-      font-family: 'Figtree', sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-family: var(--font-body);
+      overflow-x: hidden;
     }
-    #site-header {
-      transition: background-color 0.3s ease;
-      background-color: rgba(0,0,0,0.7);
-      backdrop-filter: blur(12px);
+
+    /* ---- Film grain ---- */
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.038;
     }
-    #site-header.scrolled { background-color: rgba(0,0,0,0.95); }
-    .nav-link {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.8125rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left:  max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      padding-right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      transition: background 0.35s ease, padding-top 0.35s ease, padding-bottom 0.35s ease, border-color 0.35s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      border-bottom-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { display: block; height: 90px; width: auto; }
+
+    .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
-      padding-bottom: 2px; border-bottom: 1px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
+      transition: color 0.2s ease;
     }
-    .nav-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
-    .nav-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
-    .nav-link.active { color: var(--color-accent); border-color: var(--color-accent); }
-    .btn-primary {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.875rem 2.25rem;
-      background: var(--color-accent); color: #000;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-links a.active { color: var(--color-accent); }
+
+    .nav-links a:focus-visible {
+      color: var(--color-text);
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
       border-radius: 2px;
-      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
     }
-    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,191,255,0.35); }
-    .btn-primary:active { transform: scale(0.97); }
-    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
-    .btn-ghost {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.875rem 2.25rem; color: #fff;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3); border-radius: 2px;
-      transition: border-color 0.2s ease, background-color 0.2s ease;
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-text);
+      padding: 0.25rem;
+      line-height: 0;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); background-color: rgba(255,255,255,0.06); }
-    .btn-ghost:active { background-color: rgba(255,255,255,0.1); }
-    .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-    .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--color-accent); margin-bottom: 0.625rem;
+
+    .nav-hamburger:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
     }
-    .activity-block {
-      display: grid; gap: 3rem;
-      padding: 3rem 0;
+
+    @media (max-width: 767px) {
+      .nav {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .nav.scrolled { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ---- SHARED ---- */
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.1vw, 1rem);
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.75rem;
+    }
+
+    .arrow-link {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      transition: color 0.2s ease;
+    }
+
+    .arrow-link:hover { color: var(--color-accent); }
+    .arrow-link:focus-visible { color: var(--color-accent); outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
+    .arrow-link:active { opacity: 0.7; }
+
+    .amber-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+      background: var(--color-accent);
+      padding: 0.85em 1.75em;
+      border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .amber-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .amber-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    .amber-btn:active { opacity: 0.75; transform: none; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ---- HERO ---- */
+    .jump-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+
+    .jump-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-85.webp');
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    .jump-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(10, 10, 10, 0.75) 0%,
+        rgba(10, 10, 10, 0.45) 35%,
+        rgba(10, 10, 10, 0.10) 60%,
+        transparent 75%
+      );
+    }
+
+    .jump-hero-content {
+      position: absolute;
+      bottom: 10%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 540px;
+      animation: contentRise 1.0s 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .jump-hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      color: var(--color-text);
+      text-transform: uppercase;
+      margin-bottom: 0;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    @keyframes contentRise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .jump-hero-content { animation: none; }
+    }
+
+    @media (max-width: 767px) {
+      .jump-hero-content {
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 8%;
+        max-width: none;
+      }
+      .jump-hero-headline { font-size: clamp(3rem, 12vw, 5rem); }
+    }
+
+    /* ---- INFO GRID (two columns side by side) ---- */
+    .info-grid {
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .info-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-129.webp');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .info-grid-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.62);
+    }
+
+    .info-grid-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--panorama-max);
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* Vertical rule between columns */
+    .info-col-right {
+      border-left: 1px solid rgba(255,255,255,0.08);
+      padding-left: 5rem;
+    }
+
+    /* ---- STAT ROW ---- */
+    .stat-row {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-text);
+    }
+
+    .stat-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.12);
+      align-self: center;
+    }
+
+    /* ---- COMING CARDS ---- */
+    .coming-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .coming-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 1.75rem;
+    }
+
+    .coming-card-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+
+    .coming-card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.55);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .coming-card-body {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.38);
+    }
+
+    @media (max-width: 900px) {
+      .info-grid-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      .info-col-right {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-left: 0;
+        padding-top: 4rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .info-grid { padding: 64px 0; }
+      .info-grid-inner { padding: 0 1.5rem; }
+      .stat-divider { display: none; }
+      .stat-row { gap: 1.5rem; }
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--color-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer-inner {
+      max-width: var(--panorama-max);
+      margin: 0 auto;
+      padding: 4rem 3rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.5rem; }
+
+    .footer-address {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+    }
+
+    .footer-address a { color: inherit; text-decoration: none; }
+    .footer-address a:hover { color: var(--color-text); }
+
+    .footer-col-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-nav-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-links a:hover { color: var(--color-text); }
+
+    .footer-info-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-info-list li {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .footer-legal {
+      max-width: var(--panorama-max);
+      margin: 3rem auto 0;
+      padding: 1.5rem 3rem;
       border-top: 1px solid rgba(255,255,255,0.07);
     }
-    @media (min-width: 768px) {
-      .activity-block { grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+
+    .footer-legal p {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
     }
-    .coming-badge {
-      display: inline-block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      background: rgba(255,255,255,0.07); color: var(--color-text-muted);
-      padding: 0.25rem 0.65rem; border-radius: 2px; margin-bottom: 0.75rem;
+
+    @media (max-width: 767px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; padding-top: 3rem; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-legal { padding: 1.5rem; }
     }
-    .photo-card {
-      overflow: hidden; border-radius: 3px;
-      box-shadow: 0 20px 48px -8px rgba(0,0,0,0.7), 0 4px 14px -2px rgba(0,191,255,0.08);
-    }
-    .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    #mobile-menu {
-      display: none; position: fixed; inset: 0;
-      background: var(--color-bg); z-index: 100;
-      flex-direction: column; padding: 1.5rem;
-    }
-    #mobile-menu.open { display: flex; }
-    .footer-link { color: rgba(255,255,255,0.45); font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; }
-    .footer-link:hover { color: #fff; }
   </style>
 </head>
 <body>
 
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between">
-    <a href="/" aria-label="Skydive DropX — home">
-      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
-           alt="Skydive DropX" width="148" height="38" loading="eager">
+  <!-- Film grain -->
+  <div class="grain" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="grain-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" seed="2" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+    </svg>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="86" height="34">
     </a>
-    <nav aria-label="Main navigation">
-      <ul id="nav-list" class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list"></ul>
-    </nav>
-    <button id="menu-open" class="md:hidden text-white p-1 rounded"
-            aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/>
+    <ul class="nav-links" role="list">
+      <li><a href="jump.html" class="active">Jump</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true">
+        <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="6"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="12" width="22" height="2" rx="1" fill="currentColor"/>
       </svg>
     </button>
-  </header>
-
-  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="flex items-center justify-between mb-10">
-      <a href="/" aria-label="Skydive DropX — home">
-        <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30">
-      </a>
-      <button id="menu-close" class="text-white p-1" aria-label="Close navigation">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/>
-        </svg>
-      </button>
-    </div>
-    <ul id="mobile-nav-list" class="list-none m-0 p-0 flex flex-col gap-5" role="list"></ul>
-    <div class="mt-auto pt-12">
-      <a id="mobile-cta" href="#" class="btn-primary w-full">Join the Community</a>
-    </div>
-  </div>
+  </nav>
 
   <main>
 
-    <!-- HERO -->
-    <section aria-label="Jump With Us" class="relative flex flex-col justify-end overflow-hidden" style="min-height: 60vh;">
-      <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-33.webp"
-             alt="" class="w-full h-full object-cover"
-             style="object-position: 70% center;"
-             width="1920" height="1280" loading="eager">
-        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)"></div>
-      </div>
-      <div class="relative z-10 px-6 md:px-12 pb-14 pt-40">
-        <p class="section-label">Skydive DropX</p>
-        <h1 class="font-black uppercase leading-none text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(3rem, 8vw, 6.5rem);">
-          Jump with us
-        </h1>
+    <!-- Hero -->
+    <section class="jump-hero" aria-labelledby="jump-headline">
+      <div class="jump-hero-bg" aria-hidden="true"></div>
+      <div class="jump-hero-overlay" aria-hidden="true"></div>
+      <div class="jump-hero-content">
+        <span class="section-eyebrow">Sport jumping</span>
+        <h1 class="jump-hero-headline" id="jump-headline">Jump with us.</h1>
       </div>
     </section>
 
-    <!-- TICKET PRICE BAND -->
-    <div class="relative overflow-hidden" style="border-bottom: 1px solid rgba(255,255,255,0.07);">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-22.webp" alt="" class="w-full h-full object-cover" style="object-position: center 45%;" loading="lazy">
-        <div class="absolute inset-0" style="background: rgba(0,0,0,0.60)"></div>
-      </div>
-      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:gap-10 gap-2">
-        <div class="flex items-baseline gap-3">
-          <span id="ticket-price" class="font-black"
-                style="font-family:'Barlow Condensed',sans-serif; font-size:3rem; color: var(--color-accent); letter-spacing:-0.02em;">NZ$65</span>
-          <span id="ticket-alt" class="text-xl" style="color: rgba(255,255,255,0.5);">per jump / 12,000ft</span>
-        </div>
-        <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.5); max-width: 380px;">
-          Licensed jumpers only. Join the Messenger group to coordinate jump days.
-        </p>
-      </div>
-    </div>
+    <!-- Sport skydiving + Coming soon side by side -->
+    <section class="info-grid" aria-label="Jump information">
+      <div class="info-grid-bg" aria-hidden="true"></div>
+      <div class="info-grid-inner">
 
-    <!-- ACTIVITIES -->
-    <section aria-labelledby="activities-heading" class="relative overflow-hidden px-6 md:px-12 py-16 md:py-24">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-52.webp" alt="" class="w-full h-full object-cover" style="object-position: center 35%;" loading="lazy">
-        <div class="absolute inset-0" style="background: rgba(0,0,0,0.85)"></div>
-      </div>
-      <div class="relative z-10 max-w-6xl mx-auto">
-        <p class="section-label">What's on</p>
-        <h2 id="activities-heading" class="font-black uppercase mb-1 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem);">
-          Sport, coaching, and demos
-        </h2>
-        <p class="mb-0 text-sm" style="color: rgba(255,255,255,0.35);">Tandem and AFF coming Spring 2026.</p>
+        <!-- Left: Sport skydiving -->
+        <div class="info-col-left" aria-labelledby="fj-headline">
+          <span class="section-eyebrow reveal">Every weekend</span>
+          <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(2.5rem, 4vw, 4rem);" id="fj-headline">Sport skydiving.</h2>
 
-        <!-- Fun jumping -->
-        <div class="activity-block">
-          <div>
-            <p class="section-label">Sport jumping</p>
-            <h3 class="font-black uppercase mb-4 text-white"
-                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Fun jumping</h3>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
-              Open sky and crew you know. Show up on a jump day, pay your ticket, and get in the air. All disciplines welcome.
-            </p>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
-              Jump days are coordinated through the Facebook Messenger group. Join to see who is jumping this weekend.
-            </p>
-          </div>
-          <div class="photo-card" style="height: 320px;">
-            <img src="/assets/images/Drop%20X%20Opening%202026-50.webp"
-                 alt="Two freeflyers together over Canterbury" width="800" height="600"
-                 style="object-position: center 40%" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Canopy coaching -->
-        <div class="activity-block">
-          <div class="md:order-2">
-            <p class="section-label">Coaching</p>
-            <h3 class="font-black uppercase mb-4 text-white"
-                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Canopy coaching</h3>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
-              One-on-one and small group coaching under canopy. Work on accuracy, high-performance approaches, and canopy control with experienced coaches.
-            </p>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
-              Contact us or reach out in the Messenger group to arrange a session.
-            </p>
-          </div>
-          <div class="photo-card md:order-1" style="height: 320px;">
-            <img src="/assets/images/Drop%20X%20Opening%202026-49.webp"
-                 alt="Parachute canopy in flight" width="800" height="600" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Freefly coaching -->
-        <div class="activity-block">
-          <div>
-            <p class="section-label">Coaching</p>
-            <h3 class="font-black uppercase mb-4 text-white"
-                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Freefly coaching</h3>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
-              Head-down, sit-flying, and hybrid work. Individual and small group sessions with experienced freefly coaches.
-            </p>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed">
-              Get in touch to discuss goals and arrange a session.
-            </p>
-          </div>
-          <div class="photo-card" style="height: 320px;">
-            <img src="/assets/images/Drop%20X%20Opening%202026-19.webp"
-                 alt="Two freeflyers over Canterbury plains" width="1920" height="1280" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Demo jumps — featured -->
-        <div class="activity-block" style="border-top-color: rgba(0,191,255,0.2);">
-          <div class="md:order-2">
-            <p class="section-label">Commercial</p>
-            <h3 class="font-black uppercase mb-4 text-white"
-                style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.02em; font-size: clamp(1.75rem, 3vw, 2.5rem);">Demo jumps</h3>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-4">
-              Jumpers carry large custom flags and banners into events, stadiums, and public gatherings. Hard to miss.
-            </p>
-            <p style="color: rgba(255,255,255,0.65);" class="leading-relaxed mb-6">
-              Active partnership with Switch It Up Events. Past clients include the Blues (Super Rugby) and Go Media. If you have an event and want something different, get in touch.
-            </p>
-            <a href="/contact.html" class="btn-primary">Enquire About a Demo</a>
-          </div>
-          <div class="photo-card md:order-1" style="height: 360px;">
-            <img src="/assets/images/Drop%20X%20Opening%202026-45.webp"
-                 alt="Jumper with large banner in freefall at a demo event" width="800" height="600" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Coming soon -->
-        <div style="border-top: 1px solid rgba(255,255,255,0.07); padding-top: 3rem;">
-          <p class="section-label" style="color: var(--color-text-muted);">Coming Spring 2026</p>
-          <h2 class="font-black uppercase mb-8 text-white"
-              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem); opacity: 0.55;">
-            Tandem and AFF
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mb-8">
-            <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 3px; padding: 1.75rem; opacity: 0.5;">
-              <span class="coming-badge">Spring 2026</span>
-              <h3 class="font-black uppercase mb-2" style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; color: var(--color-text-muted);">Tandem skydiving</h3>
-              <p style="font-size:0.875rem; color: var(--color-text-muted); line-height:1.65;">Commercial tandem operation launching Spring 2026. Register interest via the contact form.</p>
+          <div class="stat-row reveal reveal-d2">
+            <div class="stat-item">
+              <span class="stat-value">NZ$65</span>
+              <span class="stat-label">Per jump</span>
             </div>
-            <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: 3px; padding: 1.75rem; opacity: 0.5;">
-              <span class="coming-badge">Spring 2026</span>
-              <h3 class="font-black uppercase mb-2" style="font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; color: var(--color-text-muted);">AFF</h3>
-              <p style="font-size:0.875rem; color: var(--color-text-muted); line-height:1.65;">Accelerated Freefall training launching Spring 2026. Register interest via the contact form.</p>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-value">12,000ft</span>
+              <span class="stat-label">Altitude</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-value">Weekends</span>
+              <span class="stat-label">Weather permitting</span>
             </div>
           </div>
-          <a href="/contact.html" class="btn-ghost">Register Interest</a>
+          <p class="section-body reveal reveal-d2">Show up, grab a ticket, get in the air. All disciplines welcome. Jump days are coordinated through the Messenger group — join to see who is jumping this weekend and what's on.</p>
+          <p class="section-body reveal reveal-d2">Want to push further? We have experienced coaches across canopy, freefly, and formation skydiving. Pick a discipline, pick a coach, go up.</p>
+
+          <a href="https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link"
+             class="amber-btn reveal reveal-d3"
+             target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
+              <path d="M12 2C6.477 2 2 6.227 2 11.43c0 2.883 1.332 5.461 3.424 7.18V22l3.13-1.732c.836.232 1.72.357 2.636.357 5.523 0 10-4.227 10-9.43S17.523 2 12 2zm1.05 12.696-2.543-2.726-4.963 2.726 5.457-5.82 2.608 2.726 4.9-2.726-5.46 5.82z"/>
+            </svg>
+            Join on Messenger
+          </a>
         </div>
 
-      </div>
-    </section>
+        <!-- Right: Tandem + AFF coming soon -->
+        <div class="info-col-right" aria-labelledby="coming-headline">
+          <span class="section-eyebrow reveal">Coming Spring 2026</span>
+          <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(2.5rem, 4vw, 4rem);" id="coming-headline">Tandem and AFF.</h2>
+          <p class="section-body reveal reveal-d2">Want to do a tandem or learn to skydive? Both programmes launch Spring 2026. Get in touch to register your interest.</p>
 
-    <!-- COMMUNITY CTA -->
-    <section class="relative overflow-hidden" style="border-top: 1px solid rgba(255,255,255,0.07);">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-14.webp" alt="" class="w-full h-full object-cover" style="object-position: center 40%;" loading="lazy">
-        <div class="absolute inset-0" style="background: rgba(0,0,0,0.52)"></div>
-        <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)"></div>
-      </div>
-      <div class="relative z-10 px-6 md:px-12 py-16 md:py-20 text-center">
-        <div class="max-w-xl mx-auto">
-          <p class="section-label">Coordination</p>
-          <h2 class="font-black uppercase mb-5 text-white"
-              style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem);">
-            Find out who is jumping
-          </h2>
-          <p class="leading-relaxed mb-8" style="color: rgba(255,255,255,0.6)">
-            All jump day coordination happens in the Facebook Messenger group. Join to see upcoming sessions and connect with the crew.
-          </p>
-          <a id="jump-cta" href="#" class="btn-primary">Join the Messenger Group</a>
+          <div class="coming-cards">
+            <div class="coming-card reveal reveal-d2">
+              <span class="coming-card-label">Spring 2026</span>
+              <h3 class="coming-card-title">Tandem skydiving</h3>
+              <p class="coming-card-body">Experience freefall over Canterbury strapped to one of our instructors. No experience needed.</p>
+            </div>
+            <div class="coming-card reveal reveal-d3">
+              <span class="coming-card-label">Spring 2026</span>
+              <h3 class="coming-card-title">AFF training</h3>
+              <p class="coming-card-body">Learn to skydive solo. Ground school, coached jumps, and a full progression pathway to your licence.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.75rem;" class="reveal reveal-d3">
+            <a href="contact.html" class="arrow-link">Register your interest <span aria-hidden="true">→</span></a>
+          </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer style="background: var(--color-bg); border-top: 1px solid rgba(255,255,255,0.07);" class="px-6 md:px-12 py-12">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-      <div>
-        <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
-             alt="Skydive DropX" width="120" height="30" loading="lazy" class="mb-4 opacity-75"></a>
-        <p class="text-sm" style="color: var(--color-text-muted)">Canterbury, New Zealand</p>
-        <p class="text-sm mt-1"><a href="tel:+6427292951" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">(027) 2929951</a></p>
-        <p class="text-sm mt-1"><a href="mailto:ben@skydivedropx.com" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">ben@skydivedropx.com</a></p>
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Skydive DropX home">
+          <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="180" height="72">
+        </a>
+        <p class="footer-address">
+          Canterbury, NZ<br>
+          <a href="tel:+64272929951">(027) 2929951</a><br>
+          <a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a>
+        </p>
       </div>
+
       <nav aria-label="Footer navigation">
-        <ul id="footer-nav" class="list-none m-0 p-0 flex flex-wrap gap-x-8 gap-y-3" role="list"></ul>
+        <span class="footer-col-label">Navigate</span>
+        <ul class="footer-nav-links" role="list">
+          <li><a href="jump.html">Jump</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div><a id="footer-messenger" href="#" class="btn-primary">Join the Community</a></div>
+
+      <div>
+        <span class="footer-col-label">Jump info</span>
+        <ul class="footer-info-list">
+          <li>NZ$65 per jump</li>
+          <li>12,000ft altitude</li>
+          <li>Licensed jumpers only</li>
+          <li>Tandem + AFF coming Spring 2026</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Jump days</span>
+        <p class="footer-address">Open Saturdays and Sundays, weather permitting.</p>
+      </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-10 pt-6" style="border-top: 1px solid rgba(255,255,255,0.07)">
-      <p class="text-xs" style="color: var(--color-text-muted)">&copy; 2026 Skydive DropX. All rights reserved.</p>
+
+    <div class="footer-legal">
+      <p>© 2026 Skydive DropX. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    const header = document.getElementById('site-header');
+    const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 60);
+      nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
 
-    const menuOpen = document.getElementById('menu-open');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuOpen.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      menuOpen.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    });
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      menuOpen.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-
-    async function loadSite() {
-      try {
-        const res = await fetch('/content/site.json');
-        if (!res.ok) throw new Error('fetch failed');
-        const data = await res.json();
-
-        const navList = document.getElementById('nav-list');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = link.href; a.textContent = link.label;
-          a.className = link.href === '/jump.html' ? 'nav-link active' : 'nav-link';
-          li.appendChild(a); navList.appendChild(li);
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
         });
-
-        const mobileList = document.getElementById('mobile-nav-list');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = link.href; a.textContent = link.label;
-          a.style.cssText = "font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:rgba(255,255,255,0.8);text-decoration:none;";
-          li.appendChild(a); mobileList.appendChild(li);
-        });
-
-        const footerNav = document.getElementById('footer-nav');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = link.href; a.textContent = link.label; a.className = 'footer-link';
-          li.appendChild(a); footerNav.appendChild(li);
-        });
-
-        const msUrl = data.social.facebook_messenger;
-        ['mobile-cta', 'jump-cta', 'footer-messenger'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.href = msUrl;
-        });
-      } catch (err) { console.warn('site.json failed', err); }
+      }, { threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-visible'));
     }
-
-    async function loadTicket() {
-      try {
-        const res = await fetch('/content/jump.json');
-        if (!res.ok) throw new Error('fetch failed');
-        const data = await res.json();
-        document.getElementById('ticket-price').textContent = data.ticket.price;
-        document.getElementById('ticket-alt').textContent   = 'per jump / ' + data.ticket.altitude;
-      } catch (err) { console.warn('jump.json failed', err); }
-    }
-
-    loadSite();
-    loadTicket();
   </script>
+
 </body>
 </html>
