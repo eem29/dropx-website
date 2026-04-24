@@ -25,6 +25,7 @@ const browser = await puppeteer.launch({ headless: true });
 const page    = await browser.newPage();
 await page.setViewport({ width, height, deviceScaleFactor: 2 });
 await page.goto(url, { waitUntil: 'networkidle2', timeout: 15000 });
+await new Promise(r => setTimeout(r, 2500));
 await page.screenshot({ path: file, fullPage: true });
 await browser.close();
 

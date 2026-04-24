@@ -3,786 +3,1507 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skydive DropX — Canterbury's sport drop zone</title>
-  <meta name="description" content="Skydive DropX is Canterbury's sport drop zone for licensed skydivers. Fun jumping, canopy coaching, freefly coaching, and demo jumps. NZ$65, 12,000ft.">
-  <meta property="og:title" content="Skydive DropX — Canterbury's sport drop zone">
-  <meta property="og:description" content="Sport drop zone for licensed jumpers near Christchurch. Fun jumping, coaching, demo jumps. Canterbury, New Zealand.">
-  <meta property="og:image" content="https://skydivedropx.com/assets/images/IMG_3595.webp">
-  <meta property="og:url" content="https://skydivedropx.com/">
+  <title>Canterbury's Sport Drop Zone | Skydive DropX</title>
+  <meta name="description" content="Skydive DropX is Canterbury's home for progression, community, and serious jumping. Fun jumping, sport coaching, and display skydiving from Christchurch, NZ.">
+  <meta property="og:title" content="Canterbury's Sport Drop Zone | Skydive DropX">
+  <meta property="og:description" content="Skydive DropX is Canterbury's home for progression, community, and serious jumping. Fun jumping, sport coaching, and display skydiving from Christchurch.">
   <meta property="og:type" content="website">
-  <!-- Plausible: add after domain confirmed with Ben -->
-  <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
+  <meta property="og:url" content="https://skydivedropx.com">
+  <meta property="og:image" content="https://skydivedropx.com/dropx-images-web/Drop%20X%20Opening%202026-83.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-accent:      #00BFFF;
-      --color-text:        #FFFFFF;
-      --color-text-muted:  rgba(255,255,255,0.55);
-      --color-bg:          #000000;
-      --color-surface:     #111111;
-      --font-display:      'Barlow Condensed', sans-serif;
-      --font-body:         'Figtree', sans-serif;
-      --sp-xs:  0.5rem;
-      --sp-sm:  1rem;
-      --sp-md:  1.75rem;
-      --sp-lg:  3rem;
-      --sp-xl:  5rem;
+      --color-bg:         #0a0a0a;
+      --color-surface:    #111111;
+      --color-text:       #ffffff;
+      --color-text-muted: #9a9a9a;
+      --color-accent:     #E8763F;
+      --font-display:     'Barlow Condensed', sans-serif;
+      --font-body:        'Inter', system-ui, sans-serif;
+      --panorama-max:     1520px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--color-bg);
       color: var(--color-text);
       font-family: var(--font-body);
-      line-height: 1.72;
       overflow-x: hidden;
     }
 
-    /* ── NAV ─────────────────────────────────── */
-    .site-nav {
+    /* ---- Film grain (fixed, site-wide) ---- */
+    .grain {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.25rem 2.5rem;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.038;
+    }
+
+    /* ---- NAV ---- */
+    /* Padding uses max() so the logo/links sit over photo content
+       even at viewports wider than the 1520px panorama max-width. */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.35s ease, border-color 0.35s ease;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left:  max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      padding-right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      transition: background 0.35s ease, padding-top 0.35s ease, padding-bottom 0.35s ease, border-color 0.35s ease;
       border-bottom: 1px solid transparent;
     }
-    .site-nav.scrolled {
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom-color: rgba(255,255,255,0.06);
+
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      border-bottom-color: rgba(255, 255, 255, 0.07);
     }
-    .nav-logo img { display: block; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 90px;
+      width: auto;
+    }
+
     .nav-links {
       display: flex;
-      gap: 2rem;
       list-style: none;
+      gap: 2.5rem;
       align-items: center;
     }
+
     .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.09em;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
       transition: color 0.2s ease;
     }
-    .nav-links a:hover { color: #fff; }
-    .nav-links a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }
-    .nav-toggle {
+
+    .nav-links a:hover { color: var(--color-text); }
+
+    .nav-links a:focus-visible {
+      color: var(--color-text);
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .nav-links a:active { opacity: 0.65; }
+
+    .nav-hamburger {
       display: none;
       background: none;
       border: none;
-      color: #fff;
       cursor: pointer;
+      color: var(--color-text);
       padding: 0.25rem;
+      line-height: 0;
     }
 
-    /* ── HERO ────────────────────────────────── */
+    .nav-hamburger:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 767px) {
+      .nav {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .nav.scrolled {
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+      }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ======================================================
+       HERO — Approach A
+       Panorama maintains 2150:1528 aspect ratio, max 1520px wide.
+       All three panels stacked absolutely; transparent areas form triptych.
+       object-fit: contain preserves panel alignment — do NOT use cover.
+       Hero-content sits inside .panorama so left/bottom percentages
+       are relative to the photo canvas, not the viewport.
+    ====================================================== */
+
     .hero {
       position: relative;
+      width: 100%;
       height: 100vh;
-      min-height: 640px;
+      min-height: 600px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      background: var(--color-bg);
     }
-    .hero-img {
+
+    .stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Panorama: fixed aspect ratio, max 1520px wide, centred vertically and horizontally */
+    .panorama {
       position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      filter: saturate(1.12) contrast(1.07) brightness(0.87);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: var(--panorama-max);
+      aspect-ratio: 2150 / 1528;
     }
-    /* cinematic layers */
-    .hero-grade {
-      position: absolute; inset: 0; z-index: 1;
-      background: rgba(6,18,60,0.16);
-      mix-blend-mode: multiply;
+
+    /* All panels stack in the same position.
+       Transparent areas in the PNGs create the diagonal triptych.
+       Do NOT change object-fit to cover — it breaks panel alignment. */
+    .panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      pointer-events: none;
+      user-select: none;
     }
-    .hero-vignette {
-      position: absolute; inset: 0; z-index: 2;
-      background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 38%, rgba(0,0,0,0.52) 100%);
+
+    /* Panels visible by default. JS adds .panels-go to trigger slide-in.
+       panel-3 uses left: -15px + wider width to close the gap with panel-2
+       without creating a new gap on the right edge. */
+    .panel-1 { z-index: 1; }
+    .panel-2 { z-index: 2; }
+    /* panel-3 uses cover (not contain) so the wider container fills edge-to-edge */
+    .panel-3 { z-index: 3; left: -15px; width: calc(100% + 15px); object-fit: cover; }
+
+    .panels-go .panel-1,
+    .panels-go .panel-2,
+    .panels-go .panel-3 {
+      animation: panelZoomOut 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;
     }
-    .hero-grain {
-      position: absolute; inset: 0; z-index: 3;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.038;
-      mix-blend-mode: overlay;
+
+    /* Scale-only — no opacity fade — so panels stay visible in screenshots */
+    @keyframes panelZoomOut {
+      from { transform: scale(1.08); }
+      to   { transform: scale(1);    }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .panels-go .panel-1,
+      .panels-go .panel-2,
+      .panels-go .panel-3 { animation: none; }
+    }
+
+    /* ── HERO CONTENT — inside .panorama so positioning is
+       relative to the photo canvas, not the viewport ── */
+    .hero-content {
+      position: absolute;
+      bottom: 5%;
+      left: 3%;
+      z-index: 10;
+      max-width: min(52%, 680px);
+      padding-bottom: 1.5rem;
+      animation: contentRise 1.0s 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      inset: -1rem -3rem 0.5rem -1.5rem;
+      background: radial-gradient(ellipse at bottom left,
+        rgba(10, 10, 10, 0.6) 0%,
+        rgba(10, 10, 10, 0.3) 45%,
+        transparent 68%
+      );
+      z-index: -1;
       pointer-events: none;
     }
-    .hero-top-grad {
-      position: absolute; inset: 0; z-index: 4;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.46) 0%, transparent 28%);
-    }
-    .hero-bottom-grad {
-      position: absolute; inset: 0; z-index: 4;
-      background: linear-gradient(to top, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.45) 30%, transparent 58%);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 10;
-      padding: 0 2.5rem 4rem;
-    }
+
     .hero-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--color-accent);
-      margin-bottom: 0.85rem;
+      margin-bottom: 1.25rem;
+      display: block;
     }
+
     .hero-headline {
       font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(4.5rem, 9.5vw, 9.5rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-headline-top {
+      font-size: clamp(1rem, 2.2vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .hero-headline-bottom {
+      font-size: clamp(3.5rem, 10vw, 9rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
       line-height: 0.9;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin-bottom: 1.25rem;
-      text-shadow: 0 2px 40px rgba(0,0,0,0.35);
+      text-transform: uppercase;
     }
-    .hero-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.68);
+
+    .hero-subhead {
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 1.05vw, 0.875rem);
+      font-weight: 400;
       line-height: 1.55;
-      margin-bottom: 2.25rem;
-      max-width: 30rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 380px;
+      margin-bottom: 0;
     }
+
     .hero-ctas {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
       flex-wrap: wrap;
     }
-    .hero-cta {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.78);
+
+    .cta-arrow {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding-bottom: 0.2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.28);
-      transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+      gap: 0.45em;
+      transition: color 0.2s ease;
     }
-    .hero-cta:hover { color: #fff; border-color: rgba(255,255,255,0.65); gap: 0.7rem; }
-    .hero-cta:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
-    .hero-cta.accent { color: var(--color-accent); border-color: rgba(0,191,255,0.38); }
-    .hero-cta.accent:hover { color: var(--color-accent); border-color: rgba(0,191,255,0.8); }
 
-    /* ── ACTIVITIES ─────────────────────────── */
-    .activities {
-      position: relative;
-      overflow: hidden;
-      min-height: 65vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .cta-arrow:hover { color: var(--color-accent); }
+
+    .cta-arrow:focus-visible {
+      color: var(--color-accent);
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
     }
-    .section-bg {
-      position: absolute;
-      inset: 0;
+
+    .cta-arrow:active { opacity: 0.7; }
+
+    @keyframes contentRise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .section-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover;
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content { animation: none; }
     }
-    .activities-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.62) 100%);
+
+    /* hidden on desktop, activated in mobile media query below */
+    .hero-mobile-gradient { display: none; }
+
+    /* ── MOBILE < 768px: photo 49 full-bleed, text bottom-right in open sky ── */
+    @media (max-width: 767px) {
+      /* Fix 1 — full-width bottom gradient overlay */
+      .hero-mobile-gradient {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 10, 10, 0.85) 0%,
+          rgba(10, 10, 10, 0.55) 20%,
+          rgba(10, 10, 10, 0.00) 45%
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .hero {
+        height: 100vh;
+        min-height: 600px;
+      }
+
+      .stage { height: 100%; }
+
+      /* panorama = photo 49-1 full-bleed */
+      .panorama {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        aspect-ratio: auto;
+        transform: none;
+        left: 0;
+        margin: 0;
+        background-image: url('dropx-images-web/Drop%20X%20Opening%202026-49-1.webp');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .panel-1, .panel-2, .panel-3 { display: none; }
+
+      /* Fix 1 cont. — kill localised radial behind text */
+      .hero-content::before { content: none; }
+
+      /* Fix 2 — left-align, anchor bottom-left, breathe inside the gradient */
+      .hero-content {
+        left: 5%;
+        right: auto;
+        bottom: 3%;
+        max-width: 85vw;
+        text-align: left;
+        padding: 0 0 0.75rem 0;
+        z-index: 5;
+      }
+
+      .hero-eyebrow   { text-align: left; }
+      .hero-subhead   { text-align: left; }
+
+      /* Fix 3 — bigger headline, tight typographic block */
+      .hero-headline-top {
+        font-size: clamp(0.75rem, 3vw, 1rem);
+        letter-spacing: 0.15em;
+        margin-bottom: 0.25rem;
+        display: block;
+      }
+      .hero-headline-bottom {
+        font-size: clamp(2.5rem, 14vw, 4.5rem);
+        line-height: 0.9;
+      }
+
+      /* Fix 4 — restore CTAs, left-aligned */
+      .hero-ctas {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 1.25rem;
+      }
+
+      /* Fix 5 — smaller, readable subhead */
+      .hero-subhead {
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 90%;
+        margin-bottom: 1.5rem;
+      }
     }
-    .activities-inner {
-      position: relative;
-      z-index: 10;
-      padding: var(--sp-xl) 2.5rem var(--sp-lg);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-      gap: 3rem;
-    }
+
+    /* ======================================================
+       SHARED PATTERNS — used across multiple sections
+    ====================================================== */
+
     .section-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--color-accent);
-      margin-bottom: 0.6rem;
+      display: block;
+      margin-bottom: 1rem;
     }
+
     .section-headline {
       font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2.25rem, 4.5vw, 4.25rem);
-      line-height: 0.94;
-      letter-spacing: -0.025em;
-      color: #fff;
-    }
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .activity-card {
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 1.75rem 1.5rem 1.5rem;
-      transition: background 0.25s ease;
-    }
-    .activity-card + .activity-card { border-left: none; }
-    .activity-card:hover { background: rgba(0,0,0,0.68); }
-    .card-label {
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: 0.55rem;
-    }
-    .card-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.55rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #fff;
-      margin-bottom: 0.55rem;
+      line-height: 0.95;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
     }
-    .card-body {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.65;
-      margin-bottom: 1.1rem;
+
+    .section-body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.1vw, 1rem);
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.75rem;
     }
-    .card-link {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      color: rgba(255,255,255,0.65);
+
+    .arrow-link {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s ease, gap 0.2s ease;
+      gap: 0.45em;
+      transition: color 0.2s ease;
     }
-    .card-link:hover { color: #fff; gap: 0.65rem; }
-    .card-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
-    /* ── TICKET BAND ────────────────────────── */
-    .ticket-band {
-      background: var(--color-surface);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 1.1rem 2.5rem;
+    .arrow-link:hover { color: var(--color-accent); }
+
+    .arrow-link:focus-visible {
+      color: var(--color-accent);
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .arrow-link:active { opacity: 0.7; }
+
+    /* Scroll reveal — on intersection, element fades in and rises */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ======================================================
+       SECTION 2 — STAT STRIP
+    ====================================================== */
+
+    .stat-strip {
+      background: var(--color-bg);
+      padding: 44px 0;
+    }
+
+    .stat-strip-inner {
+      max-width: var(--panorama-max);
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 0 2rem;
+      position: relative;
+      text-align: center;
+    }
+
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8%;
+      height: 84%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 0.875rem;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.8vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-text);
+      display: block;
+    }
+
+    @media (max-width: 767px) {
+      .stat-strip { padding: 28px 0; }
+
+      .stat-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1.5rem;
+        row-gap: 1.75rem;
+      }
+
+      .stat-item { padding: 0 1rem; }
+
+      /* dividers: show only between col 1+2 and col 3+4 */
+      .stat-item:nth-child(odd)::before { display: none; }
+    }
+
+    /* ======================================================
+       SECTION 3 — FUN JUMPING
+    ====================================================== */
+
+    .fun-jumping {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .fun-jumping-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-85.webp');
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    .fun-jumping-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        rgba(10, 10, 10, 0.75) 0%,
+        rgba(10, 10, 10, 0.45) 32%,
+        rgba(10, 10, 10, 0.1) 55%,
+        transparent 70%
+      );
+    }
+
+    .fun-jumping-content {
+      position: absolute;
+      bottom: 10%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 520px;
+    }
+
+    .fj-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
+
+    .fj-details {
       display: flex;
       align-items: center;
-      gap: 3rem;
+      gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-display);
+      font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.75);
     }
-    .ticket-item {
+
+    .fj-details strong {
+      font-size: clamp(1.25rem, 2.2vw, 2rem);
+      font-weight: 800;
+      color: var(--color-accent);
+      display: block;
+      line-height: 1;
+    }
+
+    .fj-detail {
       display: flex;
       flex-direction: column;
+      gap: 0.2em;
     }
-    .ticket-label {
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 0.15rem;
-    }
-    .ticket-value {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-    .ticket-sep {
+
+    .fj-detail-divider {
       width: 1px;
       height: 2.5rem;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.2);
+      flex-shrink: 0;
     }
 
-    /* ── COMMUNITY ──────────────────────────── */
-    .community {
-      position: relative;
-      overflow: hidden;
-      min-height: 58vh;
-      display: flex;
-      align-items: flex-end;
-    }
-    .community-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.05) 100%);
-    }
-    .community-inner {
-      position: relative;
-      z-index: 10;
-      padding: 4rem 2.5rem;
-      max-width: 38rem;
-    }
-
-    /* ── COMING SOON ────────────────────────── */
-    .coming-soon {
-      position: relative;
-      overflow: hidden;
-      min-height: 65vh;
-      display: flex;
+    .fj-btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: flex-end;
+      gap: 0.6em;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+      background: linear-gradient(135deg, #00B2FF 0%, #0068FF 100%);
+      padding: 0.85em 1.75em;
+      border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
-    .coming-soon-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to left, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 55%, transparent 100%);
+
+    .fj-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .fj-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    .fj-btn:active { opacity: 0.75; transform: none; }
+
+    @media (max-width: 767px) {
+      .fun-jumping { height: 80vh; }
+
+      .fun-jumping-content {
+        left: 1.5rem;
+        right: 1.5rem;
+        max-width: none;
+        bottom: 8%;
+      }
+
+      .fj-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
+      .fj-detail-divider { display: none; }
     }
-    .coming-soon-inner {
+
+    /* ======================================================
+       SECTION 5 — AFF / LEARN TO SKYDIVE
+    ====================================================== */
+
+    .aff {
       position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .aff-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-98-1.webp');
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .aff-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        -115deg,
+        rgba(10, 10, 10, 0.80) 0%,
+        rgba(10, 10, 10, 0.50) 35%,
+        rgba(10, 10, 10, 0.12) 60%,
+        transparent 75%
+      );
+    }
+
+    .aff-content {
+      position: absolute;
+      bottom: 10%;
+      right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
       z-index: 10;
-      padding: 4rem 2.5rem;
-      max-width: 30rem;
+      max-width: 520px;
       text-align: right;
     }
 
-    /* ── CONTACT CTA ────────────────────────── */
-    .contact-cta {
-      position: relative;
-      overflow: hidden;
-      min-height: 36vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .contact-cta-overlay {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.38);
-    }
-    .contact-cta-inner {
-      position: relative;
-      z-index: 10;
-      padding: 3.5rem 2rem;
+    .aff-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
+
+    .aff-announcement {
+      margin-top: 1.5rem;
     }
 
-    /* ── BUTTONS ────────────────────────────── */
-    .btn-primary {
-      display: inline-block;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
+    .aff-coming-label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #000;
-      background: var(--color-accent);
-      text-decoration: none;
-      padding: 0.8rem 2rem;
-      border-radius: 2px;
-      transition: background 0.2s ease, transform 0.15s ease;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
-    .btn-primary:hover { background: #33cfff; transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
-    .btn-ghost {
+
+    .aff-coming-sub {
+      display: block;
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 767px) {
+      .aff { height: 100vh; }
+
+      .aff-content {
+        right: 1.5rem;
+        left: 1.5rem;
+        max-width: none;
+        text-align: left;
+        bottom: auto;
+        top: 55%;
+        transform: translateY(-50%);
+        text-shadow: 0 1px 10px rgba(0,0,0,0.85), 0 2px 20px rgba(0,0,0,0.5);
+      }
+
+      .aff-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
+      .aff-coming-label { font-size: clamp(1.2rem, 6vw, 1.8rem); }
+    }
+
+    /* ======================================================
+       SECTION 6 — DEMOS
+    ====================================================== */
+
+    .demos {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .demos-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/IMG_3595.webp');
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    .demos-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 65% 65% at 0% 100%,
+        rgba(10, 10, 10, 0.72) 0%,
+        rgba(10, 10, 10, 0.38) 45%,
+        transparent 68%
+      );
+    }
+
+    .demos-content {
+      position: absolute;
+      bottom: 10%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 500px;
+    }
+
+    .demos-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
+
+    .demos-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 767px) {
+      .demos { height: 80vh; }
+
+      .demos-overlay {
+        background: linear-gradient(to top, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.52) 35%, transparent 65%);
+      }
+
+      .demos-content {
+        left: 1.5rem;
+        right: 1.5rem;
+        max-width: none;
+        bottom: 8%;
+      }
+
+      .demos-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
+    }
+
+    /* ======================================================
+       SECTION 6 — COMMUNITY
+    ====================================================== */
+
+    .community {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .community-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-142.webp');
+      background-size: cover;
+      background-position: 20% center;
+    }
+
+    .community-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        rgba(10, 10, 10, 0.82) 0%,
+        rgba(10, 10, 10, 0.52) 35%,
+        rgba(10, 10, 10, 0.12) 58%,
+        transparent 72%
+      );
+    }
+
+    .community-content {
+      position: absolute;
+      bottom: 10%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .community-headline { font-size: clamp(2.5rem, 7vw, 7.5rem); }
+
+    .community-content .section-eyebrow {
+      font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+    }
+
+    .amber-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      font-weight: 600;
+      gap: 0.5em;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
+      color: #ffffff;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.28);
-      padding: 0.75rem 1.75rem;
-      border-radius: 2px;
-      transition: color 0.2s ease, border-color 0.2s ease, gap 0.2s ease;
+      background: var(--color-accent);
+      padding: 0.85em 1.75em;
+      border-radius: 4px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
-    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.65); gap: 0.75rem; }
-    .btn-ghost:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .amber-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .amber-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+    .amber-btn:active { opacity: 0.75; transform: none; }
 
-    /* ── BODY TEXT ──────────────────────────── */
-    .body-text {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.68);
+    /* Ghost button — community CTA only */
+    .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      padding: 0.75em 1.5em;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .ghost-btn:hover {
+      background: var(--color-text);
+      color: var(--color-bg);
+      border-color: var(--color-text);
+    }
+
+    .ghost-btn:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 4px;
+    }
+
+    .ghost-btn:active { opacity: 0.8; }
+
+    @media (max-width: 767px) {
+      .community-bg {
+        background-position: 55% center;
+      }
+
+      .community-content {
+        bottom: 8%;
+        left: 1.5rem;
+        right: auto;
+        text-align: left;
+        max-width: calc(100vw - 3rem);
+      }
+
+      .community-headline { font-size: clamp(2.5rem, 9vw, 4.5rem); }
+    }
+
+    /* ======================================================
+       SECTION 7 — DREAM FACTORY BEAT
+    ====================================================== */
+
+    .dream-factory {
+      background: var(--color-bg);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem;
+      text-align: center;
+    }
+
+    .dream-factory-headline {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 14vw, 12rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      color: var(--color-accent);
+      margin-bottom: 2rem;
+    }
+
+    .dream-factory-body {
+      font-family: var(--font-body);
+      font-size: clamp(0.875rem, 1.1vw, 1rem);
+      font-weight: 400;
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 500px;
+    }
+
+    /* ======================================================
+       SECTION 8 — TANDEM / AFF
+    ====================================================== */
+
+    .tandem {
+      position: relative;
+      height: 70vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .tandem-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-50.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .tandem-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.55);
+    }
+
+    .tandem-content {
+      position: absolute;
+      bottom: 10%;
+      right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 520px;
+      text-align: right;
+    }
+
+    .tandem-headline { font-size: clamp(2rem, 5.5vw, 6rem); }
+
+    @media (max-width: 767px) {
+      .tandem-content {
+        right: 1.5rem;
+        left: 1.5rem;
+        text-align: left;
+        bottom: 8%;
+        max-width: none;
+      }
+
+      .tandem-headline { font-size: clamp(2rem, 8vw, 3.5rem); }
+    }
+
+    /* ======================================================
+       SECTION 9 — CONTACT
+    ====================================================== */
+
+    .contact-section {
+      position: relative;
+      height: 80vh;
+      min-height: 560px;
+      overflow: hidden;
+    }
+
+    .contact-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-144.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .contact-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        rgba(10, 10, 10, 0.72) 0%,
+        rgba(10, 10, 10, 0.42) 32%,
+        rgba(10, 10, 10, 0.08) 56%,
+        transparent 70%
+      );
+    }
+
+    .contact-content {
+      position: absolute;
+      bottom: 10%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: 460px;
+    }
+
+    .contact-headline { font-size: clamp(3rem, 7vw, 7rem); }
+
+    .contact-details {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .contact-details li {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.9;
+    }
+
+    .contact-details a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-details a:hover { color: var(--color-text); }
+
+    .contact-ctas {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 767px) {
+      .contact-content {
+        left: 1.5rem;
+        right: 1.5rem;
+        max-width: none;
+        bottom: 8%;
+      }
+
+      .contact-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
+    }
+
+    /* ======================================================
+       SECTION 10 — FOOTER
+    ====================================================== */
+
+    .site-footer {
+      background: var(--color-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 4.5rem 0 0;
+    }
+
+    .footer-inner {
+      max-width: var(--panorama-max);
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+      gap: 2rem 3rem;
+      align-items: start;
+    }
+
+    .footer-brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-address {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
       line-height: 1.75;
     }
 
-    /* ── FOOTER ─────────────────────────────── */
-    footer {
-      background: #000;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 3rem 2.5rem;
-    }
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    .footer-meta { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.9; }
-    .footer-meta a { color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s ease; }
-    .footer-meta a:hover { color: rgba(255,255,255,0.75); }
-    .footer-nav-list { list-style: none; }
-    .footer-nav-list li + li { margin-top: 0.55rem; }
-    .footer-nav-list a { font-size: 0.8rem; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s ease; }
-    .footer-nav-list a:hover { color: #fff; }
-    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); margin-top: 2.5rem; }
-    .jump-stat { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.9; }
-    .jump-stat strong { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: rgba(255,255,255,0.75); margin-right: 0.25rem; letter-spacing: -0.02em; }
-
-    /* ── MOBILE MENU ────────────────────────── */
-    #mobile-menu {
-      display: none;
-      position: fixed; inset: 0;
-      background: var(--color-bg);
-      z-index: 200;
-      flex-direction: column;
-      padding: 1.5rem;
-    }
-    #mobile-menu.open { display: flex; }
-    .mob-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
-    .mob-close { background: none; border: none; color: #fff; cursor: pointer; padding: 0.25rem; }
-    .mob-links { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
-    .mob-links a {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 8vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.75);
+    .footer-address a {
+      color: inherit;
       text-decoration: none;
-      display: block;
-      padding: 0.2rem 0;
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
     }
-    .mob-links a:hover { color: #fff; }
 
-    /* ── RESPONSIVE ─────────────────────────── */
-    @media (max-width: 768px) {
-      :root { --sp-xl: 3.5rem; --sp-lg: 2rem; }
-      .site-nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .nav-toggle { display: flex; }
-      .hero-content { padding: 0 1.25rem 3rem; }
-      .activities-inner { padding: var(--sp-xl) 1.25rem var(--sp-lg); }
-      .activity-grid { grid-template-columns: 1fr; }
-      .activity-card + .activity-card { border-left: 1px solid rgba(255,255,255,0.08); border-top: none; }
-      .ticket-band { padding: 1rem 1.25rem; gap: 1.5rem; }
-      .ticket-sep { display: none; }
-      .community-inner { padding: 3rem 1.25rem; max-width: 100%; }
-      .community-overlay { background: rgba(0,0,0,0.6); }
-      .coming-soon { justify-content: flex-start; }
-      .coming-soon-inner { text-align: left; max-width: 100%; padding: 3rem 1.25rem; }
-      .coming-soon-overlay { background: rgba(0,0,0,0.58); }
-      .contact-cta-inner { padding: 2.5rem 1.25rem; }
-      footer { padding: 2.5rem 1.25rem; }
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-address a:hover { color: var(--color-text); }
+
+    .footer-col-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .footer-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-links a:hover { color: var(--color-text); }
+
+    .footer-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-info-list li {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.5;
+    }
+
+    .footer-legal {
+      max-width: var(--panorama-max);
+      margin: 3rem auto 0;
+      padding: 1.5rem 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-legal p {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: 767px) {
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 1.5rem;
+        gap: 2rem;
+      }
+
+      .footer-brand { grid-column: 1 / -1; }
+
+      .footer-legal {
+        padding: 1.5rem 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- ── MOBILE MENU ─────────────────────────── -->
-<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="mob-top">
-    <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="100" height="26" loading="eager">
-    <button class="mob-close" id="close-menu" aria-label="Close navigation">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <nav aria-label="Mobile navigation">
-    <ul class="mob-links" id="mob-links"></ul>
-  </nav>
-</div>
-
-<!-- ── NAV ───────────────────────────────────── -->
-<header>
-  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-    <a href="/" class="nav-logo" aria-label="Skydive DropX home">
-      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="110" height="28" loading="eager">
-    </a>
-    <ul class="nav-links" id="nav-links"></ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    </button>
-  </nav>
-</header>
-
-<main>
-
-  <!-- ── HERO ──────────────────────────────── -->
-  <section class="hero" aria-label="Skydive DropX hero">
-    <img
-      src="/assets/images/IMG_3595.webp"
-      alt="Skydiver carrying the New Zealand flag under canopy over Lake Wanaka"
-      class="hero-img"
-      width="1800" height="1200"
-      loading="eager"
-      fetchpriority="high">
-    <div class="hero-grade"       aria-hidden="true"></div>
-    <div class="hero-vignette"    aria-hidden="true"></div>
-    <div class="hero-grain"       aria-hidden="true"></div>
-    <div class="hero-top-grad"    aria-hidden="true"></div>
-    <div class="hero-bottom-grad" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Canterbury, New Zealand</p>
-      <h1 class="hero-headline">Canterbury's<br>drop zone.</h1>
-      <p class="hero-sub">Open to licensed jumpers. Sport jumping, coaching, and demo jumps.</p>
-      <div class="hero-ctas">
-        <a href="/community.html" class="hero-cta accent" id="hero-messenger">Join the community ↗</a>
-        <a href="/jump.html" class="hero-cta">Jump with us ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TICKET BAND ─────────────────────── -->
-  <div class="ticket-band" aria-label="Jump details">
-    <div class="ticket-item">
-      <span class="ticket-label">Altitude</span>
-      <span class="ticket-value">12,000ft</span>
-    </div>
-    <div class="ticket-sep" aria-hidden="true"></div>
-    <div class="ticket-item">
-      <span class="ticket-label">Jump ticket</span>
-      <span class="ticket-value">NZ$65</span>
-    </div>
-    <div class="ticket-sep" aria-hidden="true"></div>
-    <div class="ticket-item">
-      <span class="ticket-label">Who</span>
-      <span class="ticket-value">Licensed jumpers</span>
-    </div>
-    <div class="ticket-sep" aria-hidden="true"></div>
-    <div class="ticket-item">
-      <span class="ticket-label">Location</span>
-      <span class="ticket-value">Canterbury, NZ</span>
-    </div>
+  <!-- Film grain overlay (site-wide) -->
+  <div class="grain" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="grain-filter" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.68 0.72"
+          numOctaves="4"
+          seed="2"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+    </svg>
   </div>
 
-  <!-- ── ACTIVITIES ─────────────────────── -->
-  <section class="activities" aria-labelledby="activities-heading">
-    <div class="section-bg" aria-hidden="true">
-      <!-- 2026-41: left jumper holds banner base (y≈65%), right jumper spread-eagle (y≈20%). center 46% ensures left jumper's feet stay in frame. -->
+  <!-- Navigation (fixed, site-wide) -->
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
       <img
-        src="/assets/images/Drop%20X%20Opening%202026-41.webp"
-        alt=""
-        width="1920" height="1280"
-        loading="lazy"
-        style="object-position: center 46%;">
-      <div class="activities-overlay"></div>
-    </div>
-    <div class="activities-inner">
-      <div>
-        <p class="section-eyebrow">What we do</p>
-        <h2 id="activities-heading" class="section-headline">Sport jumping,<br>coaching, and demos.</h2>
+        src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
+        alt="Skydive DropX"
+        width="86"
+        height="34"
+      >
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="jump.html">Jump</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button
+      class="nav-hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true">
+        <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="6"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="12" width="22" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="stage">
+
+      <!-- Panorama: contains panels AND hero-content so text sits over photos -->
+      <div class="panorama" id="hero-panorama">
+        <img class="panel panel-1" src="dropx-images-web/hero-photos/hero-panel-1-final.png" alt="">
+        <img class="panel panel-2" src="dropx-images-web/hero-photos/hero-panel-2-final.png" alt="">
+        <img class="panel panel-3" src="dropx-images-web/hero-photos/hero-panel-3-final.png" alt="">
+
+        <div class="hero-content">
+          <span class="hero-eyebrow">Christchurch, New Zealand</span>
+          <h1 class="hero-headline" id="hero-headline">
+            <span class="hero-headline-top">Welcome to the</span>
+            <span class="hero-headline-bottom">Dream Factory.</span>
+          </h1>
+          <p class="hero-subhead">Canterbury's home for progression, community, and the jumps you'll talk about for years. Student training, sport coaching, and display skydiving over Christchurch.</p>
+          <div class="hero-ctas">
+            <a href="community.html" class="cta-arrow">Join the crew <span aria-hidden="true">→</span></a>
+            <a href="jump.html" class="cta-arrow">Jump info <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
       </div>
-      <div class="activity-grid">
-        <div class="activity-card">
-          <p class="card-label">Every weekend</p>
-          <h3 class="card-title">Fun jumping</h3>
-          <p class="card-body">Show up on a jump day, pay your ticket, get in the air. Open sky and crew you know. All disciplines welcome.</p>
-          <a href="/jump.html" class="card-link">Jump with us ↗</a>
-        </div>
-        <div class="activity-card">
-          <p class="card-label">One-on-one</p>
-          <h3 class="card-title">Coaching</h3>
-          <p class="card-body">Canopy coaching and freefly coaching. Work with experienced coaches on accuracy, HP approaches, and head-down.</p>
-          <a href="/jump.html" class="card-link">Find out more ↗</a>
-        </div>
-        <div class="activity-card">
-          <p class="card-label">Commercial</p>
-          <h3 class="card-title">Demo jumps</h3>
-          <p class="card-body">Custom flags and banners into events and stadiums. Past clients include the Blues and Go Media. Get in touch.</p>
-          <a href="/contact.html" class="card-link">Enquire ↗</a>
-        </div>
+      <div class="hero-mobile-gradient" aria-hidden="true"></div>
+
+    </div>
+  </section>
+
+  <!-- Stat strip -->
+  <section class="stat-strip" aria-label="Quick facts">
+    <div class="stat-strip-inner">
+      <div class="stat-item">
+        <span class="stat-eyebrow">Altitude</span>
+        <span class="stat-value">12,000ft</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-eyebrow">Jump Ticket</span>
+        <span class="stat-value">NZ$65</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-eyebrow">Who</span>
+        <span class="stat-value">Licensed jumpers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-eyebrow">Location</span>
+        <span class="stat-value">Canterbury, NZ</span>
       </div>
     </div>
   </section>
 
-  <!-- ── COMMUNITY ──────────────────────── -->
-  <section class="community" aria-labelledby="community-heading">
-    <!-- 2026-144: river landing person center-right, jet ski left. Both fully visible at center center. -->
-    <img
-      src="/assets/images/Drop%20X%20Opening%202026-144.webp"
-      alt="Skydiver landing on water with smoke and jet ski at golden hour"
-      class="section-bg"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;"
-      width="1600" height="800"
-      loading="lazy">
+  <!-- Community -->
+  <section class="community" aria-labelledby="community-headline">
+    <div class="community-bg" aria-hidden="true"></div>
     <div class="community-overlay" aria-hidden="true"></div>
-    <div class="community-inner">
-      <p class="section-eyebrow">The community</p>
-      <h2 id="community-heading" class="section-headline" style="margin-bottom:1rem;">Join the crew.</h2>
-      <p class="body-text" style="max-width:26rem;margin-bottom:1.75rem;">Jump days are coordinated through the Facebook Messenger group. Join to see who is jumping this weekend and get on load.</p>
-      <a href="#" class="btn-primary" id="community-messenger">Join the Messenger group</a>
-    </div>
-  </section>
-
-  <!-- ── COMING SOON ────────────────────── -->
-  <section class="coming-soon" aria-labelledby="coming-soon-heading">
-    <!-- IMG_3639: canopy at y≈10%, jumper body at y≈42-50% (attached to flag corner). center 38% shows both. -->
-    <img
-      src="/assets/images/IMG_3639.webp"
-      alt="Skydiver with New Zealand flag under canopy, backlit against clouds and mountains"
-      class="section-bg"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;filter:brightness(0.78) saturate(1.05);"
-      width="1600" height="1200"
-      loading="lazy">
-    <div class="coming-soon-overlay" aria-hidden="true"></div>
-    <div class="coming-soon-inner">
-      <p class="section-eyebrow">Coming Spring 2026</p>
-      <h2 id="coming-soon-heading" class="section-headline" style="margin-bottom:1rem;">Tandem and AFF.</h2>
-      <p class="body-text" style="margin-bottom:1.75rem;">Tandem skydiving and Accelerated Freefall training are coming soon. Register your interest now and be first to know when bookings open.</p>
-      <a href="/contact.html" class="btn-ghost">Register interest ↗</a>
-    </div>
-  </section>
-
-  <!-- ── CONTACT CTA ────────────────────── -->
-  <section class="contact-cta" aria-labelledby="contact-heading">
-    <!-- 2026-36: pilot in cockpit, face and chest. Head clearly visible. object-position center 30%. -->
-    <img
-      src="/assets/images/Drop%20X%20Opening%202026-36.webp"
-      alt=""
-      class="section-bg"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(0.32) saturate(0.55);"
-      width="1920" height="1080"
-      loading="lazy">
-    <div class="contact-cta-overlay" aria-hidden="true"></div>
-    <div class="contact-cta-inner">
-      <p class="section-eyebrow">Questions? Bookings? Demos?</p>
-      <h2 id="contact-heading" class="section-headline" style="margin-bottom:1.5rem;">Get in touch.</h2>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="/contact.html" class="btn-primary">Contact us</a>
-        <a href="/faq.html" class="btn-ghost" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.65);">Read the FAQ ↗</a>
+    <div class="community-content">
+      <span class="section-eyebrow reveal">Who we are</span>
+      <h2 class="section-headline community-headline reveal reveal-d1" id="community-headline">Community.</h2>
+      <p class="section-body reveal reveal-d2">Skydive DropX is a sport and club drop zone. There is no booking system. Jump days are coordinated through a Facebook Messenger group where the crew organises who is jumping, when, and what the conditions look like.</p>
+      <p class="section-body reveal reveal-d2" style="margin-top: 1rem;">If you are a licensed jumper and want to get in the air, that is where you start. Join the group, introduce yourself, and get on a load.</p>
+      <div class="reveal reveal-d3" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; align-items: center;">
+        <a href="about.html" class="amber-btn">Who is DropX? <span aria-hidden="true">→</span></a>
+        <a href="community.html" class="ghost-btn">Join the community <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
-</main>
-
-<!-- ── FOOTER ────────────────────────────── -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <a href="/" aria-label="Skydive DropX home">
-        <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="95" height="24" loading="lazy" style="opacity:0.55;display:block;margin-bottom:1rem;">
+  <!-- Fun jumping + Coaching (combined) -->
+  <section class="fun-jumping" aria-labelledby="fj-headline">
+    <div class="fun-jumping-bg" aria-hidden="true"></div>
+    <div class="fun-jumping-overlay" aria-hidden="true"></div>
+    <div class="fun-jumping-content">
+      <span class="section-eyebrow reveal">Every weekend</span>
+      <h2 class="section-headline fj-headline reveal reveal-d1" id="fj-headline">Jump. Land. Repeat.</h2>
+      <div class="fj-details reveal reveal-d2" aria-label="Jump details">
+        <span class="fj-detail"><strong>NZ$65</strong> per jump</span>
+        <span class="fj-detail-divider" aria-hidden="true"></span>
+        <span class="fj-detail"><strong>12,000ft</strong> altitude</span>
+        <span class="fj-detail-divider" aria-hidden="true"></span>
+        <span class="fj-detail">Licensed jumpers</span>
+      </div>
+      <p class="section-body reveal reveal-d2">Show up, grab a ticket, get in the air. All disciplines welcome. Want to push further? We have experienced coaches across canopy, freefly, and formation skydiving. Pick a discipline, pick a coach, go up. Join our Messenger Group to stay up to date.</p>
+      <a href="https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link" class="fj-btn reveal reveal-d3" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
+          <path d="M12 2C6.477 2 2 6.227 2 11.43c0 2.883 1.332 5.461 3.424 7.18V22l3.13-1.732c.836.232 1.72.357 2.636.357 5.523 0 10-4.227 10-9.43S17.523 2 12 2zm1.05 12.696-2.543-2.726-4.963 2.726 5.457-5.82 2.608 2.726 4.9-2.726-5.46 5.82z"/>
+        </svg>
+        Join on Messenger
       </a>
-      <p class="footer-meta">
-        Canterbury, New Zealand<br>
-        <a href="tel:+6427292951">(027) 2929951</a><br>
-        <a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a>
-      </p>
-      <p class="footer-copy">© 2026 Skydive DropX. All rights reserved.</p>
     </div>
-    <nav aria-label="Footer navigation">
-      <ul class="footer-nav-list" id="footer-nav"></ul>
-    </nav>
-    <div>
-      <p style="font-size:0.66rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:0.75rem;">Jump info</p>
-      <p class="jump-stat"><strong>NZ$65</strong> per jump</p>
-      <p class="jump-stat"><strong>12,000ft</strong> altitude</p>
-      <p class="jump-stat" style="margin-top:0.5rem;color:rgba(255,255,255,0.3);">Licensed jumpers only</p>
-      <p class="jump-stat" style="margin-top:0.5rem;color:rgba(255,255,255,0.3);">Tandem + AFF coming Spring 2026</p>
+  </section>
+
+  <!-- Learn to Skydive / AFF -->
+  <section class="aff" aria-labelledby="aff-headline">
+    <div class="aff-bg" aria-hidden="true"></div>
+    <div class="aff-overlay" aria-hidden="true"></div>
+    <div class="aff-content">
+      <span class="section-eyebrow reveal">AFF Training</span>
+      <h2 class="section-headline aff-headline reveal reveal-d1" id="aff-headline">Learn to skydive.</h2>
+      <p class="section-body reveal reveal-d2">Ground school, jump coaches, and a full progression pathway from first jump to licensed skydiver. Everything you need to go from the ground to the sky, right here at DropX.</p>
+      <div class="aff-announcement reveal reveal-d3">
+        <span class="aff-coming-label">Coming Spring 2026</span>
+        <span class="aff-coming-sub">Registrations opening soon. Be the first to know.</span>
+        <a href="contact.html" class="arrow-link">Register your interest <span aria-hidden="true">→</span></a>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  // Load nav + social from site.json
-  fetch('/content/site.json')
-    .then(r => r.json())
-    .then(data => {
-      const links = data.nav?.links || [];
-      const navEl     = document.getElementById('nav-links');
-      const mobEl     = document.getElementById('mob-links');
-      const footerEl  = document.getElementById('footer-nav');
+  <!-- Demos -->
+  <section class="demos" aria-labelledby="demos-headline">
+    <div class="demos-bg" aria-hidden="true"></div>
+    <div class="demos-overlay" aria-hidden="true"></div>
+    <div class="demos-content">
+      <span class="section-eyebrow reveal">Display skydiving</span>
+      <h2 class="section-headline demos-headline reveal reveal-d1" id="demos-headline">Demo jumps.</h2>
+      <p class="section-body reveal reveal-d2">A skydiver landing in your event doesn't just open the show, it makes it.</p>
+      <p class="section-body reveal reveal-d2" style="margin-top: 1rem;">Custom flags, sponsor banners, or the New Zealand flag delivered into stadiums, waterfront events, and civic openings. We work with event organisers to plan the approach, the timing, and the moment. Professional, reliable, and built to be the highlight of the day.</p>
+      <div class="demos-ctas reveal reveal-d3">
+        <a href="demos.html" class="arrow-link">Demo jump info <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 
-      links.forEach(link => {
-        const isCurrent = window.location.pathname === link.href || window.location.pathname === link.href.replace('.html', '');
+  <!-- Dream Factory beat -->
+  <section class="dream-factory" aria-labelledby="df-headline">
+    <h2 class="dream-factory-headline reveal" id="df-headline">#DREAMFACTORY</h2>
+    <p class="dream-factory-body reveal reveal-d1">We're here to build something different. A drop zone that pushes you, supports you, and keeps you coming back. This is Skydive DropX.</p>
+  </section>
 
-        [navEl, mobEl, footerEl].forEach(list => {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = link.href;
-          a.textContent = link.label;
-          if (isCurrent) a.setAttribute('aria-current', 'page');
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-      });
+  <!-- Contact -->
+  <section class="contact-section" aria-labelledby="contact-headline">
+    <div class="contact-bg" aria-hidden="true"></div>
+    <div class="contact-overlay" aria-hidden="true"></div>
+    <div class="contact-content">
+      <span class="section-eyebrow reveal">Come say hi</span>
+      <h2 class="section-headline contact-headline reveal reveal-d1" id="contact-headline">Get in touch.</h2>
+      <ul class="contact-details reveal reveal-d2">
+        <li><a href="tel:+64272929951">(027) 2929951</a></li>
+        <li><a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a></li>
+        <li>Canterbury, NZ</li>
+      </ul>
+      <div class="contact-ctas reveal reveal-d3">
+        <a href="contact.html" class="arrow-link">Contact us <span aria-hidden="true">→</span></a>
+        <a href="faq.html" class="arrow-link">Read the FAQ <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
 
-      const messengerUrl = data.social?.facebook_messenger;
-      if (messengerUrl) {
-        ['hero-messenger', 'community-messenger'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.href = messengerUrl;
-        });
-      }
-    })
-    .catch(() => {
-      // Fallback nav
-      const fallback = [
-        { label: 'Jump With Us', href: '/jump.html' },
-        { label: 'Community',   href: '/community.html' },
-        { label: 'Events',      href: '/events.html' },
-        { label: 'About',       href: '/about.html' },
-        { label: 'FAQ',         href: '/faq.html' },
-        { label: 'Contact',     href: '/contact.html' },
-      ];
-      [document.getElementById('nav-links'), document.getElementById('mob-links'), document.getElementById('footer-nav')].forEach(list => {
-        if (!list) return;
-        fallback.forEach(link => {
-          const li = document.createElement('li');
-          const a  = document.createElement('a');
-          a.href = link.href; a.textContent = link.label;
-          li.appendChild(a); list.appendChild(li);
-        });
-      });
-      // Fallback messenger
-      const fbUrl = 'https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link';
-      ['hero-messenger', 'community-messenger'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.href = fbUrl;
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Skydive DropX home">
+          <img
+            src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
+            alt="Skydive DropX"
+            width="180"
+            height="72"
+          >
+        </a>
+        <p class="footer-address">
+          Canterbury, NZ<br>
+          <a href="tel:+64272929951">(027) 2929951</a><br>
+          <a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a>
+        </p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <span class="footer-col-label">Navigate</span>
+        <ul class="footer-nav-links" role="list">
+          <li><a href="jump.html">Jump</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <span class="footer-col-label">Jump info</span>
+        <ul class="footer-info-list">
+          <li>NZ$65 per jump</li>
+          <li>12,000ft altitude</li>
+          <li>Licensed jumpers only</li>
+          <li>Tandem + AFF coming Spring 2026</li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Jump days</span>
+        <p class="footer-address">Open Saturdays and Sundays, weather permitting.</p>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>© 2026 Skydive DropX. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // Trigger panel zoom-out after first paint.
+    // Panels default to visible so screenshots capture the final state.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById('hero-panorama').classList.add('panels-go');
       });
     });
 
-  // Scroll nav
-  const siteNav = document.getElementById('site-nav');
-  window.addEventListener('scroll', () => {
-    siteNav.classList.toggle('scrolled', window.scrollY > 55);
-  }, { passive: true });
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-visible'));
+    }
+  </script>
 
-  // Mobile menu
-  const toggle    = document.getElementById('nav-toggle');
-  const closeBtn  = document.getElementById('close-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  toggle.addEventListener('click', () => {
-    mobileMenu.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  });
-
-  const closeMob = () => {
-    mobileMenu.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  closeBtn.addEventListener('click', closeMob);
-  mobileMenu.addEventListener('click', e => { if (e.target.tagName === 'A') closeMob(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMob(); });
-</script>
 </body>
 </html>

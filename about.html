@@ -3,210 +3,676 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Skydive DropX</title>
-  <meta name="description" content="About Skydive DropX — Canterbury's sport drop zone. Run by jumpers, for jumpers.">
-  <meta property="og:title" content="About | Skydive DropX">
-  <meta property="og:description" content="About Skydive DropX — Canterbury's sport drop zone. Run by jumpers, for jumpers.">
-  <meta property="og:image" content="https://skydivedropx.com/assets/images/Drop%20X%20Opening%202026-41.webp">
-  <meta property="og:url" content="https://skydivedropx.com/about.html">
+  <title>Who We Are | Skydive DropX</title>
+  <meta name="description" content="Skydive DropX is built for those who want more than just a skydive. Founded by passionate skydivers, we're Canterbury's home for progression, community, and the people you land with.">
+  <meta property="og:title" content="Who We Are | Skydive DropX">
+  <meta property="og:description" content="Skydive DropX is built for those who want more than just a skydive. Canterbury's home for progression, community, and serious jumping.">
   <meta property="og:type" content="website">
-  <!-- Plausible: add after domain confirmed with Ben -->
-  <!-- <script defer data-domain="skydivedropx.com" src="https://plausible.io/js/plausible.js"></script> -->
+  <meta property="og:url" content="https://skydivedropx.com/about.html">
+  <meta property="og:image" content="https://skydivedropx.com/dropx-images-web/Drop%20X%20Opening%202026-33.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = { theme: { extend: { colors: { accent: '#00BFFF', surface: '#111111' }, fontFamily: { display: ['Barlow Condensed', 'sans-serif'], body: ['Figtree', 'sans-serif'] } } } }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --color-accent: #00BFFF; --color-text: #FFFFFF; --color-text-muted: #999999; --color-bg: #000000; --color-surface: #111111; }
-    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --color-bg:         #0a0a0a;
+      --color-surface:    #111111;
+      --color-text:       #ffffff;
+      --color-text-muted: #9a9a9a;
+      --color-accent:     #E8763F;
+      --font-display:     'Barlow Condensed', sans-serif;
+      --font-body:        'Inter', system-ui, sans-serif;
+      --panorama-max:     1520px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html { scroll-behavior: smooth; }
-    body { background-color: var(--color-bg); color: var(--color-text); font-family: 'Figtree', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    #site-header { transition: background-color 0.3s ease; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(12px); }
-    #site-header.scrolled { background-color: rgba(0,0,0,0.95); }
-    .nav-link { color: rgba(255,255,255,0.75); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
-    .nav-link:hover { color: var(--color-accent); border-color: var(--color-accent); }
-    .nav-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
-    .nav-link.active { color: var(--color-accent); border-color: var(--color-accent); }
-    .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2.25rem; background: var(--color-accent); color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease; }
-    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,191,255,0.35); }
-    .btn-primary:active { transform: scale(0.97); }
-    .btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
-    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.625rem; }
-    #mobile-menu { display: none; position: fixed; inset: 0; background: var(--color-bg); z-index: 100; flex-direction: column; padding: 1.5rem; }
-    #mobile-menu.open { display: flex; }
-    .footer-link { color: rgba(255,255,255,0.45); font-size: 0.875rem; text-decoration: none; transition: color 0.2s ease; }
-    .footer-link:hover { color: #fff; }
-    /* Placeholder notice */
-    .placeholder-notice {
-      background: rgba(255, 200, 0, 0.08);
-      border: 1px solid rgba(255, 200, 0, 0.25);
-      border-radius: 3px;
-      padding: 1rem 1.25rem;
+
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.038;
+    }
+
+    /* ---- NAV ---- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left:  max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      padding-right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      transition: background 0.35s ease, padding-top 0.35s ease, padding-bottom 0.35s ease, border-color 0.35s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      border-bottom-color: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { display: block; height: 90px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-links a:focus-visible { color: var(--color-text); outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
+    .nav-links a:active { opacity: 0.65; }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-text);
+      padding: 0.25rem;
+      line-height: 0;
+    }
+
+    .nav-hamburger:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
+
+    @media (max-width: 767px) {
+      .nav { padding: 1.25rem 1.5rem; }
+      .nav.scrolled { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ---- Reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    .about-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-33.webp');
+      background-size: cover;
+      background-position: 60% center;
+    }
+
+    .about-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        115deg,
+        rgba(10, 10, 10, 0.72) 0%,
+        rgba(10, 10, 10, 0.42) 32%,
+        rgba(10, 10, 10, 0.08) 56%,
+        transparent 70%
+      );
+    }
+
+    .about-hero-content {
+      position: absolute;
+      bottom: 5%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+      z-index: 10;
+      max-width: min(52%, 680px);
+      animation: heroContentRise 1s 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .about-hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-hero-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-text);
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-hl-top {
+      font-size: clamp(1rem, 2.2vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .about-hl-bottom {
+      font-size: clamp(3.5rem, 10vw, 9rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    @keyframes heroContentRise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) { .about-hero-content { animation: none; } }
+
+    @media (max-width: 767px) {
+      .about-hero-content { left: 5%; right: 5%; max-width: 90vw; bottom: 8%; }
+      .about-hl-top    { font-size: clamp(0.875rem, 3.5vw, 1.25rem); }
+      .about-hl-bottom { font-size: clamp(2.5rem, 12vw, 4rem); }
+    }
+
+    /* ======================================================
+       FULL-BLEED STORY SECTIONS
+    ====================================================== */
+
+    .story-section {
+      position: relative;
+      height: 80vh;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .story-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Localised gradient - anchored to text position */
+    .story-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .story-overlay--left {
+      background: radial-gradient(ellipse at bottom left,
+        rgba(10, 10, 10, 0.82) 0%,
+        rgba(10, 10, 10, 0.48) 38%,
+        transparent 62%
+      );
+    }
+
+    .story-overlay--right {
+      background: radial-gradient(ellipse at bottom right,
+        rgba(10, 10, 10, 0.82) 0%,
+        rgba(10, 10, 10, 0.48) 38%,
+        transparent 62%
+      );
+    }
+
+    /* Text content blocks */
+    .story-content {
+      position: absolute;
+      z-index: 10;
+      max-width: min(46%, 580px);
+      padding-bottom: 1rem;
+    }
+
+    .story-content--left {
+      bottom: 8%;
+      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+    }
+
+    .story-content--right {
+      bottom: 8%;
+      right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
+    }
+
+    /* Shared text styles */
+    .story-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .story-eyebrow--large {
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      letter-spacing: 0.14em;
+      margin-bottom: 1.25rem;
+    }
+
+    .story-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.8vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--color-text);
+      text-transform: uppercase;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.25rem;
+    }
+
+    .story-body {
+      font-family: var(--font-body);
+      font-size: clamp(0.875rem, 1.0vw, 1rem);
+      font-weight: 400;
+      line-height: 1.68;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .story-body p + p { margin-top: 1.25rem; }
+
+    @media (max-width: 767px) {
+      .story-section { height: auto; min-height: 70vw; padding-bottom: 0; }
+      .story-content {
+        position: absolute;
+        bottom: 6%;
+        left: 5%;
+        right: 5%;
+        max-width: 92vw;
+      }
+      .story-content--right {
+        right: 5%;
+        left: 5%;
+        bottom: 6%;
+      }
+      .story-overlay--right {
+        background: radial-gradient(ellipse at bottom left,
+          rgba(10, 10, 10, 0.82) 0%,
+          rgba(10, 10, 10, 0.48) 38%,
+          transparent 62%
+        );
+      }
+      .story-headline { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+    }
+
+    /* ======================================================
+       CLOSING BEAT — full-bleed photo 27, text overlaid
+    ====================================================== */
+
+    .closing-beat {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 5rem 1.5rem 6rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .closing-beat-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-27.webp');
+      background-size: cover;
+      background-position: center 40%;
+    }
+
+    .closing-beat-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+        rgba(10, 10, 10, 0.90) 0%,
+        rgba(10, 10, 10, 0.60) 35%,
+        rgba(10, 10, 10, 0.15) 65%,
+        transparent 85%
+      );
+    }
+
+    .closing-statement {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 6vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      color: var(--color-text);
       margin-bottom: 2rem;
+      max-width: 760px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .closing-body {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-body);
+      font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+      font-weight: 400;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 560px;
+    }
+
+    .closing-body p + p { margin-top: 1.5rem; }
+
+    .closing-tagline {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-size: clamp(0.9rem, 1.4vw, 1.3rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+      margin-top: 3rem;
+      display: block;
+    }
+
+    .closing-dreamfactory {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 3vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      display: block;
+      margin-top: 0.4rem;
+      line-height: 1;
+    }
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
+
+    .site-footer {
+      background: var(--color-bg);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 4.5rem 0 0;
+    }
+
+    .footer-inner {
+      max-width: var(--panorama-max);
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+      gap: 2rem 3rem;
+      align-items: start;
+    }
+
+    .footer-brand img { height: 36px; width: auto; display: block; margin-bottom: 1.25rem; }
+
+    .footer-address {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+
+    .footer-address a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+    .footer-address a:hover { color: var(--color-text); }
+
+    .footer-col-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .footer-nav-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-nav-links a {
+      font-family: var(--font-body);
       font-size: 0.875rem;
-      color: rgba(255, 200, 0, 0.8);
-      font-family: 'Figtree', sans-serif;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-links a:hover { color: var(--color-text); }
+
+    .footer-info-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .footer-info-list li {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.5;
+    }
+
+    .footer-legal {
+      max-width: var(--panorama-max);
+      margin: 3rem auto 0;
+      padding: 1.5rem 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-legal p { font-family: var(--font-body); font-size: 0.75rem; color: rgba(255, 255, 255, 0.3); }
+
+    @media (max-width: 767px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; padding: 0 1.5rem; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-legal { padding: 1.5rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 flex items-center justify-between">
-    <a href="/" aria-label="Skydive DropX — home">
-      <img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="148" height="38" loading="eager">
-    </a>
-    <nav aria-label="Main navigation">
-      <ul id="nav-list" class="hidden md:flex items-center gap-8 list-none m-0 p-0" role="list"></ul>
-    </nav>
-    <button id="menu-open" class="md:hidden text-white p-1 rounded" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/></svg>
-    </button>
-  </header>
-
-  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation">
-    <div class="flex items-center justify-between mb-10">
-      <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30"></a>
-      <button id="menu-close" class="text-white p-1" aria-label="Close navigation">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M6 18L18 6"/></svg>
-      </button>
-    </div>
-    <ul id="mobile-nav-list" class="list-none m-0 p-0 flex flex-col gap-5" role="list"></ul>
-    <div class="mt-auto pt-12"><a id="mobile-cta" href="#" class="btn-primary w-full">Join the Community</a></div>
+  <div class="grain" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="grain-filter" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.68 0.72" numOctaves="4" seed="2" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+    </svg>
   </div>
 
-  <main>
+  <nav class="nav" id="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="86" height="34">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="jump.html">Jump</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true">
+        <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="6"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="12" width="22" height="2" rx="1" fill="currentColor"/>
+      </svg>
+    </button>
+  </nav>
 
-    <!-- HERO -->
-    <section aria-label="About DropX" class="relative flex flex-col justify-end overflow-hidden" style="min-height: 55vh;">
-      <div class="absolute inset-0 -z-10" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-36.webp"
-             alt="" class="w-full h-full object-cover object-center"
-             width="1920" height="1280" loading="eager">
-        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)"></div>
+  <!-- SECTION 1: HERO -->
+  <section class="about-hero" aria-labelledby="about-headline">
+    <div class="about-hero-bg" aria-hidden="true"></div>
+    <div class="about-hero-overlay" aria-hidden="true"></div>
+    <div class="about-hero-content">
+      <span class="about-hero-eyebrow">Who We Are</span>
+      <h1 class="about-hero-headline" id="about-headline">
+        <span class="about-hl-top">Built for those who</span>
+        <span class="about-hl-bottom">Want more.</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE STORY — community photo, text bottom-left -->
+  <section class="story-section" aria-labelledby="story-headline">
+    <div class="story-bg" style="background-image: url('dropx-images-web/Drop%20X%20Opening%202026-23.webp'); background-position: center 30%;" aria-hidden="true"></div>
+    <div class="story-overlay story-overlay--left" aria-hidden="true"></div>
+    <div class="story-content story-content--left">
+      <span class="story-eyebrow story-eyebrow--large reveal">Our Story</span>
+      <h2 class="story-headline reveal reveal-d1" id="story-headline">Built for those who want more.</h2>
+      <div class="story-body reveal reveal-d2">
+        <p>Skydive DropX is built for those who want more than just a skydive. It's for people chasing progression, and unforgettable life experiences.</p>
       </div>
-      <div class="relative z-10 px-6 md:px-12 pb-14 pt-40">
-        <p class="section-label">Skydive DropX</p>
-        <h1 class="font-black uppercase leading-none text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(3rem, 8vw, 6.5rem);">
-          About
-        </h1>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE VISION — Ben portrait, text bottom-right -->
+  <section class="story-section" aria-labelledby="vision-headline">
+    <div class="story-bg" style="background-image: url('dropx-images-web/Drop%20X%20Opening%202026-155.jpg'); background-position: 28% center;" aria-hidden="true"></div>
+    <div class="story-overlay story-overlay--right" aria-hidden="true"></div>
+    <div class="story-content story-content--right">
+      <span class="story-eyebrow reveal">The Vision</span>
+      <h2 class="story-headline reveal reveal-d1" id="vision-headline">A drop zone where everyone feels at home.</h2>
+      <div class="story-body reveal reveal-d2">
+        <p>Founded by passionate skydivers, DropX exists to create a high energy, community driven drop zone where first timers, students, and experienced jumpers all feel at home.</p>
+        <p>Whether you're stepping out of an aircraft for the first time or pushing your limits as a seasoned jumper, our focus is simple: deliver a safe, professional, and fun environment, skydiving over Christchurch.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ABOUT CONTENT -->
-    <section class="relative overflow-hidden px-6 md:px-12 py-16 md:py-24">
-      <div class="absolute inset-0" aria-hidden="true">
-        <img src="/assets/images/Drop%20X%20Opening%202026-14.webp" alt="" class="w-full h-full object-cover" style="object-position: center 40%;" loading="lazy">
-        <div class="absolute inset-0" style="background: rgba(0,0,0,0.82)"></div>
+  <!-- SECTION 4: WHAT WE DO — door exit photo, text bottom-left -->
+  <section class="story-section" aria-labelledby="whatwedo-headline">
+    <div class="story-bg" style="background-image: url('dropx-images-web/Drop%20X%20Opening%202026-37.webp'); background-position: center center;" aria-hidden="true"></div>
+    <div class="story-overlay story-overlay--left" aria-hidden="true"></div>
+    <div class="story-content story-content--left">
+      <span class="story-eyebrow reveal">What We Do</span>
+      <h2 class="story-headline reveal reveal-d1" id="whatwedo-headline">Student training. Display skydiving. Sport progression.</h2>
+      <div class="story-body reveal reveal-d2">
+        <p>We specialise in student training, display skydiving at events, and supporting sport jumpers with coaching and progression pathways. Our team is made up of experienced instructors and pilots who live and breathe aviation and are committed to helping you get the most out of every jump.</p>
       </div>
-      <div class="relative z-10 max-w-3xl mx-auto">
+    </div>
+  </section>
 
-        <!-- PLACEHOLDER NOTICE — do not remove until Ben provides copy -->
-        <div class="placeholder-notice" role="alert">
-          <strong>PLACEHOLDER:</strong> Ben's about copy is outstanding. This section will be updated when received. Do not publish without replacing this content.
-        </div>
+  <!-- SECTION 5: CLOSING BEAT — unchanged -->
+  <section class="closing-beat" aria-labelledby="closing-statement">
+    <div class="closing-beat-bg" aria-hidden="true"></div>
+    <div class="closing-beat-overlay" aria-hidden="true"></div>
+    <h2 class="closing-statement reveal" id="closing-statement">It's not just about the jump.</h2>
+    <div class="closing-body reveal reveal-d1">
+      <p>It's about the people, the energy on the ground, and the stories you take home with you.</p>
+      <p>We're here to build something different. A drop zone that pushes and supports progression, and keeps you coming back for more.</p>
+    </div>
+    <span class="closing-tagline reveal reveal-d2">This is Skydive DropX.</span>
+    <span class="closing-dreamfactory reveal reveal-d3">#DREAMFACTORY</span>
+  </section>
 
-        <p class="section-label">About us</p>
-        <h2 class="font-black uppercase mb-8 text-white"
-            style="font-family:'Barlow Condensed',sans-serif; letter-spacing:-0.025em; font-size: clamp(2rem, 4vw, 3rem);">
-          Canterbury's sport drop zone
-        </h2>
-
-        <!-- PLACEHOLDER COPY BELOW — replace with Ben's text -->
-        <div style="color: rgba(255,255,255,0.65);">
-          <p class="leading-relaxed mb-5" style="background: rgba(255,200,0,0.05); border-left: 2px solid rgba(255,200,0,0.3); padding-left: 1rem;">
-            [PLACEHOLDER] Ben's story about why DropX was set up, what drives it, and what makes it different from other drop zones. To be supplied by Ben Johnstone.
-          </p>
-          <p class="leading-relaxed mb-5" style="background: rgba(255,200,0,0.05); border-left: 2px solid rgba(255,200,0,0.3); padding-left: 1rem;">
-            [PLACEHOLDER] Further context about the team, the location, and the vision for the drop zone. To be supplied by Ben Johnstone.
-          </p>
-          <p class="leading-relaxed" style="background: rgba(255,200,0,0.05); border-left: 2px solid rgba(255,200,0,0.3); padding-left: 1rem;">
-            [PLACEHOLDER] Any additional background, milestones, or community details. To be supplied by Ben Johnstone.
-          </p>
-        </div>
-        <!-- END PLACEHOLDER COPY -->
-
-        <div class="mt-12 pt-8 flex flex-col sm:flex-row gap-4" style="border-top: 1px solid rgba(255,255,255,0.07)">
-          <a href="/contact.html" class="btn-primary">Get in Touch</a>
-          <a id="about-messenger" href="#" class="btn-primary" style="background: var(--color-surface); color: var(--color-text); border: 1px solid rgba(255,255,255,0.15);">Join the Community</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PHOTO BAND -->
-    <section aria-hidden="true" class="grid grid-cols-3 gap-1 md:grid-cols-6" style="border-top: 1px solid rgba(255,255,255,0.07);">
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-94.webp" alt="" class="w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-50.webp" alt="" class="w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-37.webp" alt="" class="w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-97.webp" alt="" class="w-full h-full object-cover object-top hidden md:block" width="400" height="400" loading="lazy"></div>
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-3.webp" alt="" class="w-full h-full object-cover hidden md:block" width="400" height="400" loading="lazy"></div>
-      <div class="aspect-square overflow-hidden"><img src="/assets/images/Drop%20X%20Opening%202026-2.webp" alt="" class="w-full h-full object-cover hidden md:block" width="400" height="400" loading="lazy"></div>
-    </section>
-
-  </main>
-
-  <footer style="background: var(--color-surface); border-top: 1px solid rgba(255,255,255,0.07);" class="px-6 md:px-12 py-12">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-      <div>
-        <a href="/"><img src="/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="120" height="30" loading="lazy" class="mb-4 opacity-75"></a>
-        <p class="text-sm" style="color: var(--color-text-muted)">Canterbury, New Zealand</p>
-        <p class="text-sm mt-1"><a href="tel:+6427292951" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">(027) 2929951</a></p>
-        <p class="text-sm mt-1"><a href="mailto:ben@skydivedropx.com" style="color: var(--color-text-muted);" class="hover:text-white transition-colors duration-200">ben@skydivedropx.com</a></p>
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Skydive DropX home">
+          <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="180" height="72">
+        </a>
+        <p class="footer-address">
+          Canterbury, NZ<br>
+          <a href="tel:+64272929951">(027) 2929951</a><br>
+          <a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a>
+        </p>
       </div>
       <nav aria-label="Footer navigation">
-        <ul id="footer-nav" class="list-none m-0 p-0 flex flex-wrap gap-x-8 gap-y-3" role="list"></ul>
+        <span class="footer-col-label">Navigate</span>
+        <ul class="footer-nav-links" role="list">
+          <li><a href="jump.html">Jump</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
-      <div><a id="footer-messenger" href="#" class="btn-primary">Join the Community</a></div>
+      <div>
+        <span class="footer-col-label">Jump info</span>
+        <ul class="footer-info-list">
+          <li>NZ$65 per jump</li>
+          <li>12,000ft altitude</li>
+          <li>Licensed jumpers only</li>
+          <li>Tandem + AFF coming Spring 2026</li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-label">Jump days</span>
+        <p class="footer-address">Open Saturdays and Sundays, weather permitting.</p>
+      </div>
     </div>
-    <div class="max-w-6xl mx-auto mt-10 pt-6" style="border-top: 1px solid rgba(255,255,255,0.07)">
-      <p class="text-xs" style="color: var(--color-text-muted)">&copy; 2026 Skydive DropX. All rights reserved.</p>
+    <div class="footer-legal">
+      <p>© 2026 Skydive DropX. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-    const menuOpen = document.getElementById('menu-open');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuOpen.addEventListener('click', () => { mobileMenu.classList.add('open'); menuOpen.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; });
-    menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuOpen.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; });
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 
-    async function loadSite() {
-      try {
-        const res = await fetch('/content/site.json');
-        if (!res.ok) throw new Error();
-        const data = await res.json();
-        const navList = document.getElementById('nav-list');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li'); const a = document.createElement('a');
-          a.href = link.href; a.textContent = link.label;
-          a.className = link.href === '/about.html' ? 'nav-link active' : 'nav-link';
-          li.appendChild(a); navList.appendChild(li);
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
         });
-        const mobileList = document.getElementById('mobile-nav-list');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li'); const a = document.createElement('a');
-          a.href = link.href; a.textContent = link.label;
-          a.style.cssText = "font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;letter-spacing:-0.01em;color:rgba(255,255,255,0.8);text-decoration:none;";
-          li.appendChild(a); mobileList.appendChild(li);
-        });
-        const footerNav = document.getElementById('footer-nav');
-        data.nav.links.forEach(link => {
-          const li = document.createElement('li'); const a = document.createElement('a');
-          a.href = link.href; a.textContent = link.label; a.className = 'footer-link';
-          li.appendChild(a); footerNav.appendChild(li);
-        });
-        const msUrl = data.social.facebook_messenger;
-        ['mobile-cta', 'about-messenger', 'footer-messenger'].forEach(id => {
-          const el = document.getElementById(id); if (el) el.href = msUrl;
-        });
-      } catch (err) { console.warn('site.json failed', err); }
+      }, { threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('is-visible'));
     }
-    loadSite();
   </script>
+
 </body>
 </html>
