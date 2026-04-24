@@ -502,6 +502,10 @@
       .footer-brand { grid-column: 1 / -1; }
       .footer-legal { padding: 1.5rem; }
     }
+    @media (max-width: 767px) {
+      .nav.open { background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+      .nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem 1.5rem 1.5rem; gap: 1.5rem; background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,0.07); }
+    }
   </style>
 </head>
 <body>
@@ -670,6 +674,17 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
     }, { passive: true });
+    const hamburger = document.querySelector('.nav-hamburger');
+    hamburger.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(open));
+      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+    }));
 
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
