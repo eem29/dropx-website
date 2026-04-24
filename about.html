@@ -162,7 +162,8 @@
 
     .about-hero-content {
       position: absolute;
-      bottom: 5%;
+      top: 50%;
+      transform: translateY(-50%);
       left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
       z-index: 10;
       max-width: min(52%, 680px);
@@ -209,14 +210,14 @@
     }
 
     @keyframes heroContentRise {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(calc(-50% + 16px)); }
+      to   { opacity: 1; transform: translateY(-50%); }
     }
 
     @media (prefers-reduced-motion: reduce) { .about-hero-content { animation: none; } }
 
     @media (max-width: 767px) {
-      .about-hero-content { left: 5%; right: 5%; max-width: 90vw; bottom: 8%; }
+      .about-hero-content { left: 5%; right: 5%; max-width: 90vw; top: 50%; transform: translateY(-50%); }
       .about-hl-top    { font-size: clamp(0.875rem, 3.5vw, 1.25rem); }
       .about-hl-bottom { font-size: clamp(2.5rem, 12vw, 4rem); }
     }
@@ -532,8 +533,6 @@
     <ul class="nav-links" role="list">
       <li><a href="jump.html">Jump</a></li>
       <li><a href="about.html" class="active">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="community.html">Community</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>

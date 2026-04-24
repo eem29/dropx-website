@@ -59,6 +59,8 @@
     .faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .faq-q { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 800; letter-spacing: -0.01em; color: var(--color-text); margin-bottom: 0.75rem; line-height: 1.1; }
     .faq-a { font-family: var(--font-body); font-size: 0.9rem; line-height: 1.68; color: rgba(255,255,255,0.6); }
+    .faq-a a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid rgba(232,118,63,0.35); transition: border-color 0.2s ease; }
+    .faq-a a:hover { border-color: var(--color-accent); }
 
     .site-footer { background: var(--color-bg); border-top: 1px solid rgba(255,255,255,0.07); }
     .footer-inner { max-width: var(--panorama-max); margin: 0 auto; padding: 4rem 3rem 0; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem; }
@@ -92,8 +94,6 @@
     <ul class="nav-links" role="list">
       <li><a href="jump.html">Jump</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="community.html">Community</a></li>
       <li><a href="faq.html" class="active">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -113,7 +113,7 @@
       <div class="page-hero-overlay" aria-hidden="true"></div>
       <div class="page-hero-content">
         <span class="section-eyebrow">Questions</span>
-        <h1 class="page-hero-headline" id="faq-headline">Got questions.</h1>
+        <h1 class="page-hero-headline" id="faq-headline">Got questions?</h1>
       </div>
     </section>
 

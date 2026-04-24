@@ -1,0 +1,22 @@
+DropX - Oversized Image Report
+Generated: 2026-04-21T08:18:49
+Threshold: width OR height > 4000 px
+
+Folders scanned (top-level .webp only):
+  - dropx-images-web/: 77 .webp files
+  - DropX onboarding/: 0 .webp files
+
+Oversized files found: 3
+
+Details:
+  Path:       /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X  Stacked - White- PNG.webp
+  Dimensions: 8334 x 8334 px
+  File size:  97.8 KB
+
+  Path:       /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X Horiz - White - PNG.webp
+  Dimensions: 8334 x 3292 px
+  File size:  52.7 KB
+
+  Path:       /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X Opening 2026-129.webp
+  Dimensions: 5436 x 2013 px
+  File size:  194.7 KB

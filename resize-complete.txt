@@ -1,0 +1,26 @@
+DropX - Resize Complete Report
+Generated: 2026-04-21T08:19:41
+Verification scan of 77 webp files (top-level of dropx-images-web/ and DropX onboarding/).
+Files still exceeding 4000 px: 0
+
+Resized files (largest dim -> 3000 px, aspect ratio preserved, webp q=88):
+
+  File:          /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X  Stacked - White- PNG.webp
+  New dims:      3000 x 3000 px
+  New size:      111.9 KB
+  Backup:        /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/_originals-before-resize/Drop X  Stacked - White- PNG.webp
+  Backup exists: YES
+
+  File:          /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X Horiz - White - PNG.webp
+  New dims:      3000 x 1185 px
+  New size:      62.6 KB
+  Backup:        /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/_originals-before-resize/Drop X Horiz - White - PNG.webp
+  Backup exists: YES
+
+  File:          /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/Drop X Opening 2026-129.webp
+  New dims:      3000 x 1111 px
+  New size:      219.8 KB
+  Backup:        /Users/emmamcintosh/Websites/Skydive DropX/dropx-images-web/_originals-before-resize/Drop X Opening 2026-129.webp
+  Backup exists: YES
+
+All scanned .webp files are now <= 4000 px in both dimensions. CC is clear to proceed.
