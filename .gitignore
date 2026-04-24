@@ -1,9 +1,35 @@
+# macOS
 .DS_Store
-node_modules/
+
+# Dev tools
+.vscode/
 screenshots/
-*.docx
-DropX onboarding/
+node_modules/
+
+# Large raw photo library — use dropx-images-web/ for web-optimised versions
 Photos/
-dropx-images-web/
-dropx-social-audit.txt
+
+# Planning / client docs
 PROGRESS.md
+dropx-brief-final.md
+dropx-full-rebuild-brief.md
+dropx-social-audit.txt
+*.docx
+
+# Client onboarding originals (PDF, raw JPEGs)
+DropX onboarding/
+
+# Specific large or unused files in dropx-images-web/
+dropx-images-web/Drop X Opening 2026-155.jpg
+dropx-images-web/Drop X Opening 2026-62.jpg
+dropx-images-web/Drop X Opening 2026-98.jpg
+dropx-images-web/dropX 35.png
+dropx-images-web/Drop X hero 831.png
+dropx-images-web/_originals-before-resize/
+dropx-images-web/conversion-report.txt
+
+# Hero-photos working files — only the three final panel PNGs are needed
+dropx-images-web/hero-photos/*
+!dropx-images-web/hero-photos/hero-panel-1-final.png
+!dropx-images-web/hero-photos/hero-panel-2-final.png
+!dropx-images-web/hero-photos/hero-panel-3-final.png
