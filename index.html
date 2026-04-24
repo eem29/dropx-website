@@ -156,10 +156,10 @@
     }
 
     /* ======================================================
-       HERO — Approach A
+       HERO - Approach A
        Panorama maintains 2150:1528 aspect ratio, max 1520px wide.
        All three panels stacked absolutely; transparent areas form triptych.
-       object-fit: contain preserves panel alignment — do NOT use cover.
+       object-fit: contain preserves panel alignment - do NOT use cover.
        Hero-content sits inside .panorama so left/bottom percentages
        are relative to the photo canvas, not the viewport.
     ====================================================== */
@@ -193,7 +193,7 @@
 
     /* All panels stack in the same position.
        Transparent areas in the PNGs create the diagonal triptych.
-       Do NOT change object-fit to cover — it breaks panel alignment. */
+       Do NOT change object-fit to cover - it breaks panel alignment. */
     .panel {
       position: absolute;
       top: 0;
@@ -220,7 +220,7 @@
       animation: panelZoomOut 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;
     }
 
-    /* Scale-only — no opacity fade — so panels stay visible in screenshots */
+    /* Scale-only - no opacity fade - so panels stay visible in screenshots */
     @keyframes panelZoomOut {
       from { transform: scale(1.08); }
       to   { transform: scale(1);    }
@@ -232,7 +232,7 @@
       .panels-go .panel-3 { animation: none; }
     }
 
-    /* ── HERO CONTENT — inside .panorama so positioning is
+    /* ── HERO CONTENT - inside .panorama so positioning is
        relative to the photo canvas, not the viewport ── */
     .hero-content {
       position: absolute;
@@ -352,7 +352,7 @@
 
     /* ── MOBILE < 768px: photo 49 full-bleed, text bottom-right in open sky ── */
     @media (max-width: 767px) {
-      /* Fix 1 — full-width bottom gradient overlay */
+      /* Fix 1 - full-width bottom gradient overlay */
       .hero-mobile-gradient {
         display: block;
         position: absolute;
@@ -392,10 +392,10 @@
 
       .panel-1, .panel-2, .panel-3 { display: none; }
 
-      /* Fix 1 cont. — kill localised radial behind text */
+      /* Fix 1 cont. - kill localised radial behind text */
       .hero-content::before { content: none; }
 
-      /* Fix 2 — left-align, anchor bottom-left, breathe inside the gradient */
+      /* Fix 2 - left-align, anchor bottom-left, breathe inside the gradient */
       .hero-content {
         left: 5%;
         right: auto;
@@ -409,7 +409,7 @@
       .hero-eyebrow   { text-align: left; }
       .hero-subhead   { text-align: left; }
 
-      /* Fix 3 — bigger headline, tight typographic block */
+      /* Fix 3 - bigger headline, tight typographic block */
       .hero-headline-top {
         font-size: clamp(0.75rem, 3vw, 1rem);
         letter-spacing: 0.15em;
@@ -421,7 +421,7 @@
         line-height: 0.9;
       }
 
-      /* Fix 4 — restore CTAs, left-aligned */
+      /* Fix 4 - restore CTAs, left-aligned */
       .hero-ctas {
         display: flex;
         gap: 1.5rem;
@@ -430,7 +430,7 @@
         margin-top: 1.25rem;
       }
 
-      /* Fix 5 — smaller, readable subhead */
+      /* Fix 5 - smaller, readable subhead */
       .hero-subhead {
         font-size: 13px;
         line-height: 1.6;
@@ -440,7 +440,7 @@
     }
 
     /* ======================================================
-       SHARED PATTERNS — used across multiple sections
+       SHARED PATTERNS - used across multiple sections
     ====================================================== */
 
     .section-eyebrow {
@@ -498,7 +498,7 @@
 
     .arrow-link:active { opacity: 0.7; }
 
-    /* Scroll reveal — on intersection, element fades in and rises */
+    /* Scroll reveal - on intersection, element fades in and rises */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
@@ -519,7 +519,7 @@
     }
 
     /* ======================================================
-       SECTION 2 — STAT STRIP
+       SECTION 2 - STAT STRIP
     ====================================================== */
 
     .stat-strip {
@@ -587,7 +587,7 @@
     }
 
     /* ======================================================
-       SECTION 3 — FUN JUMPING
+       SECTION 3 - FUN JUMPING
     ====================================================== */
 
     .fun-jumping {
@@ -707,7 +707,7 @@
     }
 
     /* ======================================================
-       SECTION 5 — AFF / LEARN TO SKYDIVE
+       SECTION 5 - AFF / LEARN TO SKYDIVE
     ====================================================== */
 
     .aff {
@@ -803,7 +803,7 @@
     }
 
     /* ======================================================
-       SECTION 6 — DEMOS
+       SECTION 6 - DEMOS
     ====================================================== */
 
     .demos {
@@ -867,7 +867,7 @@
     }
 
     /* ======================================================
-       SECTION 6 — COMMUNITY
+       SECTION 6 - COMMUNITY
     ====================================================== */
 
     .community {
@@ -933,7 +933,7 @@
     .amber-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
     .amber-btn:active { opacity: 0.75; transform: none; }
 
-    /* Ghost button — community CTA only */
+    /* Ghost button - community CTA only */
     .ghost-btn {
       display: inline-flex;
       align-items: center;
@@ -990,7 +990,7 @@
     }
 
     /* ======================================================
-       SECTION 7 — DREAM FACTORY BEAT
+       SECTION 7 - DREAM FACTORY BEAT
     ====================================================== */
 
     .dream-factory {
@@ -1024,7 +1024,7 @@
     }
 
     /* ======================================================
-       SECTION 8 — TANDEM / AFF
+       SECTION 8 - TANDEM / AFF
     ====================================================== */
 
     .tandem {
@@ -1072,7 +1072,7 @@
     }
 
     /* ======================================================
-       SECTION 9 — CONTACT
+       SECTION 9 - CONTACT
     ====================================================== */
 
     .contact-section {
@@ -1151,7 +1151,7 @@
     }
 
     /* ======================================================
-       SECTION 10 — FOOTER
+       SECTION 10 - FOOTER
     ====================================================== */
 
     .site-footer {
@@ -1477,7 +1477,7 @@
           Canterbury, NZ<br>
           <a href="tel:+64272929951">(027) 2929951</a><br>
           <a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a><br>
-          <a href="https://instagram.com/skydivedropx" target="_blank" rel="noopener noreferrer">@skydivedropx</a>
+          <a href="https://instagram.com/skydivedropx" target="_blank" rel="noopener noreferrer" aria-label="Skydive DropX on Instagram" style="display:inline-flex;align-items:center;gap:0.45em;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@skydivedropx</a>
         </p>
       </div>
 
