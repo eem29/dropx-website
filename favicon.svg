@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0a0a0a"/>
+  <!-- DropX brand mark: bold X, lower-left leg sweeps into canopy arc in amber -->
+  <line x1="108" y1="95"  x2="404" y2="420" stroke="#ffffff" stroke-width="78" stroke-linecap="round"/>
+  <line x1="404" y1="95"  x2="232" y2="267" stroke="#ffffff" stroke-width="78" stroke-linecap="round"/>
+  <path d="M 232 267 C 200 308 163 346 108 372" stroke="#E8763F" stroke-width="78" stroke-linecap="round" fill="none"/>
+</svg>
