@@ -323,27 +323,47 @@
     .story-body p + p { margin-top: 1.25rem; }
 
     @media (max-width: 767px) {
-      .story-section { height: auto; min-height: 70vw; padding-bottom: 0; }
-      .story-content {
-        position: absolute;
-        bottom: 6%;
-        left: 5%;
-        right: 5%;
-        max-width: 92vw;
+      /* Stacked layout: photo above, text below in normal flow */
+      .story-section {
+        height: auto;
+        min-height: 0;
       }
-      .story-content--right {
-        right: 5%;
-        left: 5%;
-        bottom: 6%;
+
+      /* Photo takes its own space in flow at a cinematic ratio */
+      .story-bg {
+        position: relative;
+        inset: auto;
+        height: 62vw;
+        min-height: 220px;
       }
+
+      /* Overlay caps to the photo height — does not cover text */
+      .story-overlay--left,
       .story-overlay--right {
-        background: radial-gradient(ellipse at bottom left,
-          rgba(10, 10, 10, 0.82) 0%,
-          rgba(10, 10, 10, 0.48) 38%,
-          transparent 62%
-        );
+        bottom: auto;
+        height: 62vw;
+        min-height: 220px;
+        background: linear-gradient(to top, rgba(10, 10, 10, 0.55) 0%, transparent 55%);
       }
-      .story-headline { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+
+      /* Text flows below the photo, full width, on the dark bg */
+      .story-content,
+      .story-content--left,
+      .story-content--right {
+        position: relative;
+        inset: auto;
+        max-width: none;
+        padding: 2rem 1.5rem 2.75rem;
+      }
+
+      .story-eyebrow--large { font-size: 11px; letter-spacing: 0.22em; }
+
+      .story-headline {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        text-shadow: none;
+      }
+
+      .story-body { font-size: 0.9rem; }
     }
 
     /* ======================================================
