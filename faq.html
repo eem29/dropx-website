@@ -24,7 +24,7 @@
   <style>
     :root {
       --color-bg: #0a0a0a; --color-surface: #111111; --color-text: #ffffff;
-      --color-text-muted: #9a9a9a; --color-accent: #E8763F;
+      --color-text-muted: #9a9a9a; --color-accent: #00C8FF;
       --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Inter', system-ui, sans-serif;
       --panorama-max: 1520px;
     }
@@ -69,7 +69,7 @@
     .faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
     .faq-q { font-family: var(--font-display); font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 800; letter-spacing: -0.01em; color: var(--color-text); margin-bottom: 0.75rem; line-height: 1.1; }
     .faq-a { font-family: var(--font-body); font-size: 0.9rem; line-height: 1.68; color: rgba(255,255,255,0.6); }
-    .faq-a a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid rgba(232,118,63,0.35); transition: border-color 0.2s ease; }
+    .faq-a a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid rgba(0,200,255,0.35); transition: border-color 0.2s ease; }
     .faq-a a:hover { border-color: var(--color-accent); }
 
     .site-footer { background: var(--color-bg); border-top: 1px solid rgba(255,255,255,0.07); }
@@ -90,7 +90,7 @@
       .nav.open { background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
       .nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem 1.5rem 1.5rem; gap: 1.5rem; background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,0.07); }
       .nav.open .nav-links a { display: block; padding: 0.5rem 0.75rem; margin: -0.5rem -0.75rem; border-radius: 6px; transition: background 0.12s ease, color 0.12s ease, transform 0.1s ease; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-      .nav.open .nav-links a.is-pressed { background: rgba(232,118,63,0.18); color: var(--color-accent); transform: scale(0.95); }
+      .nav.open .nav-links a.is-pressed { background: rgba(0,200,255,0.18); color: var(--color-accent); transform: scale(0.95); }
       .nav-hamburger:active { transform: scale(0.85); opacity: 0.65; }
     }
   

@@ -6,11 +6,11 @@
 
 Define as CSS custom properties inside :root {} on every page.
 Never introduce a color not listed here. Derive all tints, overlays, and hover states from these values only.
-Confirm exact cyan hex by colour-picking Drop_X_Horiz_-_White_-_PNG.webp.
+Cyan picked from the logo X (Drop X Horiz - White - PNG.webp).
 
 ```css
 :root {
-  --color-accent:        #00BFFF;  /* cyan — the X in the logo — confirm exact hex */
+  --color-accent:        #00C8FF;  /* cyan, the X in the logo */
   --color-text:          #FFFFFF;
   --color-text-muted:    #999999;
   --color-bg:            #000000;  /* pure black — matches logo background */
