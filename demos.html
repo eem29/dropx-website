@@ -72,9 +72,9 @@
     .copy-block { background: var(--color-bg); padding: 100px 0; }
     .copy-block-inner { max-width: 760px; margin: 0 auto; padding: 0 3rem; }
     .copy-lead { font-family: var(--font-display); font-size: clamp(1.8rem, 3.2vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: var(--color-text); margin-bottom: 1.5rem; }
-    /* Apply at all viewports - photo-strip already provides visual separation */
-    .photo-strip + .copy-block { padding-top: 0; }
-    @media (max-width: 767px) { .copy-block { padding: 36px 0; } .copy-block-inner { padding: 0 1.5rem; } .photo-strip + .copy-block { padding-top: 0; } }
+    /* Reduced top padding when following a photo strip (the photo already provides visual separation) */
+    .photo-strip + .copy-block { padding-top: 48px; }
+    @media (max-width: 767px) { .copy-block { padding: 36px 0; } .copy-block-inner { padding: 0 1.5rem; } .photo-strip + .copy-block { padding-top: 28px; } }
 
     /* ---- Photo strip ---- */
     .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); height: 60vh; min-height: 400px; }
