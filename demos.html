@@ -194,7 +194,7 @@
       <div class="copy-block-inner">
         <span class="section-eyebrow reveal">What we deliver</span>
         <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(2rem, 3.5vw, 3.5rem);" id="demos-deliver">From flags to full productions.</h2>
-        <p class="section-body reveal reveal-d2" style="margin-bottom: 1.25rem;">We jump with whatever you need. Custom sponsor banners, national flags, and oversized displays into the heart of your event. From Super Rugby to waterfront festivals, we plan every jump around your event schedule and landing zone.</p>
+        <p class="section-body reveal reveal-d2" style="margin-bottom: 1.25rem;">We jump with whatever you need. Custom sponsor banners, national flags, and oversized displays into the heart of your event. From stadium openings to A&P shows and festivals, we plan every jump around your event schedule and landing zone.</p>
         <p class="section-body reveal reveal-d2">We work directly with event producers to handle the approach, timing, and airspace coordination. You don't need to know anything about skydiving. We take care of it.</p>
       </div>
     </section>
@@ -203,16 +203,7 @@
       <div class="clients-inner">
         <span class="section-eyebrow reveal">Past clients</span>
         <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(1.8rem, 3vw, 3rem);" id="demos-clients">We've done this before.</h2>
-        <div class="clients-grid reveal reveal-d2">
-          <div class="client-item">
-            <p class="client-name">Blues Rugby</p>
-            <p class="client-desc">Super Rugby, Eden Park</p>
-          </div>
-          <div class="client-item">
-            <p class="client-name">Go Media</p>
-            <p class="client-desc">Stadium and event productions</p>
-          </div>
-        </div>
+        <div class="clients-grid reveal reveal-d2" id="clients-grid" aria-busy="true"></div>
       </div>
     </section>
 
@@ -278,6 +269,43 @@
         hamburger.setAttribute('aria-label', 'Open menu');
       });
     });
+    (async function loadDemoClients() {
+      const grid = document.getElementById('clients-grid');
+      if (!grid) return;
+      const fallback = [
+        { name: 'Auckland FC', context: 'Ball delivery, Go Media Stadium' },
+        { name: 'Canterbury A&P Show' },
+        { name: 'Magicland Festival' }
+      ];
+      const renderClient = c => {
+        const item = document.createElement('div');
+        item.className = 'client-item';
+        const name = document.createElement('p');
+        name.className = 'client-name';
+        name.textContent = c.name;
+        item.appendChild(name);
+        if (c.context) {
+          const desc = document.createElement('p');
+          desc.className = 'client-desc';
+          desc.textContent = c.context;
+          item.appendChild(desc);
+        }
+        return item;
+      };
+      let clients = fallback;
+      try {
+        const res = await fetch('content/jump.json', { cache: 'no-cache' });
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data.demoClients) && data.demoClients.length) {
+            clients = data.demoClients;
+          }
+        }
+      } catch (_) {}
+      grid.replaceChildren(...clients.map(renderClient));
+      grid.setAttribute('aria-busy', 'false');
+    })();
+
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.15 });
