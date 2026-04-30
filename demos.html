@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Jumps | Skydive DropX</title>
-  <meta name="description" content="Display skydiving by Skydive DropX. Custom flags, sponsor banners, and the New Zealand flag delivered into stadiums, waterfront events, and civic openings across New Zealand.">
+  <meta name="description" content="Display skydiving by Skydive DropX. Custom flags and banners delivered into stadiums, showgrounds, and festivals. We work with NZ's leading event producers.">
   <meta property="og:title" content="Demo Jumps | Skydive DropX">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skydivedropx.com/demos.html">
@@ -77,15 +77,6 @@
     .photo-strip-cell { overflow: hidden; }
     .photo-strip-cell img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
     @media (max-width: 767px) { .photo-strip { grid-template-columns: 1fr; height: auto; } .photo-strip-cell { height: 50vw; min-height: 220px; } .photo-strip-cell:nth-child(1), .photo-strip-cell:nth-child(2) { display: none; } }
-
-    /* ---- Clients ---- */
-    .clients-section { background: var(--color-surface); padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .clients-inner { max-width: 760px; margin: 0 auto; padding: 0 3rem; }
-    .clients-grid { display: flex; gap: 3rem; flex-wrap: wrap; margin-top: 2.5rem; }
-    .client-item { border-left: 2px solid var(--color-accent); padding-left: 1.25rem; }
-    .client-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--color-text); line-height: 1; margin-bottom: 0.35rem; }
-    .client-desc { font-family: var(--font-body); font-size: 0.8rem; color: var(--color-text-muted); }
-    @media (max-width: 767px) { .clients-section { padding: 56px 0; } .clients-inner { padding: 0 1.5rem; } }
 
     /* ---- Enquire CTA ---- */
     .enquire-section { position: relative; height: 70vh; min-height: 480px; overflow: hidden; background: var(--color-bg); }
@@ -174,7 +165,7 @@
       <div class="copy-block-inner">
         <span class="section-eyebrow reveal">What we do</span>
         <p class="copy-lead reveal reveal-d1" id="demos-intro">A skydiver landing in your event doesn't just open the show, it makes it.</p>
-        <p class="section-body reveal reveal-d2">Custom flags, sponsor banners, or the New Zealand flag delivered into stadiums, waterfront events, and civic openings. We work with event organisers to plan the approach, the timing, and the moment. Professional, reliable, and built to be the highlight of the day.</p>
+        <p class="section-body reveal reveal-d2">Custom flags, sponsor banners, and the New Zealand flag delivered into stadiums, showgrounds, and festivals. We handle the approach, timing, and airspace. You handle the event.</p>
       </div>
     </section>
 
@@ -190,20 +181,11 @@
       </div>
     </div>
 
-    <section class="copy-block" aria-labelledby="demos-deliver">
+    <section class="copy-block" aria-labelledby="demos-credibility">
       <div class="copy-block-inner">
-        <span class="section-eyebrow reveal">What we deliver</span>
-        <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(2rem, 3.5vw, 3.5rem);" id="demos-deliver">From flags to full productions.</h2>
-        <p class="section-body reveal reveal-d2" style="margin-bottom: 1.25rem;">We jump with whatever you need. Custom sponsor banners, national flags, and oversized displays into the heart of your event. From stadium openings to A&P shows and festivals, we plan every jump around your event schedule and landing zone.</p>
-        <p class="section-body reveal reveal-d2">We work directly with event producers to handle the approach, timing, and airspace coordination. You don't need to know anything about skydiving. We take care of it.</p>
-      </div>
-    </section>
-
-    <section class="clients-section" aria-labelledby="demos-clients">
-      <div class="clients-inner">
-        <span class="section-eyebrow reveal">Past clients</span>
-        <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(1.8rem, 3vw, 3rem);" id="demos-clients">We've done this before.</h2>
-        <div class="clients-grid reveal reveal-d2" id="clients-grid" aria-busy="true"></div>
+        <span class="section-eyebrow reveal">Who we work with</span>
+        <h2 class="section-headline reveal reveal-d1" style="font-size: clamp(2rem, 3.5vw, 3.5rem);" id="demos-credibility">We work with NZ's leading event producers.</h2>
+        <p class="section-body reveal reveal-d2">Active partnership with Switch It Up Events. We plan every jump around your event schedule and landing zone. You don't need to know anything about skydiving. We take care of it.</p>
       </div>
     </section>
 
@@ -269,43 +251,6 @@
         hamburger.setAttribute('aria-label', 'Open menu');
       });
     });
-    (async function loadDemoClients() {
-      const grid = document.getElementById('clients-grid');
-      if (!grid) return;
-      const fallback = [
-        { name: 'Auckland FC', context: 'Ball delivery, Go Media Stadium' },
-        { name: 'Canterbury A&P Show' },
-        { name: 'Magicland Festival' }
-      ];
-      const renderClient = c => {
-        const item = document.createElement('div');
-        item.className = 'client-item';
-        const name = document.createElement('p');
-        name.className = 'client-name';
-        name.textContent = c.name;
-        item.appendChild(name);
-        if (c.context) {
-          const desc = document.createElement('p');
-          desc.className = 'client-desc';
-          desc.textContent = c.context;
-          item.appendChild(desc);
-        }
-        return item;
-      };
-      let clients = fallback;
-      try {
-        const res = await fetch('content/jump.json', { cache: 'no-cache' });
-        if (res.ok) {
-          const data = await res.json();
-          if (Array.isArray(data.demoClients) && data.demoClients.length) {
-            clients = data.demoClients;
-          }
-        }
-      } catch (_) {}
-      grid.replaceChildren(...clients.map(renderClient));
-      grid.setAttribute('aria-busy', 'false');
-    })();
-
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.15 });

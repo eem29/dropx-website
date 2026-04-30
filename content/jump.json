@@ -25,7 +25,7 @@
     {
       "id": "demo-jumps",
       "name": "Demo Jumps",
-      "description": "Jumpers carry large custom flags and banners into events and stadiums. We work with New Zealand's leading event producers, with an active partnership through Switch It Up Events. Recent openings include Auckland FC at Go Media Stadium, the Canterbury A&P Show, and Magicland Festival.",
+      "description": "Jumpers carry large custom flags and banners into events and stadiums. We work with NZ's leading event producers, with an active partnership through Switch It Up Events.",
       "available": true
     },
     {
@@ -42,10 +42,5 @@
       "available": false,
       "coming_soon": "Spring 2026"
     }
-  ],
-  "demoClients": [
-    { "name": "Auckland FC", "context": "Ball delivery, Go Media Stadium" },
-    { "name": "Canterbury A&P Show" },
-    { "name": "Magicland Festival" }
   ]
 }
