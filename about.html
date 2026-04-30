@@ -231,6 +231,16 @@
       .about-hl-bottom { font-size: clamp(2.5rem, 12vw, 4rem); }
     }
 
+    /* Mobile-only subtle scroll hint - fades out once user scrolls */
+    .hero-scroll-hint { display: none; }
+    @media (max-width: 767px) {
+      .hero-scroll-hint { display: block; position: absolute; left: 50%; bottom: 1.25rem; z-index: 10; color: rgba(255,255,255,0.55); pointer-events: none; opacity: 1; transition: opacity 0.4s ease; animation: scrollHintBounce 2.4s ease-in-out infinite; }
+      .hero-scroll-hint.is-hidden { opacity: 0; }
+      .hero-scroll-hint svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.45)); }
+      @keyframes scrollHintBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
+    }
+    @media (max-width: 767px) and (prefers-reduced-motion: reduce) { .hero-scroll-hint { animation: none; transform: translateX(-50%); } }
+
     /* ======================================================
        FULL-BLEED STORY SECTIONS
     ====================================================== */
@@ -603,6 +613,9 @@
         <span class="about-hl-bottom">Want more.</span>
       </h1>
     </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
   </section>
 
   <!-- SECTION 2: THE STORY - community photo, text bottom-left -->
@@ -736,6 +749,7 @@
     } else {
       reveals.forEach(el => el.classList.add('is-visible'));
     }
+    (function(){ var h=document.querySelector('.hero-scroll-hint'); if(!h)return; var hide=function(){ if(window.scrollY>30){ h.classList.add('is-hidden'); window.removeEventListener('scroll',hide); } }; window.addEventListener('scroll',hide,{passive:true}); })();
   </script>
 
 </body>
