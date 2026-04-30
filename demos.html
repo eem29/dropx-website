@@ -51,6 +51,8 @@
     .reveal.is-visible { opacity: 1; transform: translateY(0); }
     .reveal-d1 { transition-delay: 0.1s; } .reveal-d2 { transition-delay: 0.2s; } .reveal-d3 { transition-delay: 0.3s; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+    /* Mobile: skip the fade-in and render content immediately so sections never look empty mid-scroll. */
+    @media (max-width: 767px) { .reveal { opacity: 1; transform: none; transition: none; } }
 
     .amber-btn { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--color-accent); color: #fff; text-decoration: none; padding: 0.875rem 2rem; display: inline-block; transition: background 0.2s ease; }
     .amber-btn:hover { background: #00A0CC; }
@@ -64,7 +66,7 @@
     .page-hero-headline { font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 0.9; color: var(--color-text); text-transform: uppercase; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
     @keyframes contentRise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     @media (prefers-reduced-motion: reduce) { .page-hero-content { animation: none; } }
-    @media (max-width: 767px) { .page-hero-content { left: 1.5rem; right: 1.5rem; bottom: 8%; max-width: none; } .page-hero-headline { font-size: clamp(3rem, 12vw, 5rem); } }
+    @media (max-width: 767px) { .page-hero { height: 75vh; min-height: 500px; } .page-hero-content { left: 1.5rem; right: 1.5rem; bottom: 8%; max-width: none; } .page-hero-headline { font-size: clamp(3rem, 12vw, 5rem); } }
 
     /* ---- Copy blocks ---- */
     .copy-block { background: var(--color-bg); padding: 100px 0; }
