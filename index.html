@@ -372,6 +372,10 @@
         z-index: 2;
       }
 
+      /* No localized backdrop behind text/CTAs on mobile -
+         headline carries its own text-shadow, CTAs read on the photo. */
+      .hero-content::before { display: none; }
+
       .hero {
         height: 100vh;
         min-height: 600px;
