@@ -1,0 +1,6 @@
+name = "dropx-contact"
+main = "src/index.js"
+compatibility_date = "2026-04-30"
+
+# Secrets (do not put values in this file):
+#   wrangler secret put RESEND_API_KEY

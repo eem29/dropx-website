@@ -6,6 +6,11 @@
 screenshots/
 node_modules/
 
+# Worker secrets and build artefacts
+worker/.dev.vars
+worker/.wrangler/
+worker/dist/
+
 # Large raw photo library — use dropx-images-web/ for web-optimised versions
 Photos/
 
