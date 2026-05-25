@@ -22,6 +22,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-1-final.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-2-final.webp" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-3-final.webp" fetchpriority="high">
   <style>
     :root {
       --color-bg:         #0a0a0a;
@@ -1369,9 +1372,18 @@
 
       <!-- Panorama: contains panels AND hero-content so text sits over photos -->
       <div class="panorama" id="hero-panorama">
-        <img class="panel panel-1" src="dropx-images-web/hero-photos/hero-panel-1-final.png" alt="">
-        <img class="panel panel-2" src="dropx-images-web/hero-photos/hero-panel-2-final.png" alt="">
-        <img class="panel panel-3" src="dropx-images-web/hero-photos/hero-panel-3-final.png" alt="">
+        <picture>
+          <source type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-1-final.webp">
+          <img class="panel panel-1" src="dropx-images-web/hero-photos/hero-panel-1-final.png" width="2150" height="1528" alt="" fetchpriority="high">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-2-final.webp">
+          <img class="panel panel-2" src="dropx-images-web/hero-photos/hero-panel-2-final.png" width="2150" height="1528" alt="" fetchpriority="high">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-3-final.webp">
+          <img class="panel panel-3" src="dropx-images-web/hero-photos/hero-panel-3-final.png" width="2150" height="1528" alt="" fetchpriority="high">
+        </picture>
 
         <div class="hero-content">
           <span class="hero-eyebrow">Christchurch, New Zealand</span>

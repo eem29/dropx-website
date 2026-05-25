@@ -33,8 +33,11 @@ dropx-images-web/Drop X hero 831.png
 dropx-images-web/_originals-before-resize/
 dropx-images-web/conversion-report.txt
 
-# Hero-photos working files — only the three final panel PNGs are needed
+# Hero-photos working files — only the three final panels (PNG fallback + WebP) are needed
 dropx-images-web/hero-photos/*
 !dropx-images-web/hero-photos/hero-panel-1-final.png
 !dropx-images-web/hero-photos/hero-panel-2-final.png
 !dropx-images-web/hero-photos/hero-panel-3-final.png
+!dropx-images-web/hero-photos/hero-panel-1-final.webp
+!dropx-images-web/hero-photos/hero-panel-2-final.webp
+!dropx-images-web/hero-photos/hero-panel-3-final.webp
