@@ -106,3 +106,53 @@
   };
   DX.wireBooking(document);
 })();
+
+// ---- Shared renderers for tandem content (homepage + tandem page) ----
+(function () {
+  'use strict';
+  var DX = window.DX, esc = DX.esc, URL_T = '/content/tandem.json';
+
+  DX.renderAltitudes = function (el) {
+    return DX.render(URL_T, el, function (t) {
+      return (t.altitudes || []).map(function (a, i) {
+        return '<article class="glass alt-card reveal reveal-d' + Math.min(i + 1, 3) + (a.popular ? ' glass--hi' : '') + '">' +
+          (a.popular && a.note ? '<span class="alt-badge">' + esc(a.note) + '</span>' : '') +
+          DX.phTag(a.placeholder) +
+          '<span class="card-kicker">Tandem skydive</span>' +
+          '<h3 class="card-title">' + esc(a.feet) + '</h3>' +
+          '<p class="alt-freefall">' + esc(a.freefall) + '</p>' +
+          '<p class="card-price"><small>From</small>' + esc(a.price) + '</p>' +
+          '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.feet) + '</a>' +
+        '</article>';
+      }).join('');
+    });
+  };
+
+  DX.renderMediaRows = function (el, introEl) {
+    return DX.render(URL_T, el, function (t) {
+      var m = t.media || {};
+      if (introEl && m.intro) introEl.textContent = m.intro;
+      return (m.packages || []).map(function (p, i) {
+        return '<li class="glass media-row reveal reveal-d' + Math.min(i + 1, 3) + (p.popular ? ' glass--hi' : '') + '">' +
+          '<span><span class="media-row-name">' + esc(p.name) + '</span><span class="media-row-tag">' + esc(p.tag) + '</span></span>' +
+          '<span class="card-price">' + (p.placeholder ? '<span class="ph-tag" style="margin:0 0.6rem 0 0">Placeholder</span>' : '') + esc(p.price) + '</span>' +
+        '</li>';
+      }).join('');
+    });
+  };
+
+  DX.renderDay = function (el, durationEl) {
+    return DX.render(URL_T, el, function (t) {
+      var d = t.day || {};
+      if (durationEl && d.duration) durationEl.innerHTML = esc(d.duration) + '.' + (d.placeholder ? ' ' + DX.phTag(true) : '');
+      return (d.steps || []).map(function (s, i) {
+        return '<li class="day-tile">' +
+          '<img src="' + esc(s.image) + '" alt="' + esc(s.alt) + '" width="800" height="533" loading="lazy">' +
+          '<div class="day-tile-text"><span class="day-num">0' + (i + 1) + '</span>' +
+          '<h3 class="day-title">' + esc(s.title) + '</h3>' +
+          '<p class="day-body">' + esc(s.body) + '</p></div>' +
+        '</li>';
+      }).join('');
+    });
+  };
+})();
