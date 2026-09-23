@@ -30,20 +30,56 @@
   "requirements": {
     "placeholder": true,
     "items": [
-      { "label": "Age", "value": "12+", "detail": "Under 18s need a parent or guardian to sign on the day." },
-      { "label": "Weight", "value": "Up to 100kg", "detail": "Over 95kg? Call us before you book so we can match you with the right instructor." },
-      { "label": "Health", "value": "Tell us first", "detail": "Let us know about any medical conditions, recent injuries, or pregnancy before you book." },
-      { "label": "Shoes", "value": "Laced sneakers", "detail": "Closed shoes that stay on. No boots, sandals or jandals." }
+      {
+        "label": "Age",
+        "value": "12+",
+        "detail": "Under 18s need a parent or guardian to sign on the day."
+      },
+      {
+        "label": "Weight",
+        "value": "Up to 100kg",
+        "detail": "Over 95kg? Call us before you book so we can match you with the right instructor."
+      },
+      {
+        "label": "Health",
+        "value": "Tell us first",
+        "detail": "Let us know about any medical conditions, recent injuries, or pregnancy before you book."
+      },
+      {
+        "label": "Shoes",
+        "value": "Laced sneakers",
+        "detail": "Closed shoes that stay on. No boots, sandals or jandals."
+      }
     ]
   },
   "day": {
     "duration": "Allow about 3 hours at the drop zone",
     "placeholder": true,
     "steps": [
-      { "title": "Check in", "body": "Arrive at the drop zone, sign your forms and meet your instructor.", "image": "dropx-images-web/tandem/tandem-118-tile.webp", "alt": "Tandem instructor and customer with hand signals on the landing field" },
-      { "title": "Gear up", "body": "Get fitted in your harness and run through the briefing on the ground. It takes about 20 minutes.", "image": "dropx-images-web/tandem/tandem-64-tile.webp", "alt": "Tandem pair leaving the aircraft under the wing" },
-      { "title": "Freefall", "body": "Climb to altitude, exit the aircraft and fall at around 200km/h with the plains and coast below you.", "image": "dropx-images-web/tandem/tandem-122-tile.webp", "alt": "Smiling tandem customer in freefall above the Canterbury hills" },
-      { "title": "Land", "body": "Your instructor opens the parachute and flies you back to the field. You can help steer.", "image": "dropx-images-web/tandem/tandem-13-tile.webp", "alt": "Tandem customer celebrating with the instructor after landing" }
+      {
+        "title": "Check in",
+        "body": "Arrive at the drop zone, sign your forms and meet your instructor.",
+        "image": "dropx-images-web/tandem/tandem-118-tile.webp",
+        "alt": "Tandem instructor and customer with hand signals on the landing field"
+      },
+      {
+        "title": "Gear up",
+        "body": "Get fitted in your harness and run through the briefing on the ground. It takes about 20 minutes.",
+        "image": "dropx-images-web/tandem/tandem-64-tile.webp",
+        "alt": "Tandem pair leaving the aircraft under the wing"
+      },
+      {
+        "title": "Freefall",
+        "body": "Climb to altitude, exit the aircraft and fall at around 200km/h with the plains and coast below you.",
+        "image": "dropx-images-web/tandem/tandem-122-tile.webp",
+        "alt": "Smiling tandem customer in freefall above the Canterbury hills"
+      },
+      {
+        "title": "Land",
+        "body": "Your instructor opens the parachute and flies you back to the field. You can help steer.",
+        "image": "dropx-images-web/tandem/tandem-137-tile.webp",
+        "alt": "Tandem customer walking back in from the landing area with the instructor"
+      }
     ]
   },
   "jump_days": "Weekends, weather permitting",
@@ -66,7 +102,12 @@
         "tag": "Instructor camera",
         "price": "NZ$179",
         "popular": false,
-        "includes": ["Filmed on your instructor's wrist camera", "Close-up view of your face in freefall", "Edited video and photos", "Sent to you by download link"],
+        "includes": [
+          "Filmed on your instructor's wrist camera",
+          "Close-up view of your face in freefall",
+          "Edited video and photos",
+          "Sent to you by download link"
+        ],
         "image": "dropx-images-web/tandem/tandem-105-tile.webp",
         "alt": "Close-up handcam shot of a tandem customer in freefall against a blue sky",
         "placeholder": true
@@ -76,7 +117,12 @@
         "tag": "Outside camera",
         "price": "NZ$279",
         "popular": false,
-        "includes": ["A second skydiver films you from outside", "Your exit, freefall and parachute opening", "Edited video and photos", "Sent to you by download link"],
+        "includes": [
+          "A second skydiver films you from outside",
+          "Your exit, freefall and parachute opening",
+          "Edited video and photos",
+          "Sent to you by download link"
+        ],
         "image": "dropx-images-web/tandem/tandem-125-tile.webp",
         "alt": "Camera flyer filming a tandem pair over the Canterbury coast",
         "placeholder": true
@@ -86,7 +132,12 @@
         "tag": "Handcam and camera flyer",
         "price": "NZ$379",
         "popular": true,
-        "includes": ["Everything in Handcam and Camera flyer", "Two angles of the same jump", "Edited video and full photo set", "Sent to you by download link"],
+        "includes": [
+          "Everything in Handcam and Camera flyer",
+          "Two angles of the same jump",
+          "Edited video and full photo set",
+          "Sent to you by download link"
+        ],
         "image": "dropx-images-web/tandem/tandem-8-tile.webp",
         "alt": "Tandem customer making a heart with their hands in freefall at sunset",
         "placeholder": true
