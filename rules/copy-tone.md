@@ -4,15 +4,17 @@
 
 ## Brand
 
-Skydive DropX is a sport and club drop zone for licensed jumpers near Canterbury, New Zealand.
-Not yet a commercial tandem operation. Community-first, run by jumpers for jumpers.
+Skydive DropX is a commercial drop zone in Canterbury, New Zealand (from September 2026).
+Tandem skydiving is the main product. AFF (learn to skydive) is second. The sport/club side
+(fun jumps, coaching, demos, Messenger community) stays on the site but is not the lead.
 Owner: Ben Johnstone — ben@skydivedropx.com / (027) 2929951
 
 ---
 
 ## Tone
 
-Direct and community-first. Written by a jumper for jumpers, not a tourist brochure.
+Direct, plain and professional. Written for first-timers booking a tandem, by people who jump.
+Still not a tourist brochure: be specific (altitudes, times, what happens) instead of hyping it.
 Photography does the heavy lifting. Copy supports it — it does not try to replace it.
 Be specific and plain. If in doubt, use fewer words.
 
@@ -28,26 +30,18 @@ Be specific and plain. If in doubt, use fewer words.
 
 ---
 
-## What DropX Is Right Now
+## What DropX Offers (commercial, from Sept 2026)
 
-Sport and club drop zone for licensed jumpers.
-- Jump ticket: NZ$65 per jump, 12,000ft
-- Activities: fun jumping, canopy coaching, freefly coaching, demo jumps
-- Community coordination happens via Facebook Messenger group (https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link)
+- Tandem skydiving: altitudes, prices, requirements, day steps, location in content/tandem.json
+- Photo and video: Handcam / Camera flyer / Both, in content/tandem.json → media
+- Gift vouchers, booking terms (content/terms.json)
+- AFF course: content/aff.json
+- Sport jumping for licensed jumpers: NZ$65, 12,000ft, Messenger group (jump.html)
+- Demo jumps (demos.html)
 
-**Demo jumps** are a proper commercial offering, not a side note.
-Jumpers carry large custom flags/banners into events and stadiums.
-Active partnership with Switch It Up Events. Past clients: the Blues (Super Rugby) and Go Media.
-Feature this properly on the Jump page.
-
----
-
-## Coming Soon (Spring 2026)
-
-- Tandem skydiving (commercial)
-- AFF (Accelerated Freefall — learn to skydive)
-
-Reference as "coming soon, Spring 2026" across the site. Do not hide it, do not make it the focus.
+Anything marked "placeholder": true in content JSON shows a visible PLACEHOLDER tag on the page
+until Ben confirms the value and unticks it in the CMS. Do not remove a placeholder flag without
+Ben's confirmed value.
 
 ---
 
@@ -58,7 +52,13 @@ Build the page with clear PLACEHOLDER markers. Do not invent copy about the Drop
 
 ---
 
-## FAQ — Confirmed Questions and Answers
+## FAQ
+
+Lives in content/faq.json as groups (Before you book / On the day / Safety and weather /
+Photo and video / Learn to skydive / Licensed jumpers). The club Q&As below sit under
+"Licensed jumpers".
+
+### Original club questions
 
 1. Can I learn to skydive here? — Yes, AFF coming soon Spring 2026, register interest via contact form
 2. Can I book a tandem? — Coming soon Spring 2026, register interest
@@ -83,8 +83,8 @@ Build the page with clear PLACEHOLDER markers. Do not invent copy about the Drop
 - Social audit: 18 Instagram posts, 350+ Facebook followers. Real crew, action shots, no stock. Site should match this energy.
 - About blurb outstanding from Ben — build page with placeholder, do not invent the story
 - CMS must be genuinely simple — FAQ and Events are priority collections
-- Out of scope: booking system, gift vouchers, e-commerce, blog, member login
-- FareHarbor slots in later (Spring 2026 tandem/AFF launch) — Jump page structure should make this easy to add
+- Out of scope: e-commerce, blog, member login
+- Booking system: provider not yet named by Ben. Every Book button reads content/site.json → booking.*_url. Until then they point to the contact form enquiry.
 - No em dashes anywhere, ever
 
 ---
@@ -94,4 +94,4 @@ Build the page with clear PLACEHOLDER markers. Do not invent copy about the Drop
 - Title format: "[Page description] | Skydive DropX"
 - Include "DropX" or "Skydive DropX" in every page title (50-60 chars)
 - Meta descriptions: 150-160 chars
-- Key terms: "skydive", "Canterbury", "drop zone", "licensed jumpers", "demo jumps"
+- Key terms: "tandem skydive", "Canterbury", "Christchurch", "learn to skydive", "gift voucher", "drop zone"

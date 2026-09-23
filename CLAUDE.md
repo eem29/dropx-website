@@ -5,7 +5,7 @@
 ## Project
 
 - Business: Skydive DropX
-- Type: Sport drop zone / club — community site (not commercial booking yet)
+- Type: Commercial drop zone (tandem first, AFF second) with the sport/club side kept secondary
 - Track: Phases 0-8 only
 - Domain: skydivedropx.com (confirm DNS location with Ben before Plausible)
 - Repo: create github.com/eem29/dropx-website on first session
@@ -30,22 +30,32 @@ At the start of every session, before writing any code:
 
 ## Pages
 
-- index.html         — Homepage
-- about.html         — About DropX / the people / why it was set up (PLACEHOLDER — waiting on Ben's blurb)
-- jump.html          — Jump With Us (sport jumping, coaching, demos, coming soon teaser)
-- events.html        — Upcoming events calendar
-- community.html     — Facebook Messenger group / how the community works
-- faq.html           — FAQ (managed via CMS)
-- contact.html       — Contact form
+- index.html         — Homepage (tandem-first)
+- tandem.html        — Tandem skydiving: altitudes, prices, requirements, the day, location
+- media.html         — Photo and video packages
+- learn.html         — Learn to skydive (AFF)
+- vouchers.html      — Gift vouchers
+- terms.html         — Booking terms (content from terms.json)
+- faq.html           — FAQ (grouped, CMS-managed)
+- contact.html       — Contact + tandem booking enquiry form (?topic=tandem|voucher|aff)
+- about.html         — About DropX
+- jump.html          — Sport jumping (licensed jumpers)
+- demos.html         — Demo jumps
 - thank-you.html     — Form submission confirmation
 - 404.html           — Not found
 - admin/index.html   — Decap CMS admin panel
 
 Content files:
-- content/faq.json         — FAQ questions and answers
-- content/events.json      — Upcoming events
-- content/jump.json        — Jump ticket prices, altitudes, coaching types
-- content/site.json        — Global: nav, footer, social links, Facebook group URL
+- content/site.json    — Booking links, nav, footer, social, reviews
+- content/tandem.json  — Altitudes, prices, requirements, day steps, location, camera packages
+- content/aff.json     — AFF course
+- content/faq.json     — FAQ groups
+- content/terms.json   — Booking terms
+- content/jump.json    — Sport jumping ticket + activities
+- content/events.json  — Events (unused)
+
+Photos: raw tandem originals in `SDX Tandems/` (gitignored). Web versions in `dropx-images-web/tandem/`
+as tandem-N.webp (desktop), tandem-N-mobile.webp (portrait crop), tandem-N-tile.webp (800w).
 
 ---
 
@@ -87,12 +97,12 @@ Format: short imperative sentence.
 - Do not add sections or content not in this brief
 - Do not write tourist copy ("epic", "thrill of a lifetime", "unforgettable")
 - Do not use em dashes anywhere
-- Do not add FareHarbor or any booking system
+- Do not hardcode booking URLs: every Book link uses data-book and content/site.json → booking
 - Do not use transition-all
 - Do not use default Tailwind blue or indigo as primary color
 - Do not hardcode content that should come from JSON
 - Do not use a <div> where a semantic element belongs
 - Do not add an image over 500KB without flagging it
 - Do not commit with a vague message
-- Do not invent copy for the About page — placeholder only
+- Do not invent prices, limits or policies: keep them in JSON with "placeholder": true until Ben confirms
 - Do not stop after one screenshot pass

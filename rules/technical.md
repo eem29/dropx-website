@@ -4,8 +4,10 @@
 
 ## Output Defaults
 
-- Single .html file per page, all styles inline in a <style> block
-- Tailwind CSS loaded via CDN
+- One .html file per page. Shared tokens, nav, footer, buttons and section patterns live in css/site.css
+  and js/site.js (added for the commercial build: 13 pages share the nav with the Book button).
+  Page-specific styles stay in an inline <style> block loaded after css/site.css.
+- Tailwind CDN only on 404.html and thank-you.html (legacy)
 - Mobile-first responsive
 - Breakpoints: 375px (mobile) / 768px (tablet) / 1280px (desktop)
 - Placeholder images: https://placehold.co/WIDTHxHEIGHT
@@ -17,11 +19,11 @@
 - **Domain:** skydivedropx.com — confirm DNS location with Ben before enabling Plausible
 - **Repo:** create github.com/eem29/dropx-website on first session
 - **Contact form (Web3Forms):** NOT YET — set up before building contact form, submits to ben@skydivedropx.com
-- **CMS (Decap):** configure for faq.json, events.json, jump.json — Ben manages these himself
+- **CMS (Decap):** collections for faq, tandem, aff, terms, site, jump, events — Ben manages these himself
 - **CMS auth:** Cloudflare Access — no third-party login required
 - **Analytics (Plausible):** NOT YET — add after domain is confirmed with Ben
 - **Facebook Messenger:** https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link
-- **FareHarbor:** NOT YET — added when tandem/AFF launches Spring 2026, do not build toward it now
+- **Booking:** provider TBC (Ben). All Book links use `data-book="tandem|vouchers|aff"` and are rewired by js/site.js from content/site.json → booking. Change the URL there, not in pages.
 
 ---
 
@@ -37,7 +39,10 @@ Content files:
 - content/faq.json         — FAQ questions and answers
 - content/events.json      — Upcoming events
 - content/jump.json        — Jump ticket prices, altitudes, coaching types
-- content/site.json        — Global: nav, footer, social links, Facebook group URL
+- content/site.json        — Global: booking links, nav, footer, social links, reviews
+content/tandem.json      — Tandem altitudes, prices, requirements, day steps, location, camera packages
+content/aff.json         — AFF course intro, price, stages
+content/terms.json       — Booking terms sections
 
 ---
 
@@ -80,3 +85,11 @@ Add to every page automatically:
 - Every form input has a visible <label>
 - Every clickable element has hover, focus-visible, and active states
 - Focus order follows visual order — no tabindex above 0
+
+---
+
+## Background images in inline styles
+
+Section backgrounds are set with CSS custom properties on the section, e.g.
+`style="--bg: url('/dropx-images-web/tandem/tandem-7.webp')"`. Use root-absolute paths (leading /):
+a relative url() inside a custom property resolves against css/site.css, not the page.
