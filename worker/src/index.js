@@ -13,8 +13,15 @@ const ALLOWED_ORIGINS = [
 const RESEND_FROM = 'DropX Contact <forms@send.skydivedropx.com>';
 const RESEND_TO = ['ben@skydivedropx.com'];
 
+// Cloudflare Pages branch previews, e.g. https://commercial.dropx-website.pages.dev
+const PREVIEW_ORIGIN = /^https:\/\/[a-z0-9-]+\.dropx-website\.pages\.dev$/;
+
+function isAllowedOrigin(origin) {
+  return ALLOWED_ORIGINS.includes(origin) || PREVIEW_ORIGIN.test(origin);
+}
+
 function corsHeaders(origin) {
-  const allowed = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  const allowed = isAllowedOrigin(origin) ? origin : ALLOWED_ORIGINS[0];
   return {
     'Access-Control-Allow-Origin': allowed,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
