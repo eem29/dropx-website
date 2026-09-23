@@ -1,0 +1,12 @@
+{
+  "intro": "AFF (Accelerated Freefall) is the fastest way to become a licensed skydiver. You jump from your first day, with instructors in the air beside you until you can fly on your own.",
+  "status": "Registrations open now. Tell us you're keen and we'll send you the next course dates.",
+  "price": "Course price to confirm",
+  "placeholder": true,
+  "stages": [
+    { "title": "Ground school", "body": "A full day on the ground covering the aircraft, exits, body position, your parachute and emergency procedures." },
+    { "title": "Levels 1 to 3", "body": "Two instructors jump with you and hold on while you practise stable freefall and pull your own parachute." },
+    { "title": "Levels 4 to 7", "body": "One instructor flies with you as you learn turns, forward movement, flips and solo exits." },
+    { "title": "Consolidation", "body": "Solo jumps with a coach to build experience and canopy skills towards your licence." }
+  ]
+}

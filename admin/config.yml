@@ -27,19 +27,28 @@ collections:
   - name: "faq"
     label: "FAQ"
     label_singular: "FAQ Item"
-    description: "Frequently asked questions shown on the FAQ page."
+    description: "Frequently asked questions shown on the FAQ page, in groups."
     files:
       - name: "faq"
         label: "FAQ Questions"
         file: "content/faq.json"
         fields:
-          - label: "FAQ Items"
-            name: "faqs"
+          - label: "Groups"
+            name: "groups"
             widget: "list"
-            label_singular: "Question"
+            label_singular: "Group"
+            summary: "{{fields.title}}"
             fields:
-              - { label: "Question", name: "question", widget: "string" }
-              - { label: "Answer",   name: "answer",   widget: "text" }
+              - { label: "Group title", name: "title", widget: "string" }
+              - label: "Questions"
+                name: "faqs"
+                widget: "list"
+                label_singular: "Question"
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Answer",   name: "answer",   widget: "text" }
+                  - { label: "Still a placeholder? (untick once confirmed)", name: "placeholder", widget: "boolean", default: false, required: false }
 
   # ── EVENTS ───────────────────────────────────────────────────────────────
   - name: "events"
@@ -86,3 +95,186 @@ collections:
               - { label: "Description",  name: "description", widget: "text" }
               - { label: "Available",    name: "available",   widget: "boolean", default: true }
               - { label: "Coming Soon (e.g. Spring 2026)", name: "coming_soon", widget: "string", required: false }
+
+  # ── TANDEM ────────────────────────────────────────────────────────────────
+  - name: "tandem"
+    label: "Tandem"
+    description: "Tandem altitudes, prices, requirements, the day, location and camera packages. Untick 'Still a placeholder?' once each part is confirmed."
+    files:
+      - name: "tandem"
+        label: "Tandem Details"
+        file: "content/tandem.json"
+        fields:
+          - label: "Altitudes"
+            name: "altitudes"
+            widget: "list"
+            label_singular: "Altitude"
+            summary: "{{fields.feet}} {{fields.price}}"
+            fields:
+              - { label: "Altitude", name: "feet", widget: "string", hint: "e.g. 12,000ft" }
+              - { label: "Freefall", name: "freefall", widget: "string", hint: "e.g. About 45 seconds of freefall" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g. NZ$379" }
+              - { label: "Label", name: "note", widget: "string", required: false, hint: "e.g. Most popular" }
+              - { label: "Highlight this one", name: "popular", widget: "boolean", default: false, required: false }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - label: "What's included"
+            name: "includes"
+            widget: "object"
+            fields:
+              - { label: "Items", name: "items", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - label: "Who can jump"
+            name: "requirements"
+            widget: "object"
+            fields:
+              - label: "Requirements"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.label}}: {{fields.value}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+                  - { label: "Detail", name: "detail", widget: "text" }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - label: "How the day works"
+            name: "day"
+            widget: "object"
+            fields:
+              - { label: "Duration", name: "duration", widget: "string" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "body", widget: "text" }
+                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Photo description", name: "alt", widget: "string" }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - { label: "Jump days", name: "jump_days", widget: "string" }
+          - label: "Location"
+            name: "location"
+            widget: "object"
+            fields:
+              - { label: "Area", name: "area", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Directions and parking", name: "directions", widget: "text" }
+              - { label: "Spectators", name: "spectators", widget: "text" }
+              - { label: "Google Maps link", name: "map_url", widget: "string", required: false }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - label: "Photo and video"
+            name: "media"
+            widget: "object"
+            fields:
+              - { label: "Intro", name: "intro", widget: "text" }
+              - { label: "Delivery", name: "delivery", widget: "text" }
+              - { label: "Own camera note", name: "own_camera", widget: "text" }
+              - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+              - label: "Packages"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} {{fields.price}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Highlight this one", name: "popular", widget: "boolean", default: false, required: false }
+                  - { label: "Includes", name: "includes", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Photo description", name: "alt", widget: "string" }
+                  - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+
+  # ── AFF ───────────────────────────────────────────────────────────────────
+  - name: "aff"
+    label: "Learn to Skydive (AFF)"
+    files:
+      - name: "aff"
+        label: "AFF Course"
+        file: "content/aff.json"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Status line", name: "status", widget: "text" }
+          - { label: "Price", name: "price", widget: "string" }
+          - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - label: "Course stages"
+            name: "stages"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "body", widget: "text" }
+
+  # ── BOOKING TERMS ─────────────────────────────────────────────────────────
+  - name: "terms"
+    label: "Booking Terms"
+    files:
+      - name: "terms"
+        label: "Booking Terms"
+        file: "content/terms.json"
+        fields:
+          - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+          - { label: "Last updated", name: "updated", widget: "string", required: false, hint: "e.g. October 2026" }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "body", widget: "text" }
+
+  # ── SITE SETTINGS ─────────────────────────────────────────────────────────
+  - name: "site"
+    label: "Site Settings"
+    description: "Booking links, contact details, social links and reviews."
+    files:
+      - name: "site"
+        label: "Site Settings"
+        file: "content/site.json"
+        fields:
+          - label: "Booking"
+            name: "booking"
+            widget: "object"
+            hint: "Every Book button on the site uses these links."
+            fields:
+              - { label: "Booking system name", name: "provider", widget: "string", required: false }
+              - { label: "Tandem booking link", name: "tandem_url", widget: "string" }
+              - { label: "Gift voucher link", name: "vouchers_url", widget: "string" }
+              - { label: "AFF booking link", name: "aff_url", widget: "string" }
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+          - label: "Social"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Messenger group link", name: "facebook_messenger", widget: "string" }
+              - { label: "Instagram link", name: "instagram", widget: "string" }
+          - label: "Reviews"
+            name: "reviews"
+            widget: "object"
+            hint: "The homepage reviews section stays hidden until at least one review is added."
+            fields:
+              - { label: "Rating (e.g. 5.0)", name: "rating", widget: "string", required: false }
+              - { label: "Source (e.g. Google)", name: "source", widget: "string", required: false }
+              - { label: "Link to all reviews", name: "url", widget: "string", required: false }
+              - label: "Reviews"
+                name: "items"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Quote", name: "quote", widget: "text" }
+                  - { label: "Name", name: "name", widget: "string" }

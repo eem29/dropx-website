@@ -31,16 +31,14 @@
     {
       "id": "tandem",
       "name": "Tandem Skydiving",
-      "description": "Commercial tandem operation launching Spring 2026.",
-      "available": false,
-      "coming_soon": "Spring 2026"
+      "description": "Tandem skydives for first-timers, strapped to one of our instructors. See the tandem page for altitudes and prices.",
+      "available": true
     },
     {
       "id": "aff",
       "name": "AFF",
-      "description": "Accelerated Freefall: learn to skydive. Launching Spring 2026.",
-      "available": false,
-      "coming_soon": "Spring 2026"
+      "description": "Accelerated Freefall: learn to skydive, from ground school to your licence.",
+      "available": true
     }
   ]
 }

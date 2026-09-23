@@ -1,0 +1,12 @@
+{
+  "placeholder": true,
+  "updated": "",
+  "sections": [
+    { "title": "Bookings and payment", "body": "How payment works (deposit or full payment, and when it is taken) to confirm with Ben." },
+    { "title": "Weather", "body": "We only jump in safe conditions. If weather stops jumping on your booked day, we will move your booking to another day at no cost, or refund you if no suitable day works." },
+    { "title": "Changes and cancellations", "body": "Notice periods and refund amounts for customer cancellations to confirm with Ben. Other NZ operators commonly refund in full with 48 hours notice, 50% with 24 to 48 hours notice, and nothing with less than 24 hours." },
+    { "title": "Weight, age and health", "body": "Tandem customers must meet the weight, age and health requirements on the tandem page. We may need to cancel on the day if these are not met, and will talk to you first if you are unsure." },
+    { "title": "Gift vouchers", "body": "Voucher validity period and transfer rules to confirm with Ben." },
+    { "title": "Photo and video", "body": "Footage is filmed at the instructor's discretion and depends on conditions. Delivery method and timing to confirm with Ben." }
+  ]
+}
