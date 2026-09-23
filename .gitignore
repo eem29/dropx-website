@@ -44,3 +44,6 @@ dropx-images-web/hero-photos/*
 !dropx-images-web/hero-photos/hero-panel-1-final-mobile.webp
 !dropx-images-web/hero-photos/hero-panel-2-final-mobile.webp
 !dropx-images-web/hero-photos/hero-panel-3-final-mobile.webp
+
+# Raw tandem photo originals (600MB) — use dropx-images-web/tandem/ for web versions
+SDX Tandems/
