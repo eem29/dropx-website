@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canterbury's Sport Drop Zone | Skydive DropX</title>
-  <meta name="description" content="Skydive DropX is Canterbury's home for progression, community, and serious jumping. Fun jumping, sport coaching, and display skydiving from Christchurch, NZ.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tandem Skydiving in Canterbury, NZ | Skydive DropX</title>
+  <meta name="description" content="Tandem skydiving over the Canterbury Plains and coast with Skydive DropX. No experience needed. Photo and video packages, gift vouchers, and learn to skydive.">
   <link rel="canonical" href="https://skydivedropx.com/">
-  <meta property="og:title" content="Canterbury's Sport Drop Zone | Skydive DropX">
-  <meta property="og:description" content="Skydive DropX is Canterbury's home for progression, community, and serious jumping. Fun jumping, sport coaching, and display skydiving from Christchurch.">
+  <meta property="og:title" content="Tandem Skydiving in Canterbury, NZ | Skydive DropX">
+  <meta property="og:description" content="Tandem skydiving over the Canterbury Plains and coast. No experience needed. Photo and video packages, gift vouchers, and learn to skydive.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skydivedropx.com/">
   <meta property="og:site_name" content="Skydive DropX">
@@ -17,40 +18,28 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Canterbury's Sport Drop Zone | Skydive DropX">
-  <meta name="twitter:description" content="Skydive DropX is Canterbury's home for progression, community, and serious jumping. Fun jumping, sport coaching, and display skydiving from Christchurch.">
+  <meta name="twitter:title" content="Tandem Skydiving in Canterbury, NZ | Skydive DropX">
+  <meta name="twitter:description" content="Tandem skydiving over the Canterbury Plains and coast. No experience needed. Photo and video packages, gift vouchers, and learn to skydive.">
   <meta name="twitter:image" content="https://skydivedropx.com/og-image.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
+    "@type": ["SportsActivityLocation", "TouristAttraction"],
     "name": "Skydive DropX",
     "url": "https://skydivedropx.com/",
     "logo": "https://skydivedropx.com/assets/images/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp",
     "image": "https://skydivedropx.com/og-image.jpg",
-    "description": "Canterbury's sport drop zone. Fun jumping, sport coaching, and display skydiving from Christchurch, New Zealand.",
+    "description": "Tandem skydiving, learn to skydive (AFF), and sport jumping in Canterbury, New Zealand.",
     "telephone": "+64-27-292-9951",
     "email": "ben@skydivedropx.com",
-    "areaServed": {
-      "@type": "AdministrativeArea",
-      "name": "Canterbury, New Zealand"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "Canterbury",
-      "addressCountry": "NZ"
-    },
+    "areaServed": { "@type": "AdministrativeArea", "name": "Canterbury, New Zealand" },
+    "address": { "@type": "PostalAddress", "addressRegion": "Canterbury", "addressCountry": "NZ" },
     "sport": "Skydiving",
+    "touristType": "Adventure",
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "description": "Weekends only, weather permitting"
-      }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "description": "Weekends, weather permitting" }
     ],
-    "sameAs": [
-      "https://instagram.com/skydivedropx"
-    ]
+    "sameAs": ["https://instagram.com/skydivedropx"]
   }
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -60,1523 +49,327 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-1-final.webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-2-final.webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/hero-photos/hero-panel-3-final.webp" media="(min-width: 768px)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/Drop%20X%20Opening%202026-49-1-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/tandem/tandem-7.webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="dropx-images-web/tandem/tandem-7-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="stylesheet" href="css/site.css">
   <style>
-    :root {
-      --color-bg:         #0a0a0a;
-      --color-surface:    #111111;
-      --color-text:       #ffffff;
-      --color-text-muted: #9a9a9a;
-      --color-accent:     #00C8FF;
-      --font-display:     'Barlow Condensed', sans-serif;
-      --font-body:        'Inter', system-ui, sans-serif;
-      --panorama-max:     1520px;
+    /* ---- Hero ---- */
+    .hero { min-height: 100vh; }
+    .hero .fb-bg { animation: heroSettle 1.8s var(--ease-out) both; }
+    @keyframes heroSettle { from { transform: scale(1.06); } to { transform: scale(1); } }
+    .hero-overlay {
+      background:
+        linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 20%),
+        linear-gradient(to top, rgba(10,10,10,0.72) 0%, rgba(10,10,10,0.3) 28%, transparent 50%),
+        radial-gradient(ellipse 55% 60% at 0% 100%, rgba(10,10,10,0.55) 0%, transparent 70%);
     }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      overflow-x: hidden;
-    }
-
-    /* ---- Film grain (fixed, site-wide) ---- */
-    .grain {
-      position: fixed;
-      inset: 0;
-      z-index: 9998;
-      pointer-events: none;
-      opacity: 0.038;
-    }
-
-    /* ---- NAV ---- */
-    /* Padding uses max() so the logo/links sit over photo content
-       even at viewports wider than the 1520px panorama max-width. */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-      padding-left:  max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      padding-right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      transition: background 0.35s ease, padding-top 0.35s ease, padding-bottom 0.35s ease, border-color 0.35s ease;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav.scrolled {
-      background: rgba(10, 10, 10, 0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      padding-top: 0.875rem;
-      padding-bottom: 0.875rem;
-      border-bottom-color: rgba(255, 255, 255, 0.07);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .nav-logo img {
-      display: block;
-      height: 90px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-family: var(--font-display);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover { color: var(--color-text); }
-
-    .nav-links a:focus-visible {
-      color: var(--color-text);
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-
-    .nav-links a:active { opacity: 0.65; }
-
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--color-text);
-      padding: 0.25rem;
-      line-height: 0;
-     transition: transform 0.18s ease, opacity 0.18s ease; }
-
-    .nav-hamburger:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-
+    .hero .fb-content { padding-bottom: 9vh; animation: contentRise 1s 0.5s var(--ease-out) both; }
+    .hero-eyebrow { text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .hero-headline { font-family: var(--font-display); line-height: 1; margin-bottom: var(--s-3); text-shadow: 0 2px 24px rgba(0,0,0,0.35); }
+    .hero-headline-top { display: block; font-size: clamp(1rem, 2.2vw, 2rem); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.9; margin-bottom: 0.1em; }
+    .hero-headline-bottom { display: block; font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 800; letter-spacing: -0.02em; line-height: 0.9; text-transform: uppercase; }
+    .hero-sub { font-size: clamp(0.9rem, 1.15vw, 1.05rem); line-height: 1.65; color: rgba(255,255,255,0.88); max-width: 440px; margin-bottom: var(--s-4); text-shadow: 0 2px 16px rgba(0,0,0,0.5); }
+    @media (prefers-reduced-motion: reduce) { .hero .fb-bg, .hero .fb-content { animation: none; } }
     @media (max-width: 767px) {
-      .nav {
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-      .nav.scrolled {
-        padding-top: 0.875rem;
-        padding-bottom: 0.875rem;
-      }
-      .nav-links { display: none; }
-      .nav-hamburger { display: block; }
+      .hero { min-height: 100svh; }
+      .hero .fb-content { padding-bottom: 4.5rem; }
+      .hero-headline-top { font-size: clamp(0.8rem, 3.6vw, 1rem); letter-spacing: 0.15em; margin-bottom: 0.25rem; }
+      .hero-headline-bottom { font-size: clamp(3rem, 15vw, 4.75rem); }
+      .hero-sub { font-size: 0.9rem; }
     }
 
-    /* ======================================================
-       HERO - Approach A
-       Panorama maintains 2150:1528 aspect ratio, max 1520px wide.
-       All three panels stacked absolutely; transparent areas form triptych.
-       object-fit: contain preserves panel alignment - do NOT use cover.
-       Hero-content sits inside .panorama so left/bottom percentages
-       are relative to the photo canvas, not the viewport.
-    ====================================================== */
-
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-      background: var(--color-bg);
-    }
-
-    .stage {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    /* Panorama: fixed aspect ratio, max 1520px wide, centred vertically and horizontally */
-    .panorama {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: var(--panorama-max);
-      aspect-ratio: 2150 / 1528;
-    }
-
-    /* All panels stack in the same position.
-       Transparent areas in the PNGs create the diagonal triptych.
-       Do NOT change object-fit to cover - it breaks panel alignment. */
-    .panel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    /* Panels visible by default. JS adds .panels-go to trigger slide-in.
-       panel-3 uses left: -15px + wider width to close the gap with panel-2
-       without creating a new gap on the right edge. */
-    .panel-1 { z-index: 1; }
-    .panel-2 { z-index: 2; }
-    /* panel-3 uses cover (not contain) so the wider container fills edge-to-edge */
-    .panel-3 { z-index: 3; left: -15px; width: calc(100% + 15px); object-fit: cover; }
-
-    .panels-go .panel-1,
-    .panels-go .panel-2,
-    .panels-go .panel-3 {
-      animation: panelZoomOut 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards;
-    }
-
-    /* Scale-only - no opacity fade - so panels stay visible in screenshots */
-    @keyframes panelZoomOut {
-      from { transform: scale(1.08); }
-      to   { transform: scale(1);    }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .panels-go .panel-1,
-      .panels-go .panel-2,
-      .panels-go .panel-3 { animation: none; }
-    }
-
-    /* ── HERO CONTENT - inside .panorama so positioning is
-       relative to the photo canvas, not the viewport ── */
-    .hero-content {
-      position: absolute;
-      bottom: 5%;
-      left: 3%;
-      z-index: 10;
-      max-width: min(52%, 680px);
-      padding-bottom: 1.5rem;
-      animation: contentRise 1.0s 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
-    }
-
-    .hero-content::before {
-      content: '';
-      position: absolute;
-      inset: -1rem -3rem 0.5rem -1.5rem;
-      background: radial-gradient(ellipse at bottom left,
-        rgba(10, 10, 10, 0.6) 0%,
-        rgba(10, 10, 10, 0.3) 45%,
-        transparent 68%
-      );
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      margin-bottom: 1.25rem;
-      display: block;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-headline {
-      font-family: var(--font-display);
-      font-weight: 800;
-      line-height: 1;
-      color: var(--color-text);
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.1em;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-headline-top {
-      font-size: clamp(1rem, 2.2vw, 2rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-
-    .hero-headline-bottom {
-      font-size: clamp(3.5rem, 10vw, 9rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 0.9;
-      text-transform: uppercase;
-    }
-
-    .hero-subhead {
-      font-family: var(--font-body);
-      font-size: clamp(0.75rem, 1.05vw, 0.875rem);
-      font-weight: 400;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 380px;
-      margin-bottom: 2rem;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-arrow {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45em;
-      transition: color 0.2s ease;
-    }
-
-    .cta-arrow:hover { color: var(--color-accent); }
-
-    .cta-arrow:focus-visible {
-      color: var(--color-accent);
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-
-    .cta-arrow:active { opacity: 0.7; }
-
-    @keyframes contentRise {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-content { animation: none; }
-    }
-
-    /* hidden on desktop, activated in mobile media query below */
-    .hero-mobile-gradient { display: none; }
-
-    /* ── MOBILE < 768px: photo 49 full-bleed, text bottom-right in open sky ── */
-    @media (max-width: 767px) {
-      /* Super-subtle left edge fade only (~1/3 width, virtually invisible).
-         Bottom-up gradient removed - CTAs and text don't need it. */
-      .hero-mobile-gradient {
-        display: block;
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(
-            to top,
-            rgba(10, 10, 10, 0.65) 0%,
-            rgba(10, 10, 10, 0.35) 30%,
-            transparent 60%
-          ),
-          linear-gradient(
-            to right,
-            rgba(10, 10, 10, 0.10),
-            rgba(10, 10, 10, 0) 33%
-          );
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      /* No localized backdrop behind text/CTAs on mobile -
-         headline carries its own text-shadow, CTAs read on the photo. */
-      .hero-content::before { display: none; }
-
-      .hero {
-        height: 100vh;
-        min-height: 600px;
-      }
-
-      .stage { height: 100%; }
-
-      /* panorama = photo 49-1 full-bleed */
-      .panorama {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        aspect-ratio: auto;
-        transform: none;
-        left: 0;
-        margin: 0;
-        background-image: url('dropx-images-web/Drop%20X%20Opening%202026-49-1-mobile.webp');
-        background-size: cover;
-        background-position: center;
-      }
-
-      .panel-1, .panel-2, .panel-3 { display: none; }
-
-      /* Fix 1 cont. - kill localised radial behind text */
-      .hero-content::before { content: none; }
-
-      /* Fix 2 - left-align, anchor bottom-left, breathe inside the gradient */
-      .hero-content {
-        left: 5%;
-        right: auto;
-        bottom: 3%;
-        max-width: 85vw;
-        text-align: left;
-        padding: 0 0 0.75rem 0;
-        z-index: 5;
-      }
-
-      .hero-eyebrow   { text-align: left; }
-      .hero-subhead   { text-align: left; }
-
-      /* Fix 3 - bigger headline, tight typographic block */
-      .hero-headline-top {
-        font-size: clamp(0.75rem, 3vw, 1rem);
-        letter-spacing: 0.15em;
-        margin-bottom: 0.25rem;
-        display: block;
-      }
-      .hero-headline-bottom {
-        font-size: clamp(2.5rem, 14vw, 4.5rem);
-        line-height: 0.9;
-      }
-
-      /* Fix 4 - restore CTAs, left-aligned */
-      .hero-ctas {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        margin-top: 1.25rem;
-      }
-
-      /* Fix 5 - smaller, readable subhead */
-      .hero-subhead {
-        font-size: 13px;
-        line-height: 1.6;
-        max-width: 90%;
-        margin-bottom: 1.5rem;
-      }
-
-      /* Subtle scroll hint - fades out once user scrolls */
-      .hero-scroll-hint { display: block; position: absolute; left: 50%; bottom: 4rem; z-index: 10; color: rgba(255,255,255,0.55); pointer-events: none; opacity: 1; transition: opacity 0.4s ease; animation: scrollHintBounce 2.4s ease-in-out infinite; }
-      .hero-scroll-hint.is-hidden { opacity: 0; }
-      .hero-scroll-hint svg { display: block; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.45)); }
-      @keyframes scrollHintBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
-    }
-    @media (min-width: 768px) { .hero-scroll-hint { display: none; } }
-    @media (max-width: 767px) and (prefers-reduced-motion: reduce) { .hero-scroll-hint { animation: none; transform: translateX(-50%); } }
-
-    /* ======================================================
-       SHARED PATTERNS - used across multiple sections
-    ====================================================== */
-
-    .section-eyebrow {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .section-headline {
-      font-family: var(--font-display);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      color: var(--color-text);
-      margin-bottom: 1.25rem;
-      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-    }
-
-    .section-body {
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-size: clamp(0.875rem, 1.1vw, 1rem);
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.75rem;
-    }
-
-    .arrow-link {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45em;
-      transition: color 0.2s ease;
-    }
-
-    .arrow-link:hover { color: var(--color-accent); }
-
-    .arrow-link:focus-visible {
-      color: var(--color-accent);
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-      border-radius: 2px;
-    }
-
-    .arrow-link:active { opacity: 0.7; }
-
-    /* Scroll reveal - on intersection, element fades in and rises */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-    }
-
-    /* ======================================================
-       SECTION 2 - STAT STRIP
-    ====================================================== */
-
-    .stat-strip {
-      background: var(--color-bg);
-      padding: 44px 0;
-    }
-
-    .stat-strip-inner {
-      max-width: var(--panorama-max);
-      margin: 0 auto;
-      padding: 0 3rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat-item {
-      padding: 0 2rem;
-      position: relative;
-      text-align: center;
-    }
-
-    .stat-item + .stat-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8%;
-      height: 84%;
-      width: 1px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .stat-eyebrow {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      display: block;
-      margin-bottom: 0.875rem;
-    }
-
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: clamp(1.5rem, 2.8vw, 2.8rem);
-      font-weight: 800;
-      line-height: 1;
-      color: var(--color-text);
-      display: block;
-    }
-
+    /* ---- Proof strip ---- */
+    .stat-strip { background: var(--color-bg); padding: 44px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .stat-strip-inner { max-width: var(--panorama-max); margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; }
+    .stat-item { padding: 0 2rem; position: relative; text-align: center; }
+    .stat-item + .stat-item::before { content: ''; position: absolute; left: 0; top: 8%; height: 84%; width: 1px; background: rgba(255,255,255,0.08); }
+    .stat-eyebrow { font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); display: block; margin-bottom: 0.875rem; }
+    .stat-value { font-family: var(--font-display); font-size: clamp(1.5rem, 2.8vw, 2.8rem); font-weight: 800; line-height: 1; display: block; }
     @media (max-width: 767px) {
       .stat-strip { padding: 28px 0; }
-
-      .stat-strip-inner {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 1.5rem;
-        row-gap: 1.75rem;
-      }
-
+      .stat-strip-inner { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem; row-gap: 1.75rem; }
       .stat-item { padding: 0 1rem; }
-
-      /* dividers: show only between col 1+2 and col 3+4 */
       .stat-item:nth-child(odd)::before { display: none; }
     }
 
-    /* ======================================================
-       SECTION 3 - FUN JUMPING
-    ====================================================== */
+    /* ---- Altitude cards ---- */
+    .alt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--s-3); margin: var(--s-4) 0; }
+    .alt-card { padding: 1.75rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .alt-card .card-title { font-size: clamp(2.4rem, 3.6vw, 3.4rem); }
+    .alt-freefall { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .alt-card .amber-btn { margin-top: 0.5rem; align-self: flex-start; font-size: 13px; }
+    .alt-card .ph-tag { align-self: flex-start; margin: 0; }
+    .alt-badge { position: absolute; top: -0.7rem; right: 1rem; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; background: var(--color-accent); color: #fff; padding: 0.3em 0.7em; border-radius: 3px; }
 
-    .fun-jumping {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
+    /* ---- Media summary ---- */
+    .media-rows { list-style: none; display: grid; gap: 0.75rem; margin: var(--s-3) 0 var(--s-4); width: 100%; max-width: 520px; }
+    .media-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; text-align: left; }
+    .media-row-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; line-height: 1; display: block; }
+    .media-row-tag { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+    .media-row .card-price { font-size: 1.4rem; white-space: nowrap; }
+
+    /* ---- The day: photo tiles ---- */
+    .day { position: relative; background: var(--color-bg); }
+    .day-head { position: absolute; top: 0; left: 0; right: 0; z-index: 5; padding: var(--s-6) var(--edge) 0; pointer-events: none; }
+    .day-head .section-headline { margin-bottom: 0.5rem; }
+    .day-head .section-body { max-width: 460px; margin-bottom: 0; }
+    .day-grid { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); min-height: 100vh; }
+    .day-tile { position: relative; overflow: hidden; min-height: 60vh; }
+    .day-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+    .day-tile:hover img { transform: scale(1.04); }
+    .day-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.35) 38%, transparent 60%), linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, transparent 38%); }
+    .day-tile-text { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 2rem 1.75rem 2.5rem; }
+    .day-num { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--color-accent); display: block; margin-bottom: 0.5rem; }
+    .day-title { font-family: var(--font-display); font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; letter-spacing: -0.01em; line-height: 1; margin-bottom: 0.6rem; }
+    .day-body { font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.8); }
+    .day-book { pointer-events: auto; margin-top: var(--s-3); }
+    @media (max-width: 1023px) {
+      .day-grid { grid-template-columns: repeat(2, 1fr); }
+      .day-tile { min-height: 70vh; }
     }
-
-    .fun-jumping-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-85.webp');
-      background-size: cover;
-      background-position: center 40%;
-    }
-
-    .fun-jumping-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        115deg,
-        rgba(10, 10, 10, 0.75) 0%,
-        rgba(10, 10, 10, 0.45) 32%,
-        rgba(10, 10, 10, 0.1) 55%,
-        transparent 70%
-      );
-    }
-
-    .fun-jumping-content {
-      position: absolute;
-      bottom: 10%;
-      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 520px;
-    }
-
-    .fj-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
-
-    .fj-details {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-      font-family: var(--font-display);
-      font-size: clamp(0.9rem, 1.3vw, 1.1rem);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .fj-details strong {
-      font-size: clamp(1.25rem, 2.2vw, 2rem);
-      font-weight: 800;
-      color: var(--color-accent);
-      display: block;
-      line-height: 1;
-    }
-
-    .fj-detail {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2em;
-    }
-
-    .fj-detail-divider {
-      width: 1px;
-      height: 2.5rem;
-      background: rgba(255, 255, 255, 0.2);
-      flex-shrink: 0;
-    }
-
-    .fj-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6em;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #ffffff;
-      text-decoration: none;
-      background: linear-gradient(135deg, #00B2FF 0%, #0068FF 100%);
-      padding: 0.85em 1.75em;
-      border-radius: 4px;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    .fj-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-    .fj-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
-    .fj-btn:active { opacity: 0.75; transform: none; }
-
     @media (max-width: 767px) {
-      .fun-jumping { height: 80vh; }
-
-      .fun-jumping-overlay {
-        background: linear-gradient(
-          to right,
-          rgba(10, 10, 10, 0.32),
-          rgba(10, 10, 10, 0)
-        );
-      }
-
-      .fun-jumping-content {
-        left: 1.5rem;
-        right: 1.5rem;
-        max-width: none;
-        bottom: 8%;
-        text-shadow: 0 1px 10px rgba(0,0,0,0.85), 0 2px 20px rgba(0,0,0,0.5);
-      }
-
-      /* Buttons handle their own contrast - the inherited text-shadow
-         was bleeding through the cyan fill and darkening it. */
-      .fun-jumping-content .amber-btn,
-      .fun-jumping-content .ghost-btn,
-      .fun-jumping-content .fj-btn { text-shadow: none; }
-
-      .fj-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
-      .fj-detail-divider { display: none; }
+      .day-head { position: relative; padding: 3.5rem 1.5rem 1.5rem; }
+      .day-grid { grid-template-columns: 1fr; min-height: 0; }
+      .day-tile { min-height: 72vw; }
+      .day-tile::after { background: linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.3) 50%, transparent 75%); }
+      .day-tile-text { padding: 1.5rem; }
     }
 
-    /* ======================================================
-       SECTION 5 - AFF / LEARN TO SKYDIVE
-    ====================================================== */
+    /* ---- Reviews ---- */
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--s-3); margin-bottom: var(--s-4); }
+    .review { padding: 1.5rem; }
+    .review blockquote { font-size: 0.95rem; line-height: 1.65; color: rgba(255,255,255,0.88); margin-bottom: 1rem; }
+    .review cite { font-style: normal; font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); }
 
-    .aff {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
-
-    .aff-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-98-1.webp');
-      background-size: cover;
-      background-position: center 35%;
-    }
-
-    .aff-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        -115deg,
-        rgba(10, 10, 10, 0.80) 0%,
-        rgba(10, 10, 10, 0.50) 35%,
-        rgba(10, 10, 10, 0.12) 60%,
-        transparent 75%
-      );
-    }
-
-    .aff-content {
-      position: absolute;
-      bottom: 10%;
-      right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 520px;
-      text-align: right;
-    }
-
-    .aff-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
-
-    .aff-announcement {
-      margin-top: 1.5rem;
-    }
-
-    .aff-coming-label {
-      display: block;
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--color-accent);
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .aff-coming-sub {
-      display: block;
-      font-family: var(--font-body);
-      font-size: clamp(0.9rem, 1.2vw, 1rem);
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.65);
-      letter-spacing: 0.02em;
-      margin-bottom: 1.25rem;
-    }
-
-    @media (max-width: 767px) {
-      .aff { height: 100vh; }
-
-      .aff-overlay {
-        background: linear-gradient(
-          to right,
-          rgba(10, 10, 10, 0.32),
-          rgba(10, 10, 10, 0)
-        );
-      }
-
-      .aff-content {
-        right: 1.5rem;
-        left: 1.5rem;
-        max-width: none;
-        text-align: left;
-        bottom: auto;
-        top: 55%;
-        transform: translateY(-50%);
-        text-shadow: 0 1px 10px rgba(0,0,0,0.85), 0 2px 20px rgba(0,0,0,0.5);
-      }
-
-      .aff-content .amber-btn,
-      .aff-content .ghost-btn,
-      .aff-content .cta-arrow { text-shadow: none; }
-
-      .aff-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
-      .aff-coming-label { font-size: clamp(1.2rem, 6vw, 1.8rem); }
-    }
-
-    /* ======================================================
-       SECTION 6 - DEMOS
-    ====================================================== */
-
-    .demos {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
-
-    .demos-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/IMG_3595.webp');
-      background-size: cover;
-      background-position: center 40%;
-    }
-
-    .demos-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        ellipse 65% 65% at 0% 100%,
-        rgba(10, 10, 10, 0.72) 0%,
-        rgba(10, 10, 10, 0.38) 45%,
-        transparent 68%
-      );
-    }
-
-    .demos-content {
-      position: absolute;
-      bottom: 10%;
-      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 500px;
-    }
-
-    .demos-headline { font-size: clamp(3rem, 6.5vw, 7rem); }
-
-    .demos-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 767px) {
-      .demos { height: 80vh; }
-
-      .demos-overlay {
-        background: linear-gradient(to top, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.52) 35%, transparent 65%);
-      }
-
-      .demos-content {
-        left: 1.5rem;
-        right: 1.5rem;
-        max-width: none;
-        bottom: 8%;
-      }
-
-      .demos-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
-    }
-
-    /* ======================================================
-       SECTION 6 - COMMUNITY
-    ====================================================== */
-
-    .community {
-      position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    .community-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-142.webp');
-      background-size: cover;
-      background-position: 20% center;
-    }
-
-    .community-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        115deg,
-        rgba(10, 10, 10, 0.82) 0%,
-        rgba(10, 10, 10, 0.52) 35%,
-        rgba(10, 10, 10, 0.12) 58%,
-        transparent 72%
-      );
-    }
-
-    .community-content {
-      position: absolute;
-      bottom: 10%;
-      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 500px;
-      text-align: left;
-    }
-
-    .community-headline { font-size: clamp(2.5rem, 7vw, 7.5rem); }
-
-    .community-content .section-eyebrow {
-      font-size: clamp(0.95rem, 1.4vw, 1.2rem);
-      letter-spacing: 0.12em;
-      margin-bottom: 1rem;
-    }
-
-    .amber-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5em;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #ffffff;
-      text-decoration: none;
-      background: var(--color-accent);
-      padding: 0.85em 1.75em;
-      border-radius: 4px;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-    .amber-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-    .amber-btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
-    .amber-btn:active { opacity: 0.75; transform: none; }
-
-    /* Ghost button - community CTA only */
-    .ghost-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5em;
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text);
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      padding: 0.75em 1.5em;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .ghost-btn:hover {
-      background: var(--color-text);
-      color: var(--color-bg);
-      border-color: var(--color-text);
-    }
-
-    .ghost-btn:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 4px;
-    }
-
-    .ghost-btn:active { opacity: 0.8; }
-
-    @media (max-width: 767px) {
-      .community-bg {
-        background-position: 55% center;
-      }
-
-      .community-overlay {
-        background: linear-gradient(
-          to right,
-          rgba(10, 10, 10, 0.32),
-          rgba(10, 10, 10, 0)
-        );
-      }
-
-      .community-content {
-        bottom: 8%;
-        left: 1.5rem;
-        right: auto;
-        text-align: left;
-        max-width: calc(100vw - 3rem);
-        text-shadow: 0 1px 10px rgba(0,0,0,0.85), 0 2px 20px rgba(0,0,0,0.5);
-      }
-
-      .community-content .amber-btn,
-      .community-content .ghost-btn { text-shadow: none; }
-
-      .community-headline { font-size: clamp(2.5rem, 9vw, 4.5rem); }
-    }
-
-    /* ======================================================
-       SECTION 7 - DREAM FACTORY BEAT
-    ====================================================== */
-
-    .dream-factory {
-      background: var(--color-bg);
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 1.5rem;
-      text-align: center;
-    }
-
-    .dream-factory-headline {
-      font-family: var(--font-display);
-      font-size: clamp(4rem, 14vw, 12rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      line-height: 0.9;
-      color: var(--color-accent);
-      margin-bottom: 2rem;
-    }
-
-    .dream-factory-body {
-      font-family: var(--font-body);
-      font-size: clamp(0.875rem, 1.1vw, 1rem);
-      font-weight: 400;
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 500px;
-    }
-
-    /* ======================================================
-       SECTION 8 - TANDEM / AFF
-    ====================================================== */
-
-    .tandem {
-      position: relative;
-      height: 70vh;
-      min-height: 520px;
-      overflow: hidden;
-    }
-
-    .tandem-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-50.webp');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .tandem-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(10, 10, 10, 0.55);
-    }
-
-    .tandem-content {
-      position: absolute;
-      bottom: 10%;
-      right: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 520px;
-      text-align: right;
-    }
-
-    .tandem-headline { font-size: clamp(2rem, 5.5vw, 6rem); }
-
-    @media (max-width: 767px) {
-      .tandem-content {
-        right: 1.5rem;
-        left: 1.5rem;
-        text-align: left;
-        bottom: 8%;
-        max-width: none;
-      }
-
-      .tandem-headline { font-size: clamp(2rem, 8vw, 3.5rem); }
-    }
-
-    /* ======================================================
-       SECTION 9 - CONTACT
-    ====================================================== */
-
-    .contact-section {
-      position: relative;
-      height: 80vh;
-      min-height: 560px;
-      overflow: hidden;
-    }
-
-    .contact-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('dropx-images-web/Drop%20X%20Opening%202026-144.webp');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .contact-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        115deg,
-        rgba(10, 10, 10, 0.72) 0%,
-        rgba(10, 10, 10, 0.42) 32%,
-        rgba(10, 10, 10, 0.08) 56%,
-        transparent 70%
-      );
-    }
-
-    .contact-content {
-      position: absolute;
-      bottom: 10%;
-      left: max(3rem, calc(50% - calc(var(--panorama-max) / 2) + 3rem));
-      z-index: 10;
-      max-width: 460px;
-    }
-
-    .contact-headline { font-size: clamp(3rem, 7vw, 7rem); }
-
-    .contact-details {
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .contact-details li {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.9;
-    }
-
-    .contact-details a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
+    /* ---- Contact ---- */
+    .contact-details { list-style: none; margin-bottom: var(--s-4); }
+    .contact-details li { font-size: 0.95rem; color: rgba(255,255,255,0.82); line-height: 1.9; }
+    .contact-details a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
     .contact-details a:hover { color: var(--color-text); }
-
-    .contact-ctas {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 767px) {
-      .contact-content {
-        left: 1.5rem;
-        right: 1.5rem;
-        max-width: none;
-        bottom: 8%;
-      }
-
-      .contact-headline { font-size: clamp(2.5rem, 9vw, 4rem); }
-    }
-
-    /* ======================================================
-       SECTION 10 - FOOTER
-    ====================================================== */
-
-    .site-footer {
-      background: var(--color-bg);
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      padding: 4.5rem 0 0;
-    }
-
-    .footer-inner {
-      max-width: var(--panorama-max);
-      margin: 0 auto;
-      padding: 0 3rem;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
-      gap: 2rem 3rem;
-      align-items: start;
-    }
-
-    .footer-brand img {
-      height: 36px;
-      width: auto;
-      display: block;
-      margin-bottom: 1.25rem;
-    }
-
-    .footer-address {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      line-height: 1.75;
-    }
-
-    .footer-address a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-address a:hover { color: var(--color-text); }
-
-    .footer-col-label {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.35);
-      margin-bottom: 1.1rem;
-      display: block;
-    }
-
-    .footer-nav-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-nav-links a {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-nav-links a:hover { color: var(--color-text); }
-
-    .footer-info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .footer-info-list li {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.5;
-    }
-
-    .footer-legal {
-      max-width: var(--panorama-max);
-      margin: 3rem auto 0;
-      padding: 1.5rem 3rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .footer-legal p {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.3);
-    }
-
-    @media (max-width: 767px) {
-      .footer-inner {
-        grid-template-columns: 1fr 1fr;
-        padding: 0 1.5rem;
-        gap: 2rem;
-      }
-
-      .footer-brand { grid-column: 1 / -1; }
-
-      .footer-legal {
-        padding: 1.5rem 1.5rem;
-      }
-    }
-    @media (max-width: 767px) {
-      .nav.open { background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
-      .nav.open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem 1.5rem 1.5rem; gap: 1.5rem; background: rgba(10,10,10,0.96); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,0.07); }
-      .nav.open .nav-links a { display: block; padding: 0.5rem 0.75rem; margin: -0.5rem -0.75rem; border-radius: 6px; transition: background 0.12s ease, color 0.12s ease, transform 0.1s ease; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-      .nav.open .nav-links a.is-pressed { background: rgba(0,200,255,0.18); color: var(--color-accent); transform: scale(0.95); }
-      .nav-hamburger:active { transform: scale(0.85); opacity: 0.65; }
-    }
-  
-    /* Bars-to-X animation */
-    .nav-hamburger svg rect {
-      transition: transform 0.26s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
-      transform-box: fill-box;
-      transform-origin: center;
-    }
-    .nav.open .nav-hamburger rect:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav.open .nav-hamburger rect:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav.open .nav-hamburger rect:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .contact-details a:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
   </style>
 </head>
 <body>
 
-  <!-- Film grain overlay (site-wide) -->
   <div class="grain" aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       <filter id="grain-filter" x="0%" y="0%" width="100%" height="100%">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.68 0.72"
-          numOctaves="4"
-          seed="2"
-          stitchTiles="stitch"
-        />
+        <feTurbulence type="fractalNoise" baseFrequency="0.68 0.72" numOctaves="4" seed="2" stitchTiles="stitch"/>
         <feColorMatrix type="saturate" values="0"/>
       </filter>
       <rect width="100%" height="100%" filter="url(#grain-filter)"/>
     </svg>
   </div>
 
-  <!-- Navigation (fixed, site-wide) -->
+  <!-- NAV -->
   <nav class="nav" id="main-nav" aria-label="Main navigation">
     <a href="index.html" class="nav-logo">
-      <img
-        src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
-        alt="Skydive DropX"
-        width="86"
-        height="34"
-      >
+      <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="86" height="34">
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="jump.html">Jump</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="demos.html">Demos</a></li>
+      <li><a href="tandem.html">Tandem</a></li>
+      <li><a href="media.html">Photo &amp; Video</a></li>
+      <li><a href="learn.html">Learn to Skydive</a></li>
       <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button
-      class="nav-hamburger"
-      aria-label="Open menu"
-      aria-expanded="false"
-    >
+    <a href="contact.html?topic=tandem#enquire" class="nav-book" data-book="tandem">Book now</a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true">
-        <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
-        <rect y="6"  width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="0" width="22" height="2" rx="1" fill="currentColor"/>
+        <rect y="6" width="22" height="2" rx="1" fill="currentColor"/>
         <rect y="12" width="22" height="2" rx="1" fill="currentColor"/>
       </svg>
     </button>
   </nav>
+  <!-- /NAV -->
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-headline">
-    <div class="stage">
+  <main>
 
-      <!-- Panorama: contains panels AND hero-content so text sits over photos -->
-      <div class="panorama" id="hero-panorama">
-        <picture>
-          <source media="(min-width: 768px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-1-final.webp">
-          <source media="(max-width: 767px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-1-final-mobile.webp">
-          <img class="panel panel-1" src="dropx-images-web/hero-photos/hero-panel-1-final.png" width="2150" height="1528" alt="" fetchpriority="high">
-        </picture>
-        <picture>
-          <source media="(min-width: 768px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-2-final.webp">
-          <source media="(max-width: 767px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-2-final-mobile.webp">
-          <img class="panel panel-2" src="dropx-images-web/hero-photos/hero-panel-2-final.png" width="2150" height="1528" alt="" fetchpriority="high">
-        </picture>
-        <picture>
-          <source media="(min-width: 768px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-3-final.webp">
-          <source media="(max-width: 767px)" type="image/webp" srcset="dropx-images-web/hero-photos/hero-panel-3-final-mobile.webp">
-          <img class="panel panel-3" src="dropx-images-web/hero-photos/hero-panel-3-final.png" width="2150" height="1528" alt="" fetchpriority="high">
-        </picture>
-
-        <div class="hero-content">
-          <span class="hero-eyebrow">Christchurch, New Zealand</span>
+    <!-- Hero -->
+    <section class="fb hero" aria-labelledby="hero-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-7.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-7-mobile.webp'); --bg-pos: center 45%; --bg-pos-m: center 30%;">
+      <div class="fb-bg" role="img" aria-label="A tandem skydiver and camera flyer in freefall at sunset, with sun rays breaking through cloud over Canterbury"></div>
+      <div class="fb-overlay hero-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow hero-eyebrow">Christchurch, New Zealand</span>
           <h1 class="hero-headline" id="hero-headline">
-            <span class="hero-headline-top">Welcome to the</span>
-            <span class="hero-headline-bottom">Dream Factory.</span>
+            <span class="hero-headline-top">Tandem skydiving in</span>
+            <span class="hero-headline-bottom">Canterbury.</span>
           </h1>
-          <p class="hero-subhead">Canterbury's home for progression, community, and the jumps you'll talk about for years. Student training, sport coaching, and display skydiving over Christchurch.</p>
-          <div class="hero-ctas">
-            <a href="about.html" class="cta-arrow">Who is DropX? <span aria-hidden="true">→</span></a>
-            <a href="jump.html" class="cta-arrow">Jump info <span aria-hidden="true">→</span></a>
+          <p class="hero-sub">Jump with one of our tandem instructors over the Canterbury Plains and coast. No experience needed. We'll teach you everything on the ground.</p>
+          <div class="btn-row">
+            <a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book a tandem <span aria-hidden="true">→</span></a>
+            <a href="tandem.html" class="cta-arrow">Prices and altitudes <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
-      <div class="hero-mobile-gradient" aria-hidden="true"></div>
       <div class="hero-scroll-hint" aria-hidden="true">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Stat strip -->
-  <section class="stat-strip" aria-label="Quick facts">
-    <div class="stat-strip-inner">
-      <div class="stat-item">
-        <span class="stat-eyebrow">Altitude</span>
-        <span class="stat-value">12,000ft</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-eyebrow">Jump Ticket</span>
-        <span class="stat-value">NZ$65</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-eyebrow">Who</span>
-        <span class="stat-value">Licensed jumpers</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-eyebrow">Location</span>
-        <span class="stat-value">Canterbury, NZ</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Community -->
-  <section class="community" aria-labelledby="community-headline">
-    <div class="community-bg" aria-hidden="true"></div>
-    <div class="community-overlay" aria-hidden="true"></div>
-    <div class="community-content">
-      <span class="section-eyebrow reveal">Who we are</span>
-      <h2 class="section-headline community-headline reveal reveal-d1" id="community-headline">Community.</h2>
-      <p class="section-body reveal reveal-d2">Skydive DropX is a sport and club drop zone. There is no booking system. Jump days are coordinated through a Facebook Messenger group where the crew organises who is jumping, when, and what the conditions look like.</p>
-      <p class="section-body reveal reveal-d2" style="margin-top: 1rem;">If you are a licensed jumper and want to get in the air, that is where you start. Join the group, introduce yourself, and get on a load.</p>
-      <div class="reveal reveal-d3" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; align-items: center;">
-        <a href="about.html" class="amber-btn">Who is DropX? <span aria-hidden="true">→</span></a>
-        <a href="https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link" class="ghost-btn" target="_blank" rel="noopener">Join the community <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fun jumping + Coaching (combined) -->
-  <section class="fun-jumping" aria-labelledby="fj-headline">
-    <div class="fun-jumping-bg" aria-hidden="true"></div>
-    <div class="fun-jumping-overlay" aria-hidden="true"></div>
-    <div class="fun-jumping-content">
-      <span class="section-eyebrow reveal">Weekends only</span>
-      <h2 class="section-headline fj-headline reveal reveal-d1" id="fj-headline">Jump. Land. Repeat.</h2>
-      <div class="fj-details reveal reveal-d2" aria-label="Jump details">
-        <span class="fj-detail"><strong>NZ$65</strong> per jump</span>
-        <span class="fj-detail-divider" aria-hidden="true"></span>
-        <span class="fj-detail"><strong>12,000ft</strong> altitude</span>
-        <span class="fj-detail-divider" aria-hidden="true"></span>
-        <span class="fj-detail">Licensed jumpers</span>
-      </div>
-      <p class="section-body reveal reveal-d2">Show up, grab a ticket, get in the air. All disciplines welcome. Want to push further? We have experienced coaches across canopy, freefly, and formation skydiving. Pick a discipline, pick a coach, go up. Join our Messenger Group to stay up to date.</p>
-      <a href="https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link" class="amber-btn reveal reveal-d3" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
-          <path d="M12 2C6.477 2 2 6.227 2 11.43c0 2.883 1.332 5.461 3.424 7.18V22l3.13-1.732c.836.232 1.72.357 2.636.357 5.523 0 10-4.227 10-9.43S17.523 2 12 2zm1.05 12.696-2.543-2.726-4.963 2.726 5.457-5.82 2.608 2.726 4.9-2.726-5.46 5.82z"/>
-        </svg>
-        Join on Messenger
-      </a>
-    </div>
-  </section>
-
-  <!-- Learn to Skydive / AFF -->
-  <section class="aff" aria-labelledby="aff-headline">
-    <div class="aff-bg" aria-hidden="true"></div>
-    <div class="aff-overlay" aria-hidden="true"></div>
-    <div class="aff-content">
-      <span class="section-eyebrow reveal">AFF Training</span>
-      <h2 class="section-headline aff-headline reveal reveal-d1" id="aff-headline">Learn to skydive.</h2>
-      <p class="section-body reveal reveal-d2">Ground school, jump coaches, and a full progression pathway from first jump to licensed skydiver. Everything you need to go from the ground to the sky, right here at DropX.</p>
-      <div class="aff-announcement reveal reveal-d3">
-        <span class="aff-coming-label">Coming Spring 2026</span>
-        <span class="aff-coming-sub">Registrations opening soon. Be the first to know.</span>
-        <a href="contact.html" class="arrow-link">Register your interest <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Demos -->
-  <section class="demos" aria-labelledby="demos-headline">
-    <div class="demos-bg" aria-hidden="true"></div>
-    <div class="demos-overlay" aria-hidden="true"></div>
-    <div class="demos-content">
-      <span class="section-eyebrow reveal">Display skydiving</span>
-      <h2 class="section-headline demos-headline reveal reveal-d1" id="demos-headline">Demo jumps.</h2>
-      <p class="section-body reveal reveal-d2">A skydiver landing in your event doesn't just open the show, it makes it.</p>
-      <p class="section-body reveal reveal-d2" style="margin-top: 1rem;">Custom flags, sponsor banners, or the New Zealand flag delivered into stadiums, waterfront events, and civic openings. We work with event organisers to plan the approach, the timing, and the moment. Professional, reliable, and built to be the highlight of the day.</p>
-      <div class="demos-ctas reveal reveal-d3">
-        <a href="demos.html" class="arrow-link">Demo jump info <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dream Factory beat -->
-  <section class="dream-factory" aria-labelledby="df-headline">
-    <h2 class="dream-factory-headline reveal" id="df-headline">#DREAMFACTORY</h2>
-    <p class="dream-factory-body reveal reveal-d1">We're here to build something different. A drop zone that pushes you, supports you, and keeps you coming back. This is Skydive DropX.</p>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact-section" aria-labelledby="contact-headline">
-    <div class="contact-bg" aria-hidden="true"></div>
-    <div class="contact-overlay" aria-hidden="true"></div>
-    <div class="contact-content">
-      <span class="section-eyebrow reveal">Come say hi</span>
-      <h2 class="section-headline contact-headline reveal reveal-d1" id="contact-headline">Get in touch.</h2>
-      <ul class="contact-details reveal reveal-d2">
-        <li><a href="tel:+64272929951">(027) 2929951</a></li>
-        <li><a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a></li>
-        <li>Canterbury, NZ</li>
+    <!-- Proof strip (rendered from tandem.json) -->
+    <section class="stat-strip" aria-label="Quick facts">
+      <ul class="stat-strip-inner" id="stat-strip" role="list">
+        <li class="stat-item"><span class="stat-eyebrow">Tandem from</span><span class="stat-value" data-stat="price">See prices</span></li>
+        <li class="stat-item"><span class="stat-eyebrow">Altitude</span><span class="stat-value" data-stat="alt">12,000ft</span></li>
+        <li class="stat-item"><span class="stat-eyebrow">Experience</span><span class="stat-value">None needed</span></li>
+        <li class="stat-item"><span class="stat-eyebrow">Location</span><span class="stat-value">Canterbury, NZ</span></li>
       </ul>
-      <div class="contact-ctas reveal reveal-d3">
-        <a href="contact.html" class="arrow-link">Contact us <span aria-hidden="true">→</span></a>
-        <a href="faq.html" class="arrow-link">Read the FAQ <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <!-- Altitudes -->
+    <section class="fb fb--photo-right" aria-labelledby="alt-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-10.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-10-mobile.webp'); --bg-pos: 50% center;">
+      <div class="fb-bg" role="img" aria-label="Tandem instructor and customer smiling at the camera in freefall at dusk above the coast"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">Tandem skydiving</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="alt-headline">Pick your altitude.</h2>
+          <p class="section-body reveal reveal-d2">You're attached to a qualified tandem instructor for the whole jump. They handle the parachute, you enjoy the view. The higher you go, the longer the freefall.</p>
+          <div class="alt-grid" id="alt-grid">
+            <article class="glass alt-card">
+              <span class="card-kicker">Tandem skydive</span>
+              <h3 class="card-title">See prices</h3>
+              <a href="tandem.html" class="arrow-link">Altitudes and prices <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+          <div class="btn-row reveal">
+            <a href="tandem.html" class="arrow-link">What's included <span aria-hidden="true">→</span></a>
+            <a href="contact.html?topic=voucher#enquire" class="arrow-link" data-book="vouchers">Buy a gift voucher <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo & video -->
+    <section class="fb" aria-labelledby="media-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-8.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-8-mobile.webp'); --bg-pos: 30% center;">
+      <div class="fb-bg" role="img" aria-label="Tandem customer making a heart with their hands in freefall at sunset over the Canterbury coastline"></div>
+      <div class="fb-overlay fb-overlay--right" aria-hidden="true"></div>
+      <div class="fb-content fb-content--right">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">Photo and video</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="media-headline">Keep the footage.</h2>
+          <p class="section-body reveal reveal-d2" id="media-intro">Your instructor can film the jump on a wrist camera, or a second skydiver can fly alongside and film you from outside.</p>
+        </div>
+        <ul class="media-rows" id="media-rows" role="list"></ul>
+        <div class="btn-row reveal">
+          <a href="media.html" class="arrow-link">Compare camera packages <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How the day works -->
+    <section class="day" aria-labelledby="day-headline">
+      <div class="day-head">
+        <span class="section-eyebrow">How the day works</span>
+        <h2 class="section-headline section-headline--md" id="day-headline">Four steps.</h2>
+        <p class="section-body" id="day-duration">Allow about 3 hours at the drop zone.</p>
+        <a href="contact.html?topic=tandem#enquire" class="amber-btn day-book" data-book="tandem">Book your jump <span aria-hidden="true">→</span></a>
+      </div>
+      <ol class="day-grid" id="day-grid" role="list"></ol>
+    </section>
+
+    <!-- Learn to skydive -->
+    <section class="fb" aria-labelledby="aff-headline"
+      style="--bg: url('/dropx-images-web/Drop%20X%20Opening%202026-98-1.webp'); --bg-pos: center 35%;">
+      <div class="fb-bg" role="img" aria-label="Skydivers in formation in freefall above the Canterbury Plains"></div>
+      <div class="fb-overlay fb-overlay--right" aria-hidden="true"></div>
+      <div class="fb-content fb-content--right">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">AFF course</span>
+          <h2 class="section-headline reveal reveal-d1" id="aff-headline">Learn to skydive.</h2>
+          <p class="section-body reveal reveal-d2" id="aff-intro">AFF (Accelerated Freefall) is the fastest way to become a licensed skydiver. You jump from your first day, with instructors in the air beside you until you can fly on your own.</p>
+          <div class="btn-row reveal reveal-d3">
+            <a href="learn.html" class="amber-btn">About the course <span aria-hidden="true">→</span></a>
+            <a href="contact.html?topic=aff#enquire" class="arrow-link" data-book="aff">Register your interest <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews: hidden until site.json has reviews -->
+    <section class="fb fb--short" id="reviews" aria-labelledby="reviews-headline" hidden
+      style="--bg: url('/dropx-images-web/tandem/tandem-117.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-117-mobile.webp');">
+      <div class="fb-bg" aria-hidden="true"></div>
+      <div class="fb-overlay fb-overlay--bottom" aria-hidden="true"></div>
+      <div class="fb-content">
+        <span class="section-eyebrow">Reviews</span>
+        <h2 class="section-headline section-headline--md" id="reviews-headline">What people say.</h2>
+        <div class="review-grid" id="review-grid"></div>
+      </div>
+    </section>
+
+    <!-- Gift vouchers -->
+    <section class="fb fb--short fb--photo-left" aria-labelledby="voucher-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-139.webp'); --bg-pos: center 30%; --bg-pos-m: center 20%;">
+      <div class="fb-bg" role="img" aria-label="Smiling tandem customer with her instructor just after landing"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">Gift vouchers</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="voucher-headline">Give someone a jump.</h2>
+          <p class="section-body reveal reveal-d2">Birthdays, bucket lists, a push for someone who keeps saying one day. Vouchers cover any altitude and camera package.</p>
+          <div class="btn-row reveal reveal-d3">
+            <a href="vouchers.html" class="amber-btn">Gift vouchers <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The club -->
+    <section class="fb fb--short" aria-labelledby="club-headline"
+      style="--bg: url('/dropx-images-web/Drop%20X%20Opening%202026-85.webp'); --bg-pos: center 40%;">
+      <div class="fb-bg" role="img" aria-label="Sport skydivers in freefall, one carrying a DropX banner"></div>
+      <div class="fb-overlay fb-overlay--left" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">The club</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="club-headline">Already licensed?</h2>
+          <p class="section-body reveal reveal-d2">DropX is also home to Canterbury's sport jumping crew. Fun jumps are NZ$65 from 12,000ft, with canopy and freefly coaching, and demo jumps for events.</p>
+          <div class="btn-row reveal reveal-d3">
+            <a href="jump.html" class="ghost-btn">Sport jumping <span aria-hidden="true">→</span></a>
+            <a href="demos.html" class="arrow-link">Demo jumps <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="fb fb--short" aria-labelledby="contact-headline"
+      style="--bg: url('/dropx-images-web/Drop%20X%20Opening%202026-144.webp');">
+      <div class="fb-bg" role="img" aria-label="A skydiver landing a canopy across a river at golden hour"></div>
+      <div class="fb-overlay fb-overlay--left" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal">Questions?</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="contact-headline">Get in touch.</h2>
+          <ul class="contact-details reveal reveal-d2">
+            <li><a href="tel:+64272929951">(027) 2929951</a></li>
+            <li><a href="mailto:ben@skydivedropx.com">ben@skydivedropx.com</a></li>
+            <li id="contact-days">Canterbury, NZ. Weekends, weather permitting.</li>
+          </ul>
+          <div class="btn-row reveal reveal-d3">
+            <a href="faq.html" class="ghost-btn">Read the FAQ <span aria-hidden="true">→</span></a>
+            <a href="contact.html" class="arrow-link">Contact us <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer" aria-label="Site footer">
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="index.html" aria-label="Skydive DropX home">
-          <img
-            src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp"
-            alt="Skydive DropX"
-            width="180"
-            height="72"
-          >
+          <img src="dropx-images-web/Drop%20X%20Horiz%20-%20White%20-%20PNG.webp" alt="Skydive DropX" width="180" height="72" loading="lazy">
         </a>
         <p class="footer-address">
           Canterbury, NZ<br>
@@ -1585,86 +378,109 @@
           <a href="https://instagram.com/skydivedropx" target="_blank" rel="noopener noreferrer" aria-label="Skydive DropX on Instagram" style="display:inline-flex;align-items:center;gap:0.45em;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@skydivedropx</a>
         </p>
       </div>
-
-      <nav aria-label="Footer navigation">
-        <span class="footer-col-label">Navigate</span>
+      <nav aria-label="Skydive links">
+        <span class="footer-col-label">Skydive</span>
         <ul class="footer-nav-links" role="list">
-          <li><a href="jump.html">Jump</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="demos.html">Demos</a></li>
+          <li><a href="tandem.html">Tandem skydiving</a></li>
+          <li><a href="media.html">Photo and video</a></li>
+          <li><a href="vouchers.html">Gift vouchers</a></li>
+          <li><a href="learn.html">Learn to skydive</a></li>
           <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Club links">
+        <span class="footer-col-label">The club</span>
+        <ul class="footer-nav-links" role="list">
+          <li><a href="jump.html">Sport jumping</a></li>
+          <li><a href="demos.html">Demo jumps</a></li>
+          <li><a href="https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link" target="_blank" rel="noopener">Messenger community</a></li>
+          <li><a href="about.html">About DropX</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <div>
-        <span class="footer-col-label">Jump info</span>
-        <ul class="footer-info-list">
-          <li>NZ$65 per jump</li>
-          <li>12,000ft altitude</li>
-          <li>Licensed jumpers only</li>
-          <li>Tandem + AFF coming Spring 2026</li>
-        </ul>
-      </div>
-
       <div>
         <span class="footer-col-label">Jump days</span>
-        <p class="footer-address">Open Saturdays and Sundays, weather permitting.</p>
+        <p class="footer-address footer-days">Weekends, weather permitting.</p>
+        <a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book a tandem</a>
       </div>
     </div>
-
     <div class="footer-legal">
       <p>© 2026 Skydive DropX. All rights reserved.</p>
+      <a href="terms.html">Booking terms</a>
     </div>
   </footer>
+  <!-- /FOOTER -->
 
+  <script src="js/site.js"></script>
   <script>
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-    const hamburger = document.querySelector('.nav-hamburger');
-    hamburger.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', String(open));
-      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('touchstart', () => a.classList.add('is-pressed'), { passive: true });
-      a.addEventListener('touchend',   () => { a.classList.remove('is-pressed'); });
-      a.addEventListener('touchcancel',() => a.classList.remove('is-pressed'));
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.setAttribute('aria-label', 'Open menu');
-      });
-    });
+    (function () {
+      var esc = DX.esc;
 
-    // Trigger panel zoom-out after first paint.
-    // Panels default to visible so screenshots capture the final state.
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        document.getElementById('hero-panorama').classList.add('panels-go');
-      });
-    });
+      // Proof strip + altitude cards + day steps + media rows from tandem.json
+      DX.load('/content/tandem.json').then(function (t) {
+        var alts = t.altitudes || [];
+        if (alts.length) {
+          var low = alts[0], high = alts[alts.length - 1];
+          document.querySelector('[data-stat="price"]').textContent = low.price;
+          document.querySelector('[data-stat="alt"]').textContent = 'Up to ' + high.feet;
+        }
+        var days = document.getElementById('contact-days');
+        if (t.jump_days) days.textContent = 'Canterbury, NZ. ' + t.jump_days + '.';
+        if (t.day && t.day.duration) document.getElementById('day-duration').textContent = t.day.duration + '.';
+      }).catch(function () {});
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      reveals.forEach(el => io.observe(el));
-    } else {
-      reveals.forEach(el => el.classList.add('is-visible'));
-    }
-    (function(){ var h=document.querySelector('.hero-scroll-hint'); if(!h)return; var hide=function(){ if(window.scrollY>30){ h.classList.add('is-hidden'); window.removeEventListener('scroll',hide); } }; window.addEventListener('scroll',hide,{passive:true}); })();
+      DX.render('/content/tandem.json', document.getElementById('alt-grid'), function (t) {
+        return (t.altitudes || []).map(function (a, i) {
+          return '<article class="glass alt-card reveal reveal-d' + (i + 1) + (a.popular ? ' glass--hi' : '') + '">' +
+            (a.popular && a.note ? '<span class="alt-badge">' + esc(a.note) + '</span>' : '') +
+            DX.phTag(a.placeholder) +
+            '<span class="card-kicker">Tandem skydive</span>' +
+            '<h3 class="card-title">' + esc(a.feet) + '</h3>' +
+            '<p class="alt-freefall">' + esc(a.freefall) + '</p>' +
+            '<p class="card-price"><small>From</small>' + esc(a.price) + '</p>' +
+            '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.feet) + '</a>' +
+          '</article>';
+        }).join('');
+      });
+
+      DX.render('/content/tandem.json', document.getElementById('media-rows'), function (t) {
+        var m = t.media || {};
+        if (m.intro) document.getElementById('media-intro').textContent = m.intro;
+        return (m.packages || []).map(function (p, i) {
+          return '<li class="glass media-row reveal reveal-d' + Math.min(i + 1, 3) + (p.popular ? ' glass--hi' : '') + '">' +
+            '<span><span class="media-row-name">' + esc(p.name) + '</span><span class="media-row-tag">' + esc(p.tag) + '</span></span>' +
+            '<span class="card-price">' + (p.placeholder ? '<span class="ph-tag" style="margin:0 0.6rem 0 0">Placeholder</span>' : '') + esc(p.price) + '</span>' +
+          '</li>';
+        }).join('');
+      });
+
+      DX.render('/content/tandem.json', document.getElementById('day-grid'), function (t) {
+        var steps = (t.day && t.day.steps) || [];
+        return steps.map(function (s, i) {
+          return '<li class="day-tile">' +
+            '<img src="' + esc(s.image) + '" alt="' + esc(s.alt) + '" width="800" height="533" loading="lazy">' +
+            '<div class="day-tile-text"><span class="day-num">0' + (i + 1) + '</span>' +
+            '<h3 class="day-title">' + esc(s.title) + '</h3>' +
+            '<p class="day-body">' + esc(s.body) + '</p></div>' +
+          '</li>';
+        }).join('');
+      });
+
+      DX.load('/content/aff.json').then(function (a) {
+        if (a.intro) document.getElementById('aff-intro').textContent = a.intro;
+      }).catch(function () {});
+
+      // Reviews appear only when real ones exist in site.json
+      DX.load('/content/site.json').then(function (s) {
+        var r = s.reviews || {};
+        if (!r.items || !r.items.length) return;
+        var html = r.items.map(function (item) {
+          return '<figure class="glass review"><blockquote>' + esc(item.quote) + '</blockquote><figcaption><cite>' + esc(item.name) + '</cite></figcaption></figure>';
+        }).join('');
+        document.getElementById('review-grid').innerHTML = html;
+        document.getElementById('reviews').hidden = false;
+      }).catch(function () {});
+    })();
   </script>
-
 </body>
 </html>
