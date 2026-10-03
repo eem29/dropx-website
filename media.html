@@ -51,6 +51,24 @@
     .alt-story-price { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; margin-bottom: var(--s-3); }
     .alt-story-price .card-kicker { font-size: 12px; margin-right: 0.35rem; }
     .pkg-story .ph-tag { display: table; }
+    .why .day-tile-text { padding-bottom: 2.25rem; }
+    .pkg-pitch { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.3rem, 1.7vw, 1.6rem); line-height: 1.1; color: var(--color-text); }
+    .pkg-best { font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.8); }
+    .pkg-best .card-kicker { margin-right: 0.35rem; }
+    .compare { width: 100%; max-width: 920px; margin-top: var(--s-4); padding: 1.5rem 1.75rem; text-align: left; }
+    .compare[hidden] { display: none; }
+    .cmp { width: 100%; border-collapse: collapse; }
+    .cmp caption { text-align: left; padding-bottom: 0.9rem; }
+    .cmp th, .cmp td { padding: 0.75rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.92rem; }
+    .cmp tbody tr:last-child th, .cmp tbody tr:last-child td { border-bottom: none; }
+    .cmp tbody th { text-align: left; font-weight: 400; color: rgba(255,255,255,0.85); }
+    .cmp thead th { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; text-align: center; vertical-align: bottom; }
+    .cmp thead th span { display: block; font-size: 0.95rem; font-weight: 700; color: var(--color-accent); }
+    .cmp td { text-align: center; width: 22%; }
+    .cmp-yes { color: var(--color-accent); font-size: 1.2rem; font-weight: 700; }
+    .cmp-no { color: rgba(255,255,255,0.35); font-size: 1.2rem; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @media (max-width: 767px) { .compare { padding: 1.25rem 1rem; } .cmp th, .cmp td { font-size: 0.85rem; padding: 0.65rem 0.25rem; } .cmp thead th { font-size: 1.05rem; } .cmp td { width: 24%; } }
   </style>
 </head>
 <body>
@@ -99,7 +117,7 @@
         <div class="fb-text">
           <span class="section-eyebrow">Photo and video</span>
           <h1 class="page-hero-headline" id="media-headline">Keep the<br>footage.</h1>
-          <p class="page-hero-sub">Video and photos of your tandem, from the exit to the landing, sent to you by download link.</p>
+          <p class="page-hero-sub">The door, the freefall, the canopy ride and the landing. Take your jump home with you and relive it long after you've landed.</p>
           <div class="btn-row">
             <a href="#packages" class="amber-btn">See packages <span aria-hidden="true">→</span></a>
           </div>
@@ -110,6 +128,17 @@
       </div>
     </section>
 
+    <!-- Why get the footage -->
+    <section class="day why" aria-labelledby="why-headline">
+      <div class="day-head">
+        <span class="section-eyebrow" id="why-kicker">Why get the footage</span>
+        <h2 class="section-headline section-headline--md" id="why-headline">You only get one first jump.</h2>
+        <p class="section-body" id="why-intro">It's over in minutes. The footage is how you get it back.</p>
+        <a href="#packages" class="amber-btn day-book">See the packages <span aria-hidden="true">→</span></a>
+      </div>
+      <ol class="day-grid" id="why-grid" role="list"></ol>
+    </section>
+
     <!-- Packages -->
     <section class="fb pkg-section" id="packages" aria-labelledby="pkg-headline"
       style="--bg: url('/dropx-images-web/tandem/tandem-7.webp'); --bg-pos: center 60%;">
@@ -117,11 +146,12 @@
       <div class="fb-overlay fb-overlay--wash" aria-hidden="true"></div>
       <div class="fb-content fb-content--center">
         <span class="section-eyebrow reveal">Camera packages</span>
-        <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-headline">Pick your angle.</h2>
-        <p class="section-body pkg-intro reveal reveal-d2" id="pkg-intro">Add a package when you book, or on the day.</p>
+        <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-headline">Pick your package.</h2>
+        <p class="section-body pkg-intro reveal reveal-d2" id="pkg-intro">Two packages. Both capture your whole jump. Add one when you book.</p>
         <div class="pkg-grid" id="pkg-grid">
           <article class="glass pkg"><div class="pkg-body"><h3 class="card-title">Camera packages</h3><p class="req-detail">Call us on (027) 2929951 for current camera prices.</p></div></article>
         </div>
+        <div class="glass compare reveal" id="compare" hidden></div>
       </div>
     </section>
 
@@ -230,6 +260,34 @@
   <script>
     (function () {
       var esc = DX.esc;
+      DX.render('/content/tandem.json', document.getElementById('why-grid'), function (t) {
+        var w = (t.media || {}).why || {};
+        if (w.kicker) document.getElementById('why-kicker').textContent = w.kicker;
+        if (w.headline) document.getElementById('why-headline').textContent = w.headline;
+        if (w.intro) document.getElementById('why-intro').textContent = w.intro;
+        return (w.items || []).map(function (it, i) {
+          return '<li class="day-tile">' +
+            '<img src="' + esc(it.image) + '" alt="' + esc(it.alt) + '" width="800" height="533" loading="lazy">' +
+            '<div class="day-tile-text"><span class="day-num">0' + (i + 1) + '</span>' +
+            '<h3 class="day-title">' + esc(it.title) + '</h3>' +
+            '<p class="day-body">' + esc(it.body) + '</p></div></li>';
+        }).join('');
+      });
+
+      DX.load('/content/tandem.json').then(function (t) {
+        var m = t.media || {}, rows = m.compare || [], pk = m.packages || [];
+        if (!rows.length || !pk.length) return;
+        var tick = '<span class="cmp-yes" aria-label="Included">✓</span>', no = '<span class="cmp-no" aria-label="Not included">–</span>';
+        var el = document.getElementById('compare');
+        el.innerHTML = '<table class="cmp"><caption class="card-kicker">What\'s in each package</caption>' +
+          '<thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th>' + pk.map(function (p) { return '<th scope="col">' + esc(p.name) + '<span>' + esc(p.price) + '</span></th>'; }).join('') + '</tr></thead>' +
+          '<tbody>' + rows.map(function (r) {
+            return '<tr><th scope="row">' + esc(r.label) + '</th>' + pk.map(function (p, i) { return '<td>' + ((r.values || [])[i] ? tick : no) + '</td>'; }).join('') + '</tr>';
+          }).join('') + '</tbody></table>';
+        el.hidden = false;
+        DX.observeReveals(el.parentNode);
+      }).catch(function () {});
+
       DX.render('/content/tandem.json', document.getElementById('pkg-grid'), function (t) {
         var m = t.media || {};
         if (m.delivery) document.querySelector('#del-delivery p').innerHTML = esc(m.delivery) + (m.placeholder ? ' ' + DX.phTag(true) : '');
@@ -253,8 +311,10 @@
             '<div class="pkg-body">' + DX.phTag(p.placeholder) +
               '<span class="card-kicker">' + esc(p.tag) + '</span>' +
               '<div class="pkg-head"><h3 class="card-title">' + esc(p.name) + '</h3><p class="card-price">' + esc(p.price) + '</p></div>' +
+              (p.pitch ? '<p class="pkg-pitch">' + esc(p.pitch) + '</p>' : '') +
               '<ul class="card-list">' + (p.includes || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
-              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem" style="align-self:flex-start">Add to a booking</a>' +
+              (p.best_for ? '<p class="pkg-best"><span class="card-kicker">Best for</span> ' + esc(p.best_for) + '</p>' : '') +
+              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem" style="align-self:flex-start">Add ' + esc(p.name) + ' <span aria-hidden="true">→</span></a>' +
             '</div></article>';
         }).join('');
       });

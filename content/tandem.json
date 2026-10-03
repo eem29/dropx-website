@@ -140,7 +140,9 @@
         ],
         "image": "dropx-images-web/tandem/tandem-8-tile.webp",
         "alt": "Tandem customer making a heart with their hands in freefall at sunset",
-        "placeholder": true
+        "placeholder": true,
+        "pitch": "The whole jump on video, and the photos to go with it.",
+        "best_for": "First-timers, birthdays, bucket lists, and anyone who wants a photo for the wall."
       },
       {
         "name": "The Memory",
@@ -158,7 +160,84 @@
         ],
         "image": "dropx-images-web/tandem/tandem-105-tile.webp",
         "alt": "Tandem customer in freefall with the instructor behind, deep blue sky",
-        "placeholder": true
+        "placeholder": true,
+        "pitch": "Every moment of your jump on video, from the ground to the landing.",
+        "best_for": "Anyone who wants to watch the whole jump back, start to finish."
+      }
+    ],
+    "why": {
+      "kicker": "Why get the footage",
+      "headline": "You only get one first jump.",
+      "intro": "It's over in minutes, and most people land remembering it in flashes. The footage is how you get the rest of it back.",
+      "items": [
+        {
+          "title": "The bits you'll miss.",
+          "body": "Adrenaline does strange things to memory. The look on your face at the door, the moment you let go, the view you were too busy yelling to take in. It's all there on the footage.",
+          "image": "dropx-images-web/tandem/tandem-64-tile.webp",
+          "alt": "Tandem customer leaving the aircraft, face to the camera, the wing above"
+        },
+        {
+          "title": "No phones up there.",
+          "body": "For safety, phones, GoPros and cameras stay on the ground. A DropX camera package is the only way to bring the jump home with you.",
+          "image": "dropx-images-web/tandem/tandem-125-tile.webp",
+          "alt": "Tandem pair in freefall over the Canterbury coast, filmed from the air"
+        },
+        {
+          "title": "Show everyone.",
+          "body": "Your friends and family see you land. The footage shows them where you came from: the door, the freefall and the canopy ride over Canterbury.",
+          "image": "dropx-images-web/tandem/tandem-13-tile.webp",
+          "alt": "Tandem customer celebrating with the instructor after landing"
+        },
+        {
+          "title": "Relive it, again and again.",
+          "body": "Watch it the night of your jump. Watch it on your birthday next year. Watch it in ten years and feel your stomach drop all over again.",
+          "image": "dropx-images-web/tandem/tandem-8-tile.webp",
+          "alt": "Tandem customer making a heart with their hands in freefall at sunset"
+        }
+      ]
+    },
+    "compare": [
+      {
+        "label": "Video of your whole jump",
+        "values": [
+          true,
+          true
+        ]
+      },
+      {
+        "label": "The climb and the door opening",
+        "values": [
+          true,
+          true
+        ]
+      },
+      {
+        "label": "Exit, freefall and parachute opening",
+        "values": [
+          true,
+          true
+        ]
+      },
+      {
+        "label": "The landing",
+        "values": [
+          true,
+          true
+        ]
+      },
+      {
+        "label": "Photos from your jump",
+        "values": [
+          true,
+          false
+        ]
+      },
+      {
+        "label": "Sent to you by download link",
+        "values": [
+          true,
+          true
+        ]
       }
     ]
   },
