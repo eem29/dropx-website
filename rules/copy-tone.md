@@ -20,10 +20,11 @@ Ben supplied product copy in a bold voice. Use these names as section labels / p
 - THE FIRST STEP: AFF. THE LICENCE: the 'A' licence pathway (content/aff.json)
 - THE VIEW: homepage section (content/tandem.json → view)
 - THE SHOW: demo jumps. THE GIFT: gift vouchers. THE CLUB: sport skydiving
-- THE CREW: reserved for staff profiles, not built yet
+- THE CREW: staff profiles (crew.html, content/crew.json)
 
-Nav links stay in plain words (Tandem, Photo & Video, Learn to Skydive) so first-timers can find
-things; Ben's names appear as page and section labels.
+Main nav (Oct 2026, per Ben's email): Tandem · Photo & Video · Learn to Skydive · The Show ·
+The Gift · The Club · The Crew · FAQ · About · Contact, plus Book now. Ten items: the nav
+switches to the hamburger below 1100px.
 
 Ben's own copy is used verbatim apart from typo fixes. It includes words our own copy avoids
 (e.g. "unforgettable" in The 12,000). That is client-approved: leave it, but don't add more.

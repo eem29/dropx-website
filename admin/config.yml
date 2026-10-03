@@ -233,6 +233,31 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Text", name: "body", widget: "text" }
 
+  # ── THE CREW ──────────────────────────────────────────────────────────────
+  - name: "crew"
+    label: "The Crew"
+    description: "Staff profiles. The crew page shows a 'coming soon' placeholder until at least one profile is added."
+    files:
+      - name: "crew"
+        label: "The Crew"
+        file: "content/crew.json"
+        fields:
+          - { label: "Label", name: "kicker", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: true, required: false }
+          - label: "Crew members"
+            name: "members"
+            widget: "list"
+            required: false
+            summary: "{{fields.name}}, {{fields.role}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string", hint: "e.g. Tandem instructor, Camera flyer, Pilot" }
+              - { label: "Number of jumps", name: "jumps", widget: "string", required: false, hint: "e.g. 4,000+" }
+              - { label: "Photo (portrait)", name: "photo", widget: "image", required: false }
+              - { label: "Short bio", name: "bio", widget: "text", required: false }
+
   # ── BOOKING TERMS ─────────────────────────────────────────────────────────
   - name: "terms"
     label: "Booking Terms"

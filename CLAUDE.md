@@ -38,6 +38,7 @@ At the start of every session, before writing any code:
 - terms.html         — Booking terms (content from terms.json)
 - faq.html           — FAQ (grouped, CMS-managed)
 - contact.html       — Contact + tandem booking enquiry form (?topic=tandem|voucher|aff)
+- crew.html          — The Crew: staff profiles from content/crew.json (placeholder until profiles exist)
 - about.html         — About DropX
 - jump.html          — Sport jumping (licensed jumpers)
 - demos.html         — Demo jumps
@@ -51,6 +52,7 @@ Content files:
 - content/aff.json     — AFF course
 - content/faq.json     — FAQ groups
 - content/terms.json   — Booking terms
+- content/crew.json    — The Crew staff profiles
 - content/jump.json    — Sport jumping ticket + activities
 - content/events.json  — Events (unused)
 

@@ -7,12 +7,46 @@
   },
   "nav": {
     "links": [
-      { "label": "Tandem", "href": "tandem.html" },
-      { "label": "Photo & Video", "href": "media.html" },
-      { "label": "Learn to Skydive", "href": "learn.html" },
-      { "label": "FAQ", "href": "faq.html" },
-      { "label": "About", "href": "about.html" },
-      { "label": "Contact", "href": "contact.html" }
+      {
+        "label": "Tandem",
+        "href": "tandem.html"
+      },
+      {
+        "label": "Photo & Video",
+        "href": "media.html"
+      },
+      {
+        "label": "Learn to Skydive",
+        "href": "learn.html"
+      },
+      {
+        "label": "The Show",
+        "href": "demos.html"
+      },
+      {
+        "label": "The Gift",
+        "href": "vouchers.html"
+      },
+      {
+        "label": "The Club",
+        "href": "jump.html"
+      },
+      {
+        "label": "The Crew",
+        "href": "crew.html"
+      },
+      {
+        "label": "FAQ",
+        "href": "faq.html"
+      },
+      {
+        "label": "About",
+        "href": "about.html"
+      },
+      {
+        "label": "Contact",
+        "href": "contact.html"
+      }
     ]
   },
   "footer": {
