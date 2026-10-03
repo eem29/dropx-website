@@ -56,10 +56,6 @@
     .faq-mini .faq-a a { color: var(--color-text); }
     .faq-mini .ph-tag { margin: 0 0 0.5rem; }
     @media (max-width: 767px) { .req-grid { grid-template-columns: 1fr; } }
-    .alt-story-price { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; margin-bottom: var(--s-3); }
-    .alt-story-price .card-kicker { font-size: 12px; margin-right: 0.35rem; }
-    .alt-story .ph-tag { display: table; }
-    .drop-label { display: block; margin-bottom: 0.35rem; color: rgba(255,255,255,0.6); }
   </style>
 </head>
 <body>
@@ -120,53 +116,21 @@
       </div>
     </section>
 
-    <!-- Prices -->
-    <section class="fb fb--photo-left" id="prices" aria-labelledby="prices-headline"
+    <!-- Prices: The 12,000 and The 9,000 -->
+    <section class="fb drop-section" id="prices" aria-labelledby="prices-headline"
       style="--bg: url('/dropx-images-web/tandem/tandem-6.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-6-mobile.webp'); --bg-pos: center 40%;">
       <div class="fb-bg" role="img" aria-label="Tandem pair and camera flyer falling through warm sunset cloud, with the drogue parachute above"></div>
-      <div class="fb-overlay" aria-hidden="true"></div>
-      <div class="fb-content">
-        <div class="fb-text">
-          <span class="section-eyebrow reveal">Altitudes and prices</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="prices-headline">Choose your height.</h2>
-          <p class="section-body reveal reveal-d2">Every tandem includes your briefing, all gear and the jump itself. Prices are per person. Add photo and video when you book.</p>
-          <div class="alt-grid" id="alt-grid">
-            <article class="glass alt-card"><span class="card-kicker">Tandem skydive</span><h3 class="card-title">Prices</h3><p class="alt-freefall">Call us on (027) 2929951 for current prices.</p></article>
-          </div>
-          <div class="btn-row reveal">
-            <a href="media.html" class="arrow-link">Photo and video packages <span aria-hidden="true">→</span></a>
-            <a href="vouchers.html" class="arrow-link">Gift vouchers <span aria-hidden="true">→</span></a>
-          </div>
+      <div class="fb-overlay drop-section-overlay" aria-hidden="true"></div>
+      <div class="fb-content fb-content--center">
+        <span class="section-eyebrow reveal">Altitudes and prices</span>
+        <h2 class="section-headline section-headline--md reveal reveal-d1" id="prices-headline">Choose your drop.</h2>
+        <p class="section-body drop-section-intro reveal reveal-d2">Every tandem includes your briefing, all gear and the jump itself. Prices are per person. Add photo and video when you book.</p>
+        <div class="drop-grid" id="alt-grid">
+          <article class="glass drop-card"><div class="drop-card-body"><span class="drop-label">The Drop</span><p class="drop-line">The 12,000 and The 9,000.</p><p class="story-p">Call us on (027) 2929951 for current prices.</p></div></article>
         </div>
-      </div>
-    </section>
-
-    <!-- The 12,000 -->
-    <section class="fb fb--photo-left alt-story" id="alt-0" aria-labelledby="alt-0-headline"
-      style="--bg: url('/dropx-images-web/tandem/tandem-10.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-10-mobile.webp'); --bg-pos: center 40%;">
-      <div class="fb-bg" role="img" aria-label="Tandem instructor and customer smiling in freefall at dusk above the Canterbury coast"></div>
-      <div class="fb-overlay" aria-hidden="true"></div>
-      <div class="fb-content">
-        <div class="fb-text" data-alt="0">
-          <span class="section-eyebrow reveal">The 12,000</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="alt-0-headline">The 12,000</h2>
-          <div class="alt-story-body"></div>
-          <div class="btn-row reveal"><a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book The 12,000 <span aria-hidden="true">→</span></a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The 9,000 -->
-    <section class="fb fb--photo-right alt-story" id="alt-1" aria-labelledby="alt-1-headline"
-      style="--bg: url('/dropx-images-web/tandem/tandem-122.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-122-mobile.webp'); --bg-pos: center 40%;">
-      <div class="fb-bg" role="img" aria-label="Smiling tandem customer in freefall above the Canterbury hills"></div>
-      <div class="fb-overlay" aria-hidden="true"></div>
-      <div class="fb-content">
-        <div class="fb-text" data-alt="1">
-          <span class="section-eyebrow reveal">The 9,000</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="alt-1-headline">The 9,000</h2>
-          <div class="alt-story-body"></div>
-          <div class="btn-row reveal"><a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book The 9,000 <span aria-hidden="true">→</span></a></div>
+        <div class="btn-row drop-section-links reveal">
+          <a href="media.html" class="arrow-link">Photo and video packages <span aria-hidden="true">→</span></a>
+          <a href="vouchers.html" class="arrow-link">Gift vouchers <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -323,24 +287,11 @@
   <script>
     (function () {
       var esc = DX.esc;
-      DX.renderAltitudes(document.getElementById('alt-grid'));
-      DX.load('/content/tandem.json').then(function (t) {
-        (t.altitudes || []).forEach(function (a, i) {
-          var box = document.querySelector('[data-alt="' + i + '"]');
-          if (!box) return;
-          box.querySelector('.section-eyebrow').textContent = a.name + ' · ' + a.feet;
-          box.querySelector('h2').textContent = a.headline || a.name;
-          box.querySelector('.alt-story-body').innerHTML =
-            '<span class="card-kicker drop-label">The Drop</span><p class="story-tagline">' + esc(a.tagline || '') + '</p>' + DX.phTag(a.placeholder) +
-            '<div class="story">' + DX.story(a.story) + '</div>' +
-            '<p class="alt-story-price"><span class="card-kicker">From</span> ' + esc(a.price) + '</p>';
-          box.querySelector('.amber-btn').firstChild.textContent = 'Book ' + a.name + ' ';
-        });
-        // hide story sections beyond the number of altitudes in the CMS
-        document.querySelectorAll('[data-alt]').forEach(function (b) {
-          if (+b.getAttribute('data-alt') >= (t.altitudes || []).length) b.closest('section').hidden = true;
-        });
-      }).catch(function () {});
+      DX.renderAltitudes(document.getElementById('alt-grid'), { full: true }).then(function () {
+        // cards render after load, so jump to #alt-12000 / #alt-9000 links once they exist
+        var target = location.hash && document.querySelector(location.hash);
+        if (target && target.classList.contains('drop-card')) target.scrollIntoView();
+      });
       DX.renderDay(document.getElementById('day-grid'), document.getElementById('day-duration'));
 
       DX.render('/content/tandem.json', document.getElementById('incl-list'), function (t) {

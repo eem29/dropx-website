@@ -119,17 +119,36 @@
     }).join('');
   };
 
-  DX.renderAltitudes = function (el) {
+  // Altitude product cards. opts.full shows Ben's whole story (tandem page);
+  // otherwise the opening lines plus a link to the full story (homepage).
+  DX.renderAltitudes = function (el, opts) {
+    opts = opts || {};
     return DX.render(URL_T, el, function (t) {
       return (t.altitudes || []).map(function (a, i) {
-        return '<article class="glass alt-card reveal reveal-d' + Math.min(i + 1, 3) + (a.popular ? ' glass--hi' : '') + '">' +
+        var story = a.story || [];
+        var shown = opts.full ? story : story.slice(0, 2);
+        var slug = 'alt-' + String(a.feet || i).replace(/[^0-9]/g, '');
+        return '<article class="glass drop-card reveal reveal-d' + Math.min(i + 1, 3) + (a.popular ? ' glass--hi' : '') + '" id="' + slug + '">' +
+          (a.image ? '<div class="drop-card-media"><img src="' + esc(a.image) + '" alt="' + esc(a.alt || '') + '" width="1200" height="800" loading="lazy" style="object-position:' + esc(a.image_pos || 'center') + '">' +
+            '<h3 class="drop-card-name">' + esc(a.name || a.feet) + '</h3></div>' : '<h3 class="drop-card-name">' + esc(a.name || a.feet) + '</h3>') +
           (a.popular && a.note ? '<span class="alt-badge">' + esc(a.note) + '</span>' : '') +
-          DX.phTag(a.placeholder) +
-          '<span class="card-kicker">' + esc(a.feet) + ' tandem</span>' +
-          '<h3 class="card-title">' + esc(a.name || a.feet) + '</h3>' +
-          '<p class="alt-freefall">' + esc(a.tagline || a.freefall) + '</p>' +
-          '<p class="card-price"><small>From</small>' + esc(a.price) + '</p>' +
-          '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.name || a.feet) + '</a>' +
+          '<div class="drop-card-body">' +
+            DX.phTag(a.placeholder) +
+            '<span class="drop-label">The Drop</span>' +
+            '<p class="drop-line">' + esc(a.tagline || '') + '</p>' +
+            (a.headline ? '<p class="drop-headline">' + esc(a.headline) + '</p>' : '') +
+            '<div class="story drop-story">' + DX.story(shown) + '</div>' +
+            (!opts.full && story.length > shown.length ? '<a class="arrow-link drop-more" href="tandem.html#' + slug + '">Read the full story <span aria-hidden="true">→</span></a>' : '') +
+            '<dl class="drop-facts">' +
+              '<div><dt>Altitude</dt><dd>' + esc(a.feet) + '</dd></div>' +
+              '<div><dt>Freefall</dt><dd>' + esc(String(a.freefall || '').replace(/ of freefall$/i, '')) + '</dd></div>' +
+              '<div><dt>From</dt><dd>' + esc(a.price) + '</dd></div>' +
+            '</dl>' +
+            '<div class="btn-row drop-ctas">' +
+              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.name || a.feet) + ' <span aria-hidden="true">→</span></a>' +
+              '<a href="contact.html?topic=voucher#enquire" class="arrow-link" data-book="vouchers">Give it as a gift <span aria-hidden="true">→</span></a>' +
+            '</div>' +
+          '</div>' +
         '</article>';
       }).join('');
     });

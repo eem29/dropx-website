@@ -16,7 +16,10 @@
         "200 km/h. Nothing between you and the sky. Just open air and a perspective that can't be replicated from the ground.",
         "This is the full DropX experience. Big altitude. Big freefall. One unforgettable view.",
         "12,000 feet above Canterbury. Then there's nowhere left to go, but out."
-      ]
+      ],
+      "image": "dropx-images-web/tandem/tandem-10-card.webp",
+      "alt": "Tandem instructor and customer grinning in freefall at dusk, the Canterbury coast below",
+      "image_pos": "center 35%"
     },
     {
       "name": "The 9,000",
@@ -32,7 +35,10 @@
         "At 9,000 feet, you're high enough to see Canterbury unfold beneath you, but close enough to appreciate just how fast the ground is coming towards you.",
         "The aircraft climbs. The anticipation builds. Then the door opens.",
         "Step into the sky and experience freefall at 200 km/h, before the parachute opens and the noise gives way to a completely different kind of silence."
-      ]
+      ],
+      "image": "dropx-images-web/tandem/tandem-122-card.webp",
+      "alt": "Smiling tandem customer in freefall above the Canterbury hills",
+      "image_pos": "center 30%"
     }
   ],
   "includes": {

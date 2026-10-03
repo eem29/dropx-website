@@ -121,6 +121,9 @@ collections:
               - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
               - { label: "Story headline", name: "headline", widget: "string" }
               - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
+              - { label: "Card photo", name: "image", widget: "image", required: false }
+              - { label: "Card photo description", name: "alt", widget: "string", required: false }
+              - { label: "Card photo focus (e.g. center 35%)", name: "image_pos", widget: "string", required: false }
           - label: "The View (homepage)"
             name: "view"
             widget: "object"
