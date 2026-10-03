@@ -59,6 +59,7 @@
     .alt-story-price { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; margin-bottom: var(--s-3); }
     .alt-story-price .card-kicker { font-size: 12px; margin-right: 0.35rem; }
     .alt-story .ph-tag { display: table; }
+    .drop-label { display: block; margin-bottom: 0.35rem; color: rgba(255,255,255,0.6); }
   </style>
 </head>
 <body>
@@ -330,7 +331,7 @@
           box.querySelector('.section-eyebrow').textContent = a.name + ' · ' + a.feet;
           box.querySelector('h2').textContent = a.headline || a.name;
           box.querySelector('.alt-story-body').innerHTML =
-            '<p class="story-tagline">' + esc(a.tagline || '') + '</p>' + DX.phTag(a.placeholder) +
+            '<span class="card-kicker drop-label">The Drop</span><p class="story-tagline">' + esc(a.tagline || '') + '</p>' + DX.phTag(a.placeholder) +
             '<div class="story">' + DX.story(a.story) + '</div>' +
             '<p class="alt-story-price"><span class="card-kicker">From</span> ' + esc(a.price) + '</p>';
           box.querySelector('.amber-btn').firstChild.textContent = 'Book ' + a.name + ' ';

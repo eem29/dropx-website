@@ -90,7 +90,7 @@
       <div class="fb-content">
         <div class="fb-text">
           <span class="section-eyebrow" id="hero-kicker">The First Step</span>
-          <h1 class="page-hero-headline learn-h1" id="learn-headline">From first jump,<br>to skydiver.</h1>
+          <h1 class="page-hero-headline learn-h1" id="learn-headline">From first jump,<br> to skydiver.</h1>
           <p class="page-hero-sub" id="hero-sub">This is where it starts.</p>
           <div class="btn-row">
             <a href="contact.html?topic=aff#enquire" class="amber-btn" data-book="aff">Register your interest <span aria-hidden="true">→</span></a>
@@ -229,7 +229,7 @@
       DX.load('/content/aff.json').then(function (a) {
         if (a.kicker) document.getElementById('hero-kicker').textContent = a.kicker;
         if (a.hero_sub) document.getElementById('hero-sub').textContent = a.hero_sub;
-        if (a.hero_title) document.getElementById('learn-headline').innerHTML = esc(a.hero_title).replace(', ', ',<br>');
+        if (a.hero_title) document.getElementById('learn-headline').innerHTML = esc(a.hero_title).replace(', ', ',<br> ');
         if (a.headline) document.getElementById('aff-intro-headline').textContent = a.headline;
         if (a.story) document.getElementById('aff-story').innerHTML = DX.story(a.story);
         var l = a.licence || {};
