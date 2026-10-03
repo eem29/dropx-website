@@ -120,7 +120,7 @@
         "tag": "Video and photos",
         "price": "NZ$299",
         "popular": true,
-        "headline": "You may as well remember all of it.",
+        "headline": "The Full Send.",
         "story": [
           "The skydive is over in minutes.",
           "The memory isn't.",
@@ -141,7 +141,7 @@
         "tag": "Video only",
         "price": "NZ$199",
         "popular": false,
-        "headline": "Every part of it, on video.",
+        "headline": "The Memory.",
         "story": [
           "Every part of your experience is captured, from the ground, the climb, the anticipation, the exit, the freefall and the moment the parachute opens, right to the landing."
         ],
