@@ -3,55 +3,151 @@
     {
       "title": "Before you book",
       "faqs": [
-        { "question": "Do I need any experience?", "answer": "No. Tandem skydiving is built for first-timers. Your instructor is attached to you the whole way and handles the parachute. You get a full briefing on the ground before you go up.", "placeholder": false },
-        { "question": "Is there a weight limit?", "answer": "The limit is 100kg. If you're over 95kg, give us a call before you book so we can match you with the right instructor. We'll weigh you at check-in.", "placeholder": true },
-        { "question": "How old do I need to be?", "answer": "The minimum age is 12. Under 18s need a parent or guardian to sign on the day. There's no upper age limit if you're in good health.", "placeholder": true },
-        { "question": "Can I jump if I have a medical condition or injury?", "answer": "Often, yes, but tell us first. Let us know about heart conditions, back or neck injuries, recent surgery, dislocated shoulders, epilepsy or diabetes when you book. You can't jump if you're pregnant, or within 24 hours of scuba diving.", "placeholder": true },
-        { "question": "Can my friends and I jump together?", "answer": "Yes. Book together and we'll do our best to get you on the same load. Groups are welcome, get in touch for group bookings.", "placeholder": true },
-        { "question": "Do you sell gift vouchers?", "answer": "Yes. Vouchers can be used for any tandem altitude and camera package. See <a href=\"vouchers.html\">gift vouchers</a>.", "placeholder": true }
+        {
+          "question": "Do I need any experience?",
+          "answer": "No. Tandem skydiving is built for first-timers. Your instructor is attached to you the whole way and handles the parachute. You get a full briefing on the ground before you go up.",
+          "placeholder": false
+        },
+        {
+          "question": "Is there a weight limit?",
+          "answer": "The limit is 100kg. If you're over 95kg, give us a call before you book so we can match you with the right instructor. We'll weigh you at check-in.",
+          "placeholder": true
+        },
+        {
+          "question": "How old do I need to be?",
+          "answer": "The minimum age is 12. Under 18s need a parent or guardian to sign on the day. There's no upper age limit if you're in good health.",
+          "placeholder": true
+        },
+        {
+          "question": "Can I jump if I have a medical condition or injury?",
+          "answer": "Often, yes, but tell us first. Let us know about heart conditions, back or neck injuries, recent surgery, dislocated shoulders, epilepsy or diabetes when you book. You can't jump if you're pregnant, or within 24 hours of scuba diving.",
+          "placeholder": true
+        },
+        {
+          "question": "Can my friends and I jump together?",
+          "answer": "Yes. Book together and we'll do our best to get you on the same load. Groups are welcome, get in touch for group bookings.",
+          "placeholder": true
+        },
+        {
+          "question": "Do you sell gift vouchers?",
+          "answer": "Yes. Vouchers can be used for any tandem altitude and camera package. See <a href=\"vouchers.html\">gift vouchers</a>.",
+          "placeholder": true
+        }
       ]
     },
     {
       "title": "On the day",
       "faqs": [
-        { "question": "How long does it take?", "answer": "Allow about 3 hours at the drop zone. The briefing takes around 20 minutes, the flight to altitude around 15 to 20 minutes, and weather or aircraft loads can add time.", "placeholder": true },
-        { "question": "What should I wear?", "answer": "Comfortable clothes you can move in and closed shoes with laces. No boots, sandals or jandals. We supply the jumpsuit, harness and goggles.", "placeholder": false },
-        { "question": "Can I wear my glasses or contacts?", "answer": "Yes. Contacts are fine under the goggles, and we have goggles that fit over most glasses.", "placeholder": false },
-        { "question": "Should I eat before I jump?", "answer": "Yes. Have a light meal before you arrive and drink plenty of water. Don't drink alcohol the night before or on the day.", "placeholder": false },
-        { "question": "What does freefall feel like?", "answer": "Less like falling than most people expect. There's no stomach-drop feeling like a rollercoaster, because you're already moving fast when you leave the aircraft. It feels like strong wind holding you up. You can breathe normally.", "placeholder": false },
-        { "question": "What if I get nervous?", "answer": "Almost everyone does. Your instructor has done this many times and will talk you through every step. Most people say the nerves are worst on the ground.", "placeholder": false },
-        { "question": "Can friends and family watch?", "answer": "Yes. Spectators are welcome to come and watch the landings.", "placeholder": true }
+        {
+          "question": "How long does it take?",
+          "answer": "Allow about 3 hours at the drop zone. The briefing takes around 20 minutes, the flight to altitude around 15 to 20 minutes, and weather or aircraft loads can add time.",
+          "placeholder": true
+        },
+        {
+          "question": "What should I wear?",
+          "answer": "Comfortable clothes you can move in and closed shoes with laces. No boots, sandals or jandals. We supply the jumpsuit, harness and goggles.",
+          "placeholder": false
+        },
+        {
+          "question": "Can I wear my glasses or contacts?",
+          "answer": "Yes. Contacts are fine under the goggles, and we have goggles that fit over most glasses.",
+          "placeholder": false
+        },
+        {
+          "question": "Should I eat before I jump?",
+          "answer": "Yes. Have a light meal before you arrive and drink plenty of water. Don't drink alcohol the night before or on the day.",
+          "placeholder": false
+        },
+        {
+          "question": "What does freefall feel like?",
+          "answer": "Less like falling than most people expect. There's no stomach-drop feeling like a rollercoaster, because you're already moving fast when you leave the aircraft. It feels like strong wind holding you up. You can breathe normally.",
+          "placeholder": false
+        },
+        {
+          "question": "What if I get nervous?",
+          "answer": "Almost everyone does. Your instructor has done this many times and will talk you through every step. Most people say the nerves are worst on the ground.",
+          "placeholder": false
+        },
+        {
+          "question": "Can friends and family watch?",
+          "answer": "Yes. Spectators are welcome to come and watch the landings.",
+          "placeholder": true
+        }
       ]
     },
     {
       "title": "Safety and weather",
       "faqs": [
-        { "question": "How safe is tandem skydiving?", "answer": "Tandem skydiving has a strong safety record. Every rig carries a main and reserve parachute and an automatic activation device that deploys the reserve if needed. Our tandem instructors are rated and current, and DropX operates under New Zealand Civil Aviation rules.", "placeholder": true },
-        { "question": "What happens if the weather is bad?", "answer": "We only jump in safe conditions. If wind, cloud or rain stops jumping on your day, we'll move you to another day at no cost, or refund you if that doesn't work.", "placeholder": true },
-        { "question": "What is your cancellation policy?", "answer": "See our <a href=\"terms.html\">booking terms</a> for the full cancellation and refund policy.", "placeholder": true }
+        {
+          "question": "How safe is tandem skydiving?",
+          "answer": "Tandem skydiving has a strong safety record. Every rig carries a main and reserve parachute and an automatic activation device that deploys the reserve if needed. Our tandem instructors are rated and current, and DropX operates under New Zealand Civil Aviation rules.",
+          "placeholder": true
+        },
+        {
+          "question": "What happens if the weather is bad?",
+          "answer": "We only jump in safe conditions. If wind, cloud or rain stops jumping on your day, we'll move you to another day at no cost, or refund you if that doesn't work.",
+          "placeholder": true
+        },
+        {
+          "question": "What is your cancellation policy?",
+          "answer": "See our <a href=\"terms.html\">booking terms</a> for the full cancellation and refund policy.",
+          "placeholder": true
+        }
       ]
     },
     {
       "title": "Photo and video",
       "faqs": [
-        { "question": "Can I bring my own camera or GoPro?", "answer": "No. For safety, phones, GoPros and cameras aren't allowed on tandem jumps. Our camera packages are the only way to get footage from the air.", "placeholder": false },
-        { "question": "What's the difference between Handcam and Camera flyer?", "answer": "Handcam is filmed on your instructor's wrist camera and shows close-ups of your face. Camera flyer is a second skydiver who films you from outside, so you see the exit, the freefall and the scenery around you. See <a href=\"media.html\">photo and video</a>.", "placeholder": false },
-        { "question": "How do I get my photos and video?", "answer": "We send them to you by download link after your jump.", "placeholder": true }
+        {
+          "question": "Can I bring my own camera or GoPro?",
+          "answer": "No. For safety, phones, GoPros and cameras aren't allowed on tandem jumps. Our camera packages are the only way to get footage from the air.",
+          "placeholder": false
+        },
+        {
+          "question": "What's the difference between The Full Send and The Memory?",
+          "answer": "The Full Send is video and photos. The Memory is video only. Both capture your jump from the exit and freefall to the parachute opening. See <a href=\"media.html\">photo and video</a>.",
+          "placeholder": true
+        },
+        {
+          "question": "How do I get my photos and video?",
+          "answer": "We send them to you by download link after your jump.",
+          "placeholder": true
+        }
       ]
     },
     {
       "title": "Learn to skydive",
       "faqs": [
-        { "question": "Can I learn to skydive at DropX?", "answer": "Yes. Our AFF (Accelerated Freefall) course takes you from your first jump to a skydiving licence. See <a href=\"learn.html\">learn to skydive</a>.", "placeholder": false },
-        { "question": "Should I do a tandem before AFF?", "answer": "You don't have to, but many people do. A tandem lets you experience freefall before committing to a course.", "placeholder": false }
+        {
+          "question": "Can I learn to skydive at DropX?",
+          "answer": "Yes. Our AFF (Accelerated Freefall) course takes you from your first jump to a skydiving licence. See <a href=\"learn.html\">learn to skydive</a>.",
+          "placeholder": false
+        },
+        {
+          "question": "Should I do a tandem before AFF?",
+          "answer": "You don't have to, but many people do. A tandem lets you experience freefall before committing to a course.",
+          "placeholder": false
+        }
       ]
     },
     {
       "title": "Licensed jumpers",
       "faqs": [
-        { "question": "I am a licensed jumper. How do I jump here?", "answer": "Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Facebook Messenger community group</a>, coordinate with the crew, and show up on jump day. Tickets are NZ$65 per jump from 12,000ft.", "placeholder": false },
-        { "question": "What sport events do you run?", "answer": "Canopy coaching, freefly coaching, and demo jumps. Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Messenger group</a> for upcoming sessions.", "placeholder": false },
-        { "question": "How do I find out who is jumping this weekend?", "answer": "Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Facebook Messenger group</a>. That is where all jump day coordination happens.", "placeholder": false }
+        {
+          "question": "I am a licensed jumper. How do I jump here?",
+          "answer": "Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Facebook Messenger community group</a>, coordinate with the crew, and show up on jump day. Tickets are NZ$65 per jump from 12,000ft.",
+          "placeholder": false
+        },
+        {
+          "question": "What sport events do you run?",
+          "answer": "Canopy coaching, freefly coaching, and demo jumps. Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Messenger group</a> for upcoming sessions.",
+          "placeholder": false
+        },
+        {
+          "question": "How do I find out who is jumping this weekend?",
+          "answer": "Join the <a href=\"https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link\" target=\"_blank\" rel=\"noopener\">Facebook Messenger group</a>. That is where all jump day coordination happens.",
+          "placeholder": false
+        }
       ]
     }
   ]

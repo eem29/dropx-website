@@ -1,20 +1,38 @@
 {
   "altitudes": [
     {
-      "feet": "9,000ft",
-      "freefall": "About 25 seconds of freefall",
-      "price": "NZ$299",
-      "note": "",
-      "popular": false,
-      "placeholder": true
-    },
-    {
+      "name": "The 12,000",
       "feet": "12,000ft",
+      "tagline": "12,000 feet. Up to 45 seconds of freefall. One hell of a way to see Canterbury.",
       "freefall": "About 45 seconds of freefall",
       "price": "NZ$379",
       "note": "Most popular",
       "popular": true,
-      "placeholder": true
+      "placeholder": true,
+      "headline": "The altitude changes everything.",
+      "story": [
+        "12,000 feet above Canterbury, the ground starts to feel a long way away. Christchurch, the Southern Alps, Banks Peninsula and the Canterbury Plains stretch out beneath you, while the aircraft door becomes your only reference point.",
+        "Then the door opens.",
+        "200 km/h. Nothing between you and the sky. Just open air and a perspective that can't be replicated from the ground.",
+        "This is the full DropX experience. Big altitude. Big freefall. One unforgettable view.",
+        "12,000 feet above Canterbury. Then there's nowhere left to go, but out."
+      ]
+    },
+    {
+      "name": "The 9,000",
+      "feet": "9,000ft",
+      "tagline": "9,000 feet. Pure freefall. A serious introduction to skydiving.",
+      "freefall": "About 25 seconds of freefall",
+      "price": "NZ$299",
+      "note": "",
+      "popular": false,
+      "placeholder": true,
+      "headline": "Closer to the ground. No less of an experience.",
+      "story": [
+        "At 9,000 feet, you're high enough to see Canterbury unfold beneath you, but close enough to appreciate just how fast the ground is coming towards you.",
+        "The aircraft climbs. The anticipation builds. Then the door opens.",
+        "Step into the sky and experience freefall at 200 km/h, before the parachute opens and the noise gives way to a completely different kind of silence."
+      ]
     }
   ],
   "includes": {
@@ -92,56 +110,60 @@
     "placeholder": true
   },
   "media": {
-    "intro": "Your instructor can film the jump on a wrist camera, or a second skydiver can fly alongside and film you from outside. Add it when you book, or on the day.",
+    "intro": "The skydive is over in minutes. The memory isn't.",
     "delivery": "Photos and edited video are sent to you by download link after your jump.",
     "own_camera": "For safety, you can't take your own phone, GoPro or camera on the jump. Our camera packages are the only way to get footage from the air.",
     "placeholder": true,
     "packages": [
       {
-        "name": "Handcam",
-        "tag": "Instructor camera",
-        "price": "NZ$179",
-        "popular": false,
-        "includes": [
-          "Filmed on your instructor's wrist camera",
-          "Close-up view of your face in freefall",
-          "Edited video and photos",
-          "Sent to you by download link"
-        ],
-        "image": "dropx-images-web/tandem/tandem-105-tile.webp",
-        "alt": "Close-up handcam shot of a tandem customer in freefall against a blue sky",
-        "placeholder": true
-      },
-      {
-        "name": "Camera flyer",
-        "tag": "Outside camera",
-        "price": "NZ$279",
-        "popular": false,
-        "includes": [
-          "A second skydiver films you from outside",
-          "Your exit, freefall and parachute opening",
-          "Edited video and photos",
-          "Sent to you by download link"
-        ],
-        "image": "dropx-images-web/tandem/tandem-125-tile.webp",
-        "alt": "Camera flyer filming a tandem pair over the Canterbury coast",
-        "placeholder": true
-      },
-      {
-        "name": "Both",
-        "tag": "Handcam and camera flyer",
-        "price": "NZ$379",
+        "name": "The Full Send",
+        "tag": "Video and photos",
+        "price": "NZ$299",
         "popular": true,
+        "headline": "You may as well remember all of it.",
+        "story": [
+          "The skydive is over in minutes.",
+          "The memory isn't.",
+          "You're already jumping. You may as well remember all of it.",
+          "Our camera and video package captures the exit, the freefall, the view from above and everything in between, so you can relive the full DropX experience long after you've landed."
+        ],
         "includes": [
-          "Everything in Handcam and Camera flyer",
-          "Two angles of the same jump",
-          "Edited video and full photo set",
+          "Video of your whole jump",
+          "Photos from the exit, freefall and canopy ride",
           "Sent to you by download link"
         ],
         "image": "dropx-images-web/tandem/tandem-8-tile.webp",
         "alt": "Tandem customer making a heart with their hands in freefall at sunset",
         "placeholder": true
+      },
+      {
+        "name": "The Memory",
+        "tag": "Video only",
+        "price": "NZ$199",
+        "popular": false,
+        "headline": "Every part of it, on video.",
+        "story": [
+          "Every part of your experience is captured, from the ground, the climb, the anticipation, the exit, the freefall and the moment the parachute opens, right to the landing."
+        ],
+        "includes": [
+          "Video from the ground to the landing",
+          "The climb, exit, freefall and parachute opening",
+          "Sent to you by download link"
+        ],
+        "image": "dropx-images-web/tandem/tandem-105-tile.webp",
+        "alt": "Tandem customer in freefall with the instructor behind, deep blue sky",
+        "placeholder": true
       }
+    ]
+  },
+  "view": {
+    "kicker": "The View",
+    "headline": "Some views are earned.",
+    "story": [
+      "From the ground, Canterbury is beautiful.",
+      "From 12,000 feet, it becomes something else entirely.",
+      "The Southern Alps. The plains. The coastline. Christchurch.",
+      "All from a perspective you can't reach without leaving the ground."
     ]
   }
 }

@@ -112,17 +112,24 @@
   'use strict';
   var DX = window.DX, esc = DX.esc, URL_T = '/content/tandem.json';
 
+  // Story copy: short lines become display-font "beats", longer ones body paragraphs
+  DX.story = function (paras) {
+    return (paras || []).map(function (p) {
+      return '<p class="' + (p.length <= 75 ? 'story-beat' : 'story-p') + '">' + esc(p) + '</p>';
+    }).join('');
+  };
+
   DX.renderAltitudes = function (el) {
     return DX.render(URL_T, el, function (t) {
       return (t.altitudes || []).map(function (a, i) {
         return '<article class="glass alt-card reveal reveal-d' + Math.min(i + 1, 3) + (a.popular ? ' glass--hi' : '') + '">' +
           (a.popular && a.note ? '<span class="alt-badge">' + esc(a.note) + '</span>' : '') +
           DX.phTag(a.placeholder) +
-          '<span class="card-kicker">Tandem skydive</span>' +
-          '<h3 class="card-title">' + esc(a.feet) + '</h3>' +
-          '<p class="alt-freefall">' + esc(a.freefall) + '</p>' +
+          '<span class="card-kicker">' + esc(a.feet) + ' tandem</span>' +
+          '<h3 class="card-title">' + esc(a.name || a.feet) + '</h3>' +
+          '<p class="alt-freefall">' + esc(a.tagline || a.freefall) + '</p>' +
           '<p class="card-price"><small>From</small>' + esc(a.price) + '</p>' +
-          '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.feet) + '</a>' +
+          '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.name || a.feet) + '</a>' +
         '</article>';
       }).join('');
     });
