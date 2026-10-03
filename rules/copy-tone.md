@@ -11,6 +11,26 @@ Owner: Ben Johnstone — ben@skydivedropx.com / (027) 2929951
 
 ---
 
+## Ben's naming system (October 2026)
+
+Ben supplied product copy in a bold voice. Use these names as section labels / product names:
+
+- THE 12,000 and THE 9,000: tandem altitudes (content/tandem.json → altitudes[].name)
+- THE FULL SEND (video and photos) and THE MEMORY (video only): camera packages
+- THE FIRST STEP: AFF. THE LICENCE: the 'A' licence pathway (content/aff.json)
+- THE VIEW: homepage section (content/tandem.json → view)
+- THE SHOW: demo jumps. THE GIFT: gift vouchers. THE CLUB: sport skydiving
+- THE CREW: reserved for staff profiles, not built yet
+
+Nav links stay in plain words (Tandem, Photo & Video, Learn to Skydive) so first-timers can find
+things; Ben's names appear as page and section labels.
+
+Ben's own copy is used verbatim apart from typo fixes. It includes words our own copy avoids
+(e.g. "unforgettable" in The 12,000). That is client-approved: leave it, but don't add more.
+Short story lines (75 characters or fewer) render as bold display-font "beats" via DX.story().
+
+---
+
 ## Tone
 
 Direct, plain and professional. Written for first-timers booking a tandem, by people who jump.

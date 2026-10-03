@@ -200,7 +200,7 @@
         </ul>
       </nav>
       <nav aria-label="Club links">
-        <span class="footer-col-label">The club</span>
+        <span class="footer-col-label">The Club</span>
         <ul class="footer-nav-links" role="list">
           <li><a href="jump.html">Sport jumping</a></li>
           <li><a href="demos.html">Demo jumps</a></li>
@@ -229,6 +229,7 @@
       DX.load('/content/aff.json').then(function (a) {
         if (a.kicker) document.getElementById('hero-kicker').textContent = a.kicker;
         if (a.hero_sub) document.getElementById('hero-sub').textContent = a.hero_sub;
+        if (a.hero_title) document.getElementById('learn-headline').innerHTML = esc(a.hero_title).replace(', ', ',<br>');
         if (a.headline) document.getElementById('aff-intro-headline').textContent = a.headline;
         if (a.story) document.getElementById('aff-story').innerHTML = DX.story(a.story);
         var l = a.licence || {};

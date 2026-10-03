@@ -109,14 +109,25 @@ collections:
             name: "altitudes"
             widget: "list"
             label_singular: "Altitude"
-            summary: "{{fields.feet}} {{fields.price}}"
+            summary: "{{fields.name}} {{fields.price}}"
             fields:
+              - { label: "Product name", name: "name", widget: "string", hint: "e.g. The 12,000" }
               - { label: "Altitude", name: "feet", widget: "string", hint: "e.g. 12,000ft" }
+              - { label: "Tagline", name: "tagline", widget: "string", hint: "e.g. 12,000 feet. Up to 45 seconds of freefall." }
               - { label: "Freefall", name: "freefall", widget: "string", hint: "e.g. About 45 seconds of freefall" }
               - { label: "Price", name: "price", widget: "string", hint: "e.g. NZ$379" }
               - { label: "Label", name: "note", widget: "string", required: false, hint: "e.g. Most popular" }
               - { label: "Highlight this one", name: "popular", widget: "boolean", default: false, required: false }
               - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+              - { label: "Story headline", name: "headline", widget: "string" }
+              - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
+          - label: "The View (homepage)"
+            name: "view"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "kicker", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
           - label: "What's included"
             name: "includes"
             widget: "object"
@@ -176,13 +187,15 @@ collections:
                 summary: "{{fields.name}} {{fields.price}}"
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Tag", name: "tag", widget: "string" }
+                  - { label: "Tag", name: "tag", widget: "string", hint: "e.g. Video and photos" }
                   - { label: "Price", name: "price", widget: "string" }
                   - { label: "Highlight this one", name: "popular", widget: "boolean", default: false, required: false }
                   - { label: "Includes", name: "includes", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
                   - { label: "Photo", name: "image", widget: "image" }
                   - { label: "Photo description", name: "alt", widget: "string" }
                   - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
 
   # ── AFF ───────────────────────────────────────────────────────────────────
   - name: "aff"
@@ -192,7 +205,20 @@ collections:
         label: "AFF Course"
         file: "content/aff.json"
         fields:
-          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Label", name: "kicker", widget: "string", hint: "e.g. The First Step" }
+          - { label: "Hero headline", name: "hero_title", widget: "string" }
+          - { label: "Hero line", name: "hero_sub", widget: "string" }
+          - { label: "Homepage intro", name: "intro", widget: "text" }
+          - { label: "Story headline", name: "headline", widget: "string" }
+          - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
+          - label: "The Licence"
+            name: "licence"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "kicker", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Story (one line per paragraph; short lines show as bold beats)", name: "story", widget: "list", field: { label: "Paragraph", name: "p", widget: "text" } }
           - { label: "Status line", name: "status", widget: "text" }
           - { label: "Price", name: "price", widget: "string" }
           - { label: "Still a placeholder?", name: "placeholder", widget: "boolean", default: false, required: false }
