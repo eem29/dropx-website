@@ -1,12 +1,56 @@
 {
-  "intro": "AFF (Accelerated Freefall) is the fastest way to become a licensed skydiver. You jump from your first day, with instructors in the air beside you until you can fly on your own.",
+  "kicker": "The First Step",
+  "hero_title": "From first jump, to skydiver.",
+  "hero_sub": "This is where it starts.",
+  "intro": "AFF is where you stop being a passenger and start learning to fly.",
+  "headline": "Every skydiver starts somewhere.",
+  "story": [
+    "AFF is where you stop being a passenger and start learning to fly.",
+    "Over a series of progressive jumps, you'll learn the skills, awareness and control required to skydive independently, under the guidance of experienced instructors who have made thousands of jumps themselves.",
+    "Your first jump is the beginning. Each jump after that gives you more responsibility, more freedom and more confidence.",
+    "Until eventually, you're standing in the door by yourself.",
+    "One jump becomes two.",
+    "Two becomes ten.",
+    "And somewhere along the way, you stop being someone who went skydiving.",
+    "You become a skydiver."
+  ],
   "status": "Registrations open now. Tell us you're keen and we'll send you the next course dates.",
   "price": "Course price to confirm",
   "placeholder": true,
   "stages": [
-    { "title": "Ground school", "body": "A full day on the ground covering the aircraft, exits, body position, your parachute and emergency procedures." },
-    { "title": "Levels 1 to 3", "body": "Two instructors jump with you and hold on while you practise stable freefall and pull your own parachute." },
-    { "title": "Levels 4 to 7", "body": "One instructor flies with you as you learn turns, forward movement, flips and solo exits." },
-    { "title": "Consolidation", "body": "Solo jumps with a coach to build experience and canopy skills towards your licence." }
-  ]
+    {
+      "title": "Ground school",
+      "body": "A full day on the ground covering the aircraft, exits, body position, your parachute and emergency procedures."
+    },
+    {
+      "title": "Levels 1 to 3",
+      "body": "Two instructors jump with you and hold on while you practise stable freefall and pull your own parachute."
+    },
+    {
+      "title": "Levels 4 to 7",
+      "body": "One instructor flies with you as you learn turns, forward movement, flips and solo exits."
+    },
+    {
+      "title": "Consolidation",
+      "body": "Solo jumps with a coach to build experience and canopy skills towards your licence."
+    }
+  ],
+  "licence": {
+    "kicker": "The Licence",
+    "headline": "The 'A' licence.",
+    "tagline": "The beginning of everything that comes after. Unlimited possibilities.",
+    "story": [
+      "Not everyone wants to do one skydive.",
+      "Some people want to become a skydiver.",
+      "The DropX Licence pathway takes you from your first jump through to your A Licence, teaching you everything you need to become an independent sport skydiver.",
+      "You won't just experience the freefall. You'll learn how to control it, how to fly.",
+      "You won't just jump from an aircraft. You'll learn how to become part of the skydiving community.",
+      "There is a difference between doing a skydive and becoming a skydiver.",
+      "The 'A' Licence is your entry into the sport and career pathways.",
+      "A structured progression of training.",
+      "You learn the rules.",
+      "You learn the skills.",
+      "Then you get to decide where you go from there."
+    ]
+  }
 }
