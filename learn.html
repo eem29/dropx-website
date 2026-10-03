@@ -40,6 +40,9 @@
     .stage-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; }
     .stage p { font-size: 0.87rem; line-height: 1.6; color: rgba(255,255,255,0.8); }
     @media (max-width: 767px) { .stage-list { grid-template-columns: 1fr; } }
+    .learn-h1 { font-size: clamp(3rem, 7vw, 6.5rem); }
+    .page-hero .fb-text:has(.learn-h1) { max-width: 820px; }
+    #aff-story { margin-bottom: var(--s-4); }
   </style>
 </head>
 <body>
@@ -86,9 +89,9 @@
       <div class="fb-overlay fb-overlay--left" aria-hidden="true"></div>
       <div class="fb-content">
         <div class="fb-text">
-          <span class="section-eyebrow">AFF course</span>
-          <h1 class="page-hero-headline" id="learn-headline">Learn to<br>skydive.</h1>
-          <p class="page-hero-sub">From your first jump to a skydiving licence, with instructors in the air beside you.</p>
+          <span class="section-eyebrow" id="hero-kicker">The First Step</span>
+          <h1 class="page-hero-headline learn-h1" id="learn-headline">From first jump,<br>to skydiver.</h1>
+          <p class="page-hero-sub" id="hero-sub">This is where it starts.</p>
           <div class="btn-row">
             <a href="contact.html?topic=aff#enquire" class="amber-btn" data-book="aff">Register your interest <span aria-hidden="true">→</span></a>
             <a href="#course" class="cta-arrow">The course <span aria-hidden="true">→</span></a>
@@ -107,9 +110,9 @@
       <div class="fb-overlay" aria-hidden="true"></div>
       <div class="fb-content">
         <div class="fb-text">
-          <span class="section-eyebrow reveal">What is AFF?</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="aff-intro-headline">Fly on your own.</h2>
-          <p class="section-body reveal reveal-d2" id="aff-intro">AFF (Accelerated Freefall) is the fastest way to become a licensed skydiver. You jump from your first day, with instructors in the air beside you until you can fly on your own.</p>
+          <span class="section-eyebrow reveal">AFF course</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="aff-intro-headline">Every skydiver starts somewhere.</h2>
+          <div class="story" id="aff-story"><p class="story-beat">AFF is where you stop being a passenger and start learning to fly.</p></div>
           <div class="glass aff-status reveal reveal-d3" id="aff-status">
             <span class="card-kicker">Course price</span>
             <strong class="aff-price">Call us</strong>
@@ -131,6 +134,24 @@
           <ol class="stage-list" id="stage-list" role="list">
             <li class="glass stage"><span class="day-num">01</span><h3 class="stage-title">Ground school</h3><p>A full day on the ground before your first jump.</p></li>
           </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Licence -->
+    <section class="fb fb--photo-right" id="licence" aria-labelledby="licence-headline"
+      style="--bg: url('/dropx-images-web/Drop%20X%20Opening%202026-16.webp'); --bg-pos: center;">
+      <div class="fb-bg" role="img" aria-label="Two licensed skydivers freeflying in clear sky above the clouds"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text">
+          <span class="section-eyebrow reveal" id="licence-kicker">The Licence</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="licence-headline">The 'A' licence.</h2>
+          <p class="story-tagline reveal reveal-d2" id="licence-tagline">The beginning of everything that comes after.</p>
+          <div class="story" id="licence-story"></div>
+          <div class="btn-row reveal">
+            <a href="contact.html?topic=aff#enquire" class="amber-btn" data-book="aff">Start your licence <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -206,7 +227,15 @@
     (function () {
       var esc = DX.esc;
       DX.load('/content/aff.json').then(function (a) {
-        if (a.intro) document.getElementById('aff-intro').textContent = a.intro;
+        if (a.kicker) document.getElementById('hero-kicker').textContent = a.kicker;
+        if (a.hero_sub) document.getElementById('hero-sub').textContent = a.hero_sub;
+        if (a.headline) document.getElementById('aff-intro-headline').textContent = a.headline;
+        if (a.story) document.getElementById('aff-story').innerHTML = DX.story(a.story);
+        var l = a.licence || {};
+        if (l.kicker) document.getElementById('licence-kicker').textContent = l.kicker;
+        if (l.headline) document.getElementById('licence-headline').textContent = l.headline;
+        if (l.tagline) document.getElementById('licence-tagline').textContent = l.tagline;
+        document.getElementById('licence-story').innerHTML = DX.story(l.story);
         document.getElementById('aff-status').innerHTML = DX.phTag(a.placeholder) +
           '<span class="card-kicker">Course price</span><strong class="aff-price">' + esc(a.price) + '</strong><p>' + esc(a.status) + '</p>';
       }).catch(function () {});
