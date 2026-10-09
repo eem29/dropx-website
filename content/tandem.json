@@ -8,7 +8,7 @@
       "price": "NZ$379",
       "note": "Most popular",
       "popular": true,
-      "placeholder": true,
+      "placeholder": false,
       "headline": "The altitude changes everything.",
       "story": [
         "12,000 feet above Canterbury, the ground starts to feel a long way away. Christchurch, the Southern Alps, Banks Peninsula and the Canterbury Plains stretch out beneath you, while the aircraft door becomes your only reference point.",
@@ -29,7 +29,7 @@
       "price": "NZ$299",
       "note": "",
       "popular": false,
-      "placeholder": true,
+      "placeholder": false,
       "headline": "Closer to the ground. No less of an experience.",
       "story": [
         "At 9,000 feet, you're high enough to see Canterbury unfold beneath you, but close enough to appreciate just how fast the ground is coming towards you.",
@@ -140,7 +140,7 @@
         ],
         "image": "dropx-images-web/tandem/tandem-8-tile.webp",
         "alt": "Tandem customer making a heart with their hands in freefall at sunset",
-        "placeholder": true,
+        "placeholder": false,
         "pitch": "The whole jump on video, and the photos to go with it.",
         "best_for": "First-timers, birthdays, bucket lists, and anyone who wants a photo for the wall."
       },
@@ -160,7 +160,7 @@
         ],
         "image": "dropx-images-web/tandem/tandem-105-tile.webp",
         "alt": "Tandem customer in freefall with the instructor behind, deep blue sky",
-        "placeholder": true,
+        "placeholder": false,
         "pitch": "Every moment of your jump on video, from the ground to the landing.",
         "best_for": "Anyone who wants to watch the whole jump back, start to finish."
       }
