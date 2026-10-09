@@ -97,7 +97,7 @@ Format: short imperative sentence.
 ## Hard Rules
 
 - Do not add sections or content not in this brief
-- Do not write tourist copy ("epic", "thrill of a lifetime", "unforgettable")
+- Do write in Ben's voice (bold, punchy, sells the experience) and use his own words wherever he has supplied them; see rules/copy-tone.md
 - Do not use em dashes anywhere
 - Do not hardcode booking URLs: every Book link uses data-book and content/site.json → booking
 - Do not use transition-all

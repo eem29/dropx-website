@@ -26,28 +26,33 @@ Main nav (Oct 2026, per Ben's email): Tandem · Photo & Video · Learn to Skydiv
 The Gift · The Club · The Crew · FAQ · About · Contact, plus Book now. Ten items: the nav
 switches to the hamburger below 1100px.
 
-Ben's own copy is used verbatim apart from typo fixes. It includes words our own copy avoids
-(e.g. "unforgettable" in The 12,000). That is client-approved: leave it, but don't add more.
+Ben's own copy is used verbatim apart from typo fixes. Where Ben has written copy for something,
+use his words, not a rewrite.
 Short story lines (75 characters or fewer) render as bold display-font "beats" via DX.story().
 
 ---
 
-## Tone
+## Tone (updated Oct 2026: follow Ben's voice)
 
-Direct, plain and professional. Written for first-timers booking a tandem, by people who jump.
-Still not a tourist brochure: be specific (altitudes, times, what happens) instead of hyping it.
-Photography does the heavy lifting. Copy supports it — it does not try to replace it.
-Be specific and plain. If in doubt, use fewer words.
+Bold, confident and direct, in the voice of Ben's own product copy (see the naming system above).
+Short punchy lines. Big claims are fine when they're true to the product: "One hell of a way to
+see Canterbury." Sell the experience: the altitude, the freefall, the view, reliving it.
+
+- Use Ben's words wherever he has written them. Only write new copy where he hasn't, and match his
+  voice when you do.
+- Words like "unforgettable" or "once in a lifetime" are fine if they suit the product and Ben's
+  voice. There is no banned-words list any more.
+- Facts stay factual: never invent prices, limits, policies, jump numbers or delivery times.
+  Unconfirmed facts go in JSON with "placeholder": true.
+- Photography still does the heavy lifting. Copy and photos sit together, never flat text panels.
 
 ---
 
 ## Copy Rules
 
 - Never use em dashes. Replace with a hyphen, comma, colon, or rewrite the sentence.
-- Never use: "thrill of a lifetime", "unforgettable experience", "epic adventure", or similar tourist copy
-- Never use: "epic", "stunning", "breathtaking" or any generic adventure-tourism language
-- Placeholder copy must be clearly marked as PLACEHOLDER
-- Do not write marketing copy the client has not provided or approved
+- Placeholder copy (unconfirmed facts) must be clearly marked as PLACEHOLDER
+- New marketing copy written by us is a draft for Ben to approve
 
 ---
 
