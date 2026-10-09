@@ -20,7 +20,7 @@
         },
         {
           "question": "Can I jump if I have a medical condition or injury?",
-          "answer": "Often, yes, but tell us first. Let us know about heart conditions, back or neck injuries, recent surgery, dislocated shoulders, epilepsy or diabetes when you book. You can't jump if you're pregnant, or within 24 hours of scuba diving.",
+          "answer": "Often, yes, but tell us first. Let us know about any medical conditions or recent injuries when you book and we'll talk it through with you.",
           "placeholder": true
         },
         {
@@ -55,8 +55,8 @@
         },
         {
           "question": "Should I eat before I jump?",
-          "answer": "Yes. Have a light meal before you arrive and drink plenty of water. Don't drink alcohol the night before or on the day.",
-          "placeholder": false
+          "answer": "Yes. Have a light meal before you arrive and drink plenty of water.",
+          "placeholder": true
         },
         {
           "question": "What does freefall feel like?",
