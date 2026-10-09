@@ -42,28 +42,41 @@
     });
   };
 
-  // ---- Nav ----
+  // ---- Nav: top bar + full-screen menu panel ----
   var nav = document.getElementById('main-nav');
   if (nav) {
     var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 50); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     var burger = nav.querySelector('.nav-hamburger');
-    var setOpen = function (open) {
+    var panel = document.getElementById('nav-panel');
+    var label = burger && burger.querySelector('.nav-menu-label');
+    var setOpen = function (open, restoreFocus) {
       nav.classList.toggle('open', open);
+      document.documentElement.classList.toggle('menu-open', open);
       burger.setAttribute('aria-expanded', String(open));
       burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (label) label.textContent = open ? 'Close' : 'Menu';
+      if (open && panel) {
+        var first = panel.querySelector('a');
+        if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, 50);
+      } else if (restoreFocus) {
+        burger.focus();
+      }
     };
     if (burger) {
       burger.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) setOpen(false, true);
+      });
     }
-    nav.querySelectorAll('.nav-links a').forEach(function (a) {
-      a.addEventListener('touchstart', function () { a.classList.add('is-pressed'); }, { passive: true });
-      a.addEventListener('touchend', function () { a.classList.remove('is-pressed'); });
-      a.addEventListener('touchcancel', function () { a.classList.remove('is-pressed'); });
-      a.addEventListener('click', function () { if (burger) setOpen(false); });
-    });
+    if (panel) {
+      panel.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      // click on the backdrop (not a link) closes the panel
+      panel.addEventListener('click', function (e) { if (e.target === panel || e.target.classList.contains('nav-panel-inner')) setOpen(false, true); });
+    }
   }
 
   // ---- Scroll reveal ----

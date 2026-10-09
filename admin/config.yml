@@ -294,16 +294,6 @@ collections:
               - { label: "Tandem booking link", name: "tandem_url", widget: "string" }
               - { label: "Gift voucher link", name: "vouchers_url", widget: "string" }
               - { label: "AFF booking link", name: "aff_url", widget: "string" }
-          - label: "Navigation"
-            name: "nav"
-            widget: "object"
-            fields:
-              - label: "Links"
-                name: "links"
-                widget: "list"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Link", name: "href", widget: "string" }
           - label: "Footer"
             name: "footer"
             widget: "object"
