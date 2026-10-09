@@ -22,9 +22,11 @@ Ben supplied product copy in a bold voice. Use these names as section labels / p
 - THE SHOW: demo jumps. THE GIFT: gift vouchers. THE CLUB: sport skydiving
 - THE CREW: staff profiles (crew.html, content/crew.json)
 
-Main nav (Oct 2026, per Ben's email): Tandem · Photo & Video · Learn to Skydive · The Show ·
-The Gift · The Club · The Crew · FAQ · About · Contact, plus Book now. Ten items: the nav
-switches to the hamburger below 1100px.
+Nav (Oct 2026): the top bar shows Tandem · Learn to Skydive · The Gift · FAQ, plus Book now and
+a Menu button. Menu opens a full-screen panel: Skydive (Tandem, Photo & Video, Learn to Skydive,
+The Gift), DropX (The Show, The Club, The Crew, About) and Get in touch (FAQ, Contact, Booking
+terms). Each of Ben's names has a plain-English line under it in the panel. Photo & Video is not
+in the top bar: it lives inside the tandem page and the menu.
 
 Ben's own copy is used verbatim apart from typo fixes. Where Ben has written copy for something,
 use his words, not a rewrite.
