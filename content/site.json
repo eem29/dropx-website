@@ -1,6 +1,7 @@
 {
   "booking": {
-    "provider": "",
+    "provider": "fareharbor",
+    "shortname": "skydivedropx",
     "tandem_url": "contact.html?topic=tandem#enquire",
     "vouchers_url": "contact.html?topic=voucher#enquire",
     "aff_url": "contact.html?topic=aff#enquire"

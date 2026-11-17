@@ -15,8 +15,9 @@
     "You become a skydiver."
   ],
   "status": "Registrations open now. Tell us you're keen and we'll send you the next course dates.",
-  "price": "Course price to confirm",
-  "placeholder": true,
+  "price": "NZ$3,599",
+  "licence_price": "NZ$5,999",
+  "placeholder": false,
   "stages": [
     {
       "title": "Ground school",

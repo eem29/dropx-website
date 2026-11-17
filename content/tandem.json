@@ -5,7 +5,7 @@
       "feet": "12,000ft",
       "tagline": "12,000 feet. Up to 45 seconds of freefall. One hell of a way to see Canterbury.",
       "freefall": "About 45 seconds of freefall",
-      "price": "NZ$379",
+      "price": "NZ$449",
       "note": "Most popular",
       "popular": true,
       "placeholder": false,
@@ -26,7 +26,7 @@
       "feet": "9,000ft",
       "tagline": "9,000 feet. Pure freefall. A serious introduction to skydiving.",
       "freefall": "About 25 seconds of freefall",
-      "price": "NZ$299",
+      "price": "NZ$369",
       "note": "",
       "popular": false,
       "placeholder": false,
@@ -119,50 +119,92 @@
     "intro": "The skydive is over in minutes. The memory isn't.",
     "delivery": "Photos and edited video are sent to you by download link after your jump.",
     "own_camera": "For safety, you can't take your own phone, GoPro or camera on the jump. Our camera packages are the only way to get footage from the air.",
-    "placeholder": true,
+    "placeholder": false,
     "packages": [
       {
+        "name": "Handcam",
+        "tag": "Video",
+        "price": "NZ$190",
+        "popular": false,
+        "headline": "Handcam.",
+        "story": [
+          "Your instructor wears a camera on their wrist.",
+          "It captures your face at the door, the full freefall and the moment the parachute opens.",
+          "Raw, close-up footage of exactly what it felt like."
+        ],
+        "includes": [
+          "Handcam video from exit through to landing",
+          "Sent to you by download link"
+        ],
+        "image": "dropx-images-web/tandem/tandem-105-tile.webp",
+        "alt": "Tandem customer in freefall with the instructor behind, deep blue sky",
+        "pitch": "Your jump on video, up close and personal.",
+        "best_for": "Anyone who wants to relive the full experience."
+      },
+      {
+        "name": "Handcam + Photos",
+        "tag": "Video & photos",
+        "price": "NZ$220",
+        "popular": false,
+        "headline": "Handcam + Photos.",
+        "story": [
+          "The same close-up handcam video, plus stills from the jump.",
+          "Photos from the exit, the freefall and the canopy ride.",
+          "Watch it back, then pick the shot for the wall."
+        ],
+        "includes": [
+          "Handcam video from exit through to landing",
+          "Photos from your jump",
+          "Sent to you by download link"
+        ],
+        "image": "dropx-images-web/tandem/tandem-8-tile.webp",
+        "alt": "Tandem customer making a heart with their hands in freefall at sunset",
+        "pitch": "Video of your jump and the photos to go with it.",
+        "best_for": "First-timers and anyone who wants a photo for the wall."
+      },
+      {
+        "name": "Outside Cam + Photos",
+        "tag": "External camera",
+        "price": "NZ$330",
+        "popular": false,
+        "headline": "Outside Cam + Photos.",
+        "story": [
+          "A separate camera flyer jumps with you.",
+          "They shoot from outside the jump, capturing the whole skydive from a completely different angle.",
+          "The exit, the freefall from above. A perspective no handcam can get."
+        ],
+        "includes": [
+          "Video from an external camera flyer",
+          "Photos from your jump",
+          "Sent to you by download link"
+        ],
+        "image": "dropx-images-web/tandem/tandem-125-tile.webp",
+        "alt": "Tandem pair in freefall over the Canterbury coast, filmed from the air",
+        "pitch": "Your jump shot from the outside.",
+        "best_for": "Anyone who wants the wide-angle perspective."
+      },
+      {
         "name": "The Full Send",
-        "tag": "Video and photos",
-        "price": "NZ$299",
+        "tag": "Full coverage",
+        "price": "NZ$390",
         "popular": true,
         "headline": "The Full Send.",
         "story": [
           "The skydive is over in minutes.",
           "The memory isn't.",
-          "You're already jumping. You may as well remember all of it.",
-          "Our camera and video package captures the exit, the freefall, the view from above and everything in between, so you can relive the full DropX experience long after you've landed."
+          "Handcam plus an outside camera flyer covers every angle. Close-up footage of your face. Wide shots from outside. Photos from both.",
+          "Everything."
         ],
         "includes": [
-          "Video of your whole jump",
-          "Photos from the exit, freefall and canopy ride",
+          "Handcam video of your jump",
+          "Video from an external camera flyer",
+          "Photos from your jump",
           "Sent to you by download link"
         ],
-        "image": "dropx-images-web/tandem/tandem-8-tile.webp",
-        "alt": "Tandem customer making a heart with their hands in freefall at sunset",
-        "placeholder": false,
-        "pitch": "The whole jump on video, and the photos to go with it.",
-        "best_for": "First-timers, birthdays, bucket lists, and anyone who wants a photo for the wall."
-      },
-      {
-        "name": "The Memory",
-        "tag": "Video only",
-        "price": "NZ$199",
-        "popular": false,
-        "headline": "The Memory.",
-        "story": [
-          "Every part of your experience is captured, from the ground, the climb, the anticipation, the exit, the freefall and the moment the parachute opens, right to the landing."
-        ],
-        "includes": [
-          "Video from the ground to the landing",
-          "The climb, exit, freefall and parachute opening",
-          "Sent to you by download link"
-        ],
-        "image": "dropx-images-web/tandem/tandem-105-tile.webp",
-        "alt": "Tandem customer in freefall with the instructor behind, deep blue sky",
-        "placeholder": false,
-        "pitch": "Every moment of your jump on video, from the ground to the landing.",
-        "best_for": "Anyone who wants to watch the whole jump back, start to finish."
+        "image": "dropx-images-web/tandem/tandem-13-tile.webp",
+        "alt": "Tandem customer celebrating with the instructor after landing",
+        "pitch": "Both cameras. All the footage. All the photos.",
+        "best_for": "Bucket lists, big birthdays, and anyone who doesn't want to miss a thing."
       }
     ],
     "why": {
@@ -198,46 +240,20 @@
     },
     "compare": [
       {
-        "label": "Video of your whole jump",
-        "values": [
-          true,
-          true
-        ]
+        "label": "Handcam video",
+        "values": [true, true, false, true]
       },
       {
-        "label": "The climb and the door opening",
-        "values": [
-          true,
-          true
-        ]
-      },
-      {
-        "label": "Exit, freefall and parachute opening",
-        "values": [
-          true,
-          true
-        ]
-      },
-      {
-        "label": "The landing",
-        "values": [
-          true,
-          true
-        ]
+        "label": "Outside camera video",
+        "values": [false, false, true, true]
       },
       {
         "label": "Photos from your jump",
-        "values": [
-          true,
-          false
-        ]
+        "values": [false, true, true, true]
       },
       {
         "label": "Sent to you by download link",
-        "values": [
-          true,
-          true
-        ]
+        "values": [true, true, true, true]
       }
     ]
   },
