@@ -113,6 +113,10 @@
       (root || document).querySelectorAll('[data-book]').forEach(function (a) {
         var url = b[KEYS[a.getAttribute('data-book')]];
         if (!url) return;
+        // FareHarbor "online ref": shows in the Dashboard which page each booking came from
+        if (url.indexOf('fareharbor.com/embeds/book/') !== -1) {
+          url += (url.indexOf('?') === -1 ? '?' : '&') + 'ref=website-' + (location.pathname.replace(/^\/|\.html$/g, '') || 'index');
+        }
         a.setAttribute('href', url);
         // FareHarbor links stay in this tab: the Lightframe API opens them as a booking pop-up
         if (/^https?:\/\//.test(url) && url.indexOf(location.host) === -1 && url.indexOf('fareharbor.com/embeds/book/') === -1) {
