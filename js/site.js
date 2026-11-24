@@ -104,7 +104,7 @@
   // ---- Book links from site.json ----
   var KEYS = {
     tandem: 'tandem_url', vouchers: 'vouchers_url', aff: 'aff_url',
-    tandem_12k: 'tandem_12k_url', tandem_9k: 'tandem_9k_url',
+    flow: 'flow_url', tandem_12k: 'tandem_12k_url', tandem_9k: 'tandem_9k_url',
     vouchers_12k: 'vouchers_12k_url', vouchers_9k: 'vouchers_9k_url'
   };
   DX.wireBooking = function (root) {
@@ -114,7 +114,8 @@
         var url = b[KEYS[a.getAttribute('data-book')]];
         if (!url) return;
         a.setAttribute('href', url);
-        if (/^https?:\/\//.test(url) && url.indexOf(location.host) === -1) {
+        // FareHarbor links stay in this tab: the Lightframe API opens them as a booking pop-up
+        if (/^https?:\/\//.test(url) && url.indexOf(location.host) === -1 && url.indexOf('fareharbor.com/embeds/book/') === -1) {
           a.setAttribute('target', '_blank');
           a.setAttribute('rel', 'noopener');
         }
