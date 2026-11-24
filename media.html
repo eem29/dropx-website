@@ -178,7 +178,7 @@
       <div class="fb-content fb-content--center">
         <span class="section-eyebrow reveal">Camera packages</span>
         <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-headline">Pick your package.</h2>
-        <p class="section-body pkg-intro reveal reveal-d2" id="pkg-intro">Two packages. Both capture your whole jump. Add one when you book.</p>
+        <p class="section-body pkg-intro reveal reveal-d2" id="pkg-intro">Four packages. All available on the day.</p>
         <div class="pkg-grid" id="pkg-grid">
           <article class="glass pkg"><div class="pkg-body"><h3 class="card-title">Camera packages</h3><p class="req-detail">Call us on (027) 2929951 for current camera prices.</p></div></article>
         </div>
@@ -186,32 +186,58 @@
       </div>
     </section>
 
-    <!-- The Full Send -->
+    <!-- Handcam -->
     <section class="fb fb--photo-left" id="pkg-0" aria-labelledby="pkg-0-headline"
-      style="--bg: url('/dropx-images-web/tandem/tandem-8.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-8-mobile.webp'); --bg-pos: 30% center;">
-      <div class="fb-bg" role="img" aria-label="Tandem customer making a heart with their hands in freefall at sunset over the coast"></div>
-      <div class="fb-overlay" aria-hidden="true"></div>
-      <div class="fb-content">
-        <div class="fb-text" data-pkg="0">
-          <span class="section-eyebrow reveal">The Full Send</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-0-headline">The Full Send</h2>
-          <div class="pkg-story"></div>
-          <div class="btn-row reveal"><a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Add The Full Send <span aria-hidden="true">→</span></a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Memory -->
-    <section class="fb fb--photo-right" id="pkg-1" aria-labelledby="pkg-1-headline"
       style="--bg: url('/dropx-images-web/tandem/tandem-105.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-105-mobile.webp'); --bg-pos: center;">
       <div class="fb-bg" role="img" aria-label="Tandem customer in freefall with the instructor behind, deep blue sky"></div>
       <div class="fb-overlay" aria-hidden="true"></div>
       <div class="fb-content">
-        <div class="fb-text" data-pkg="1">
-          <span class="section-eyebrow reveal">The Memory</span>
-          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-1-headline">The Memory</h2>
+        <div class="fb-text" data-pkg="0">
+          <span class="section-eyebrow reveal">Video</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-0-headline">Handcam.</h2>
           <div class="pkg-story"></div>
-          <div class="btn-row reveal"><a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Add The Memory <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Handcam + Photos -->
+    <section class="fb fb--photo-right" id="pkg-1" aria-labelledby="pkg-1-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-8.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-8-mobile.webp'); --bg-pos: 30% center;">
+      <div class="fb-bg" role="img" aria-label="Tandem customer making a heart with their hands in freefall at sunset over the coast"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text" data-pkg="1">
+          <span class="section-eyebrow reveal">Video &amp; photos</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-1-headline">Handcam + Photos.</h2>
+          <div class="pkg-story"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outside Cam + Photos -->
+    <section class="fb fb--photo-left" id="pkg-2" aria-labelledby="pkg-2-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-125.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-125-mobile.webp'); --bg-pos: center;">
+      <div class="fb-bg" role="img" aria-label="Tandem pair in freefall over the Canterbury coast, filmed from the air"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text" data-pkg="2">
+          <span class="section-eyebrow reveal">External camera</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-2-headline">Outside Cam + Photos.</h2>
+          <div class="pkg-story"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Full Send -->
+    <section class="fb fb--photo-right" id="pkg-3" aria-labelledby="pkg-3-headline"
+      style="--bg: url('/dropx-images-web/tandem/tandem-13.webp'); --bg-m: url('/dropx-images-web/tandem/tandem-13-mobile.webp'); --bg-pos: center 30%;">
+      <div class="fb-bg" role="img" aria-label="Tandem customer celebrating with the instructor after landing"></div>
+      <div class="fb-overlay" aria-hidden="true"></div>
+      <div class="fb-content">
+        <div class="fb-text" data-pkg="3">
+          <span class="section-eyebrow reveal">Full coverage</span>
+          <h2 class="section-headline section-headline--md reveal reveal-d1" id="pkg-3-headline">The Full Send.</h2>
+          <div class="pkg-story"></div>
         </div>
       </div>
     </section>
@@ -299,7 +325,7 @@
         if (w.intro) document.getElementById('why-intro').textContent = w.intro;
         return (w.items || []).map(function (it, i) {
           return '<li class="day-tile">' +
-            '<img src="' + esc(it.image) + '" alt="' + esc(it.alt) + '" width="800" height="533" loading="lazy">' +
+            '<img src="' + esc(it.image) + '" alt="' + esc(it.alt) + '" width="800" height="533" loading="lazy" style="object-position:' + esc(it.image_pos || 'center') + '">' +
             '<div class="day-tile-text"><span class="day-num">0' + (i + 1) + '</span>' +
             '<h3 class="day-title">' + esc(it.title) + '</h3>' +
             '<p class="day-body">' + esc(it.body) + '</p></div></li>';
@@ -330,8 +356,7 @@
           box.querySelector('.section-eyebrow').textContent = p.tag;
           box.querySelector('h2').textContent = p.headline || p.name;
           box.querySelector('.pkg-story').innerHTML = DX.phTag(p.placeholder) + '<div class="story">' + DX.story(p.story) + '</div>' +
-            '<p class="alt-story-price"><span class="card-kicker">Add for</span> ' + esc(p.price) + '</p>';
-          box.querySelector('.amber-btn').firstChild.textContent = 'Add ' + p.name + ' ';
+            '<p class="alt-story-price"><span class="card-kicker">Price</span> ' + esc(p.price) + '</p>';
         });
         document.querySelectorAll('[data-pkg]').forEach(function (b) {
           if (+b.getAttribute('data-pkg') >= (m.packages || []).length) b.closest('section').hidden = true;
@@ -346,7 +371,6 @@
               (p.pitch ? '<p class="pkg-pitch">' + esc(p.pitch) + '</p>' : '') +
               '<ul class="card-list">' + (p.includes || []).map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
               (p.best_for ? '<p class="pkg-best"><span class="card-kicker">Best for</span> ' + esc(p.best_for) + '</p>' : '') +
-              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem" style="align-self:flex-start">Add ' + esc(p.name) + ' <span aria-hidden="true">→</span></a>' +
             '</div></article>';
         }).join('');
       });

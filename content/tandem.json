@@ -220,25 +220,29 @@
           "title": "The bits you'll miss.",
           "body": "Adrenaline does strange things to memory. The look on your face at the door, the moment you let go, the view you were too busy yelling to take in. It's all there on the footage.",
           "image": "dropx-images-web/tandem/tandem-64-tile.webp",
-          "alt": "Tandem customer leaving the aircraft, face to the camera, the wing above"
+          "alt": "Tandem customer leaving the aircraft, face to the camera, the wing above",
+          "image_pos": "center top"
         },
         {
           "title": "No phones up there.",
           "body": "For safety, phones, GoPros and cameras stay on the ground. A DropX camera package is the only way to bring the jump home with you.",
           "image": "dropx-images-web/tandem/tandem-125-tile.webp",
-          "alt": "Tandem pair in freefall over the Canterbury coast, filmed from the air"
+          "alt": "Tandem pair in freefall over the Canterbury coast, filmed from the air",
+          "image_pos": "center 65%"
         },
         {
           "title": "Show everyone.",
           "body": "Your friends and family see you land. The footage shows them where you came from: the door, the freefall and the canopy ride over Canterbury.",
           "image": "dropx-images-web/tandem/tandem-13-tile.webp",
-          "alt": "Tandem customer celebrating with the instructor after landing"
+          "alt": "Tandem customer celebrating with the instructor after landing",
+          "image_pos": "center 20%"
         },
         {
           "title": "Relive it, again and again.",
           "body": "Watch it the night of your jump. Watch it on your birthday next year. Watch it in ten years and feel your stomach drop all over again.",
           "image": "dropx-images-web/tandem/tandem-8-tile.webp",
-          "alt": "Tandem customer making a heart with their hands in freefall at sunset"
+          "alt": "Tandem customer making a heart with their hands in freefall at sunset",
+          "image_pos": "center 45%"
         }
       ]
     },

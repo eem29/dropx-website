@@ -2,7 +2,7 @@
   "booking": {
     "provider": "fareharbor",
     "shortname": "skydivedropx",
-    "tandem_url": "contact.html?topic=tandem#enquire",
+    "tandem_url": "tandem.html",
     "tandem_12k_url": "https://fareharbor.com/skydivedropx/items/770316/",
     "tandem_9k_url": "https://fareharbor.com/skydivedropx/items/770317/",
     "vouchers_url": "contact.html?topic=voucher#enquire",
