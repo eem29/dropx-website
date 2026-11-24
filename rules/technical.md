@@ -23,7 +23,11 @@
 - **CMS auth:** Cloudflare Access — no third-party login required
 - **Analytics (Plausible):** NOT YET — add after domain is confirmed with Ben
 - **Facebook Messenger:** https://m.me/ch/Abaa9XdSVzir96lk/?send_source=cm:copy_invite_link
-- **Booking:** provider TBC (Ben). All Book links use `data-book="tandem|vouchers|aff"` and are rewired by js/site.js from content/site.json → booking. Change the URL there, not in pages.
+- **Booking:** FareHarbor (shortname `skydivedropx`). Book links use `data-book="..."` and js/site.js rewires them from content/site.json → booking. Change URLs there, not in pages.
+  - Item links use the embed generator format: `https://fareharbor.com/embeds/book/skydivedropx/items/<id>/?flow=1726537` (12,000 = 770316, 9,000 = 770317, 12,000 gift = 770597, 9,000 gift = 770598). "Include item description" is off because the pages carry the copy.
+  - The Lightframe API script (`?autolightframe=yes`) sits right above `</body>` on every page. FareHarbor links must not open in a new tab.
+  - site.js adds `ref=website-<page>` (FareHarbor online ref) to every FareHarbor link.
+  - **Go-live checklist:** blank `booking.fh_preview` (demo preview code, only needed while the account is in Demo Mode), remove the noindex meta tags, deploy the Worker CORS change, then merge to main.
 
 ---
 

@@ -116,6 +116,8 @@
         // FareHarbor "online ref": shows in the Dashboard which page each booking came from
         if (url.indexOf('fareharbor.com/embeds/book/') !== -1) {
           url += (url.indexOf('?') === -1 ? '?' : '&') + 'ref=website-' + (location.pathname.replace(/^\/|\.html$/g, '') || 'index');
+          // Demo mode only: FareHarbor hides the company unless the link carries its preview code. Blank fh_preview at go-live.
+          if (b.fh_preview) url += '&preview=' + encodeURIComponent(b.fh_preview);
         }
         a.setAttribute('href', url);
         // FareHarbor links stay in this tab: the Lightframe API opens them as a booking pop-up
