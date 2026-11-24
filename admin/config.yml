@@ -113,6 +113,8 @@ collections:
             fields:
               - { label: "Product name", name: "name", widget: "string", hint: "e.g. The 12,000" }
               - { label: "Altitude", name: "feet", widget: "string", hint: "e.g. 12,000ft" }
+              - { label: "Booking link key", name: "book_key", widget: "string", required: false, hint: "Which FareHarbor link in Site settings this card's Book button uses (tandem_12k or tandem_9k). Leave as is." }
+              - { label: "Gift link key", name: "voucher_key", widget: "string", required: false, hint: "Which FareHarbor gift link this card uses (vouchers_12k or vouchers_9k). Leave as is." }
               - { label: "Tagline", name: "tagline", widget: "string", hint: "e.g. 12,000 feet. Up to 45 seconds of freefall." }
               - { label: "Freefall", name: "freefall", widget: "string", hint: "e.g. About 45 seconds of freefall" }
               - { label: "Price", name: "price", widget: "string", hint: "e.g. NZ$379" }
@@ -291,8 +293,14 @@ collections:
             hint: "Every Book button on the site uses these links."
             fields:
               - { label: "Booking system name", name: "provider", widget: "string", required: false }
-              - { label: "Tandem booking link", name: "tandem_url", widget: "string" }
-              - { label: "Gift voucher link", name: "vouchers_url", widget: "string" }
+              - { label: "FareHarbor shortname", name: "shortname", widget: "string", required: false }
+              - { label: "Book now link (top bar and general Book buttons)", name: "tandem_url", widget: "string" }
+              - { label: "The 12,000 FareHarbor link", name: "tandem_12k_url", widget: "string", required: false, hint: "From FareHarbor: Settings > Book Buttons & Embeds > Specific item > Link" }
+              - { label: "The 9,000 FareHarbor link", name: "tandem_9k_url", widget: "string", required: false }
+              - { label: "Gift voucher fallback link", name: "vouchers_url", widget: "string" }
+              - { label: "12,000 gift FareHarbor link", name: "vouchers_12k_url", widget: "string", required: false }
+              - { label: "9,000 gift FareHarbor link", name: "vouchers_9k_url", widget: "string", required: false }
+              - { label: "All tandems FareHarbor flow link", name: "flow_url", widget: "string", required: false, hint: "Not used yet. Swap into the Book now link to open the pop-up with both altitudes." }
               - { label: "AFF booking link", name: "aff_url", widget: "string" }
           - label: "Footer"
             name: "footer"
