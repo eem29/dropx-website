@@ -107,6 +107,7 @@
     flow: 'flow_url', tandem_12k: 'tandem_12k_url', tandem_9k: 'tandem_9k_url',
     vouchers_12k: 'vouchers_12k_url', vouchers_9k: 'vouchers_9k_url'
   };
+  var page = location.pathname.replace(/^\/|\.html$/g, '') || 'index';
   DX.wireBooking = function (root) {
     return DX.load('/content/site.json').then(function (site) {
       var b = site.booking || {};
@@ -115,9 +116,19 @@
         if (!url) return;
         // FareHarbor "online ref": shows in the Dashboard which page each booking came from
         if (url.indexOf('fareharbor.com/embeds/book/') !== -1) {
-          url += (url.indexOf('?') === -1 ? '?' : '&') + 'ref=website-' + (location.pathname.replace(/^\/|\.html$/g, '') || 'index');
+          url += (url.indexOf('?') === -1 ? '?' : '&') + 'ref=website-' + page;
           // Demo mode only: FareHarbor hides the company unless the link carries its preview code. Blank fh_preview at go-live.
           if (b.fh_preview) url += '&preview=' + encodeURIComponent(b.fh_preview);
+        }
+        // A link to a section of the page we're already on just scrolls there, arrow pointing the way
+        var m = /^([a-z0-9-]+)\.html(#[a-z0-9-]+)$/i.exec(url);
+        if (m && m[1] === page) {
+          var target = document.querySelector(m[2]);
+          if (target) {
+            url = m[2];
+            var arrow = a.querySelector('[aria-hidden="true"]');
+            if (arrow) arrow.textContent = a.compareDocumentPosition(target) & Node.DOCUMENT_POSITION_FOLLOWING ? '↓' : '↑';
+          }
         }
         a.setAttribute('href', url);
         // FareHarbor links stay in this tab: the Lightframe API opens them as a booking pop-up
