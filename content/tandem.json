@@ -3,6 +3,8 @@
     {
       "name": "The 12,000",
       "feet": "12,000ft",
+      "book_key": "tandem_12k",
+      "voucher_key": "vouchers_12k",
       "tagline": "12,000 feet. Up to 45 seconds of freefall. One hell of a way to see Canterbury.",
       "freefall": "About 45 seconds of freefall",
       "price": "NZ$449",
@@ -24,6 +26,8 @@
     {
       "name": "The 9,000",
       "feet": "9,000ft",
+      "book_key": "tandem_9k",
+      "voucher_key": "vouchers_9k",
       "tagline": "9,000 feet. Pure freefall. A serious introduction to skydiving.",
       "freefall": "About 25 seconds of freefall",
       "price": "NZ$369",

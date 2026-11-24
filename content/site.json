@@ -3,7 +3,11 @@
     "provider": "fareharbor",
     "shortname": "skydivedropx",
     "tandem_url": "contact.html?topic=tandem#enquire",
+    "tandem_12k_url": "https://fareharbor.com/skydivedropx/items/770316/",
+    "tandem_9k_url": "https://fareharbor.com/skydivedropx/items/770317/",
     "vouchers_url": "contact.html?topic=voucher#enquire",
+    "vouchers_12k_url": "https://fareharbor.com/skydivedropx/items/770597/",
+    "vouchers_9k_url": "https://fareharbor.com/skydivedropx/items/770598/",
     "aff_url": "contact.html?topic=aff#enquire"
   },
   "footer": {

@@ -102,7 +102,11 @@
   }
 
   // ---- Book links from site.json ----
-  var KEYS = { tandem: 'tandem_url', vouchers: 'vouchers_url', aff: 'aff_url' };
+  var KEYS = {
+    tandem: 'tandem_url', vouchers: 'vouchers_url', aff: 'aff_url',
+    tandem_12k: 'tandem_12k_url', tandem_9k: 'tandem_9k_url',
+    vouchers_12k: 'vouchers_12k_url', vouchers_9k: 'vouchers_9k_url'
+  };
   DX.wireBooking = function (root) {
     return DX.load('/content/site.json').then(function (site) {
       var b = site.booking || {};
@@ -158,8 +162,8 @@
               '<div><dt>From</dt><dd>' + esc(a.price) + '</dd></div>' +
             '</dl>' +
             '<div class="btn-row drop-ctas">' +
-              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="tandem">Book ' + esc(a.name || a.feet) + ' <span aria-hidden="true">→</span></a>' +
-              '<a href="contact.html?topic=voucher#enquire" class="arrow-link" data-book="vouchers">Give it as a gift <span aria-hidden="true">→</span></a>' +
+              '<a href="contact.html?topic=tandem#enquire" class="amber-btn" data-book="' + esc(a.book_key || 'tandem') + '">Book ' + esc(a.name || a.feet) + ' <span aria-hidden="true">→</span></a>' +
+              '<a href="contact.html?topic=voucher#enquire" class="arrow-link" data-book="' + esc(a.voucher_key || 'vouchers') + '">Give it as a gift <span aria-hidden="true">→</span></a>' +
             '</div>' +
           '</div>' +
         '</article>';
